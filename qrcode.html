@@ -44,11 +44,12 @@
                 } else {
                   // res is the info in the qr code
                   node.parentNode.previousElementSibling.value = res;
-                  //set json code in qr code
-                  //parse here
-                  var obj = JSON.parse(res);
-                  document.getElementById("name").innerHTML = obj.name;
-                  document.getElementById("age").innerHTML = obj.age;
+                  
+                  // if create qr code on URL selection below code not needed
+                  //https://www.qr-code-generator.com/
+
+                  //if uncommented QR CODE MUST BE A LINK
+                  window.location = res;
                 }
               };
               qrcode.decode(reader.result);
