@@ -11,15 +11,15 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand mb-0 h1" href=<?php echo $helper->pageUrl("index.php")?>>ICT Open House</a>
+        <a class="navbar-brand mb-0 h1" href=<?php echo $helper->pageUrl("index.php")?>>ICT OPEN HOUSE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("index.php") ?>">Courses<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("quiz.php") ?>">Course Quiz</a>
-                <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("tour.php") ?>">Tour Map</a>
+                <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("index.php") ?>">COURSES<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("quiz.php") ?>">QUIZ</a>
+                <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("tour.php") ?>">MAP</a>
             </div>
         </div>
     </div>
