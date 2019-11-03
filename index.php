@@ -10,7 +10,9 @@
 
     $sql = "SELECT * FROM Course";
     $result = $db->query($sql);
-
+    
+    $result2 = $db->query($sql);
+   
     $db->close();
 
     $img = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80";
@@ -22,7 +24,7 @@
     
     <main>
         <div id="fullpage">
-            <div class="section fp-scrollable">
+            <div class="section fp-scrollable" id="section0">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <?php while ($row = $db->fetch_array($result)): ?>
@@ -35,20 +37,34 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php endwhile; ?>
+                            <?php endwhile; ?>
                     </div>
                 </div>
             </div>
             <div class="section" id="section1">
-                <div class="slide" id="slide1"><h1>Information Technology</h1></div>
+                <div class="slide" id="slide1">
+                    <div class="intro">
+                        <h1 style="color:white;">Information Technology</h1></div>
+                        <p style="color:white;">Learn everything related to IT here!</p>
+                    </div>
+
+                    
                 <div class="slide" id="slide2"><h1>Course Description</h1></div>
                 <div class="slide" id="slide3"><h1>Course Requirements</h1></div>
             </div>
-            <div class="section">Course 2</div>
-            <div class="section">Course 3</div>
-            <div class="section">Course 4</div>
-            <div class="section">Course 5</div>
-            <div class="section">Quiz</div>
+            <?php 
+            while ($row1 = $db->fetch_array($result2)): 
+            ?>
+                    <div class="section" id="<?php echo $row['course_id'] . '-section'?>">
+                    <div class="slide" id="slide1">
+                    <div class="intro">
+                        <h1 style="color:white;"><?php echo $row1['course_name'] ?></h1></div>
+                        <p style="color:white;"><?php echo $row1['course_short_description'] ?></p>
+                    </div>
+                    <div class="slide" id="slide2"><p><?php echo $row1['course_description'] ?></p></div>
+                    <div class="slide" id="slide3"><h1><?php echo $row1['course_requirements'] ?></h1></div>
+                </div>
+            <?php endwhile; ?>
         </div>
     </main>
 

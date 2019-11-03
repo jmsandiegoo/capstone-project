@@ -23,3 +23,49 @@ body {
 }
 
 /* Insert other pages */
+
+/* Backgrounds will cover all the section
+	* --------------------------------------- */
+	.slide{
+		background-size: cover;
+	}
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section0{
+		background-image: url(imgs/bg1.jpg);
+    }
+    
+    #section1{
+        padding-top:50px !important;
+    }
+
+	#section0 h1{
+		top: 50%;
+		transform: translateY(-50%);
+		position: relative;
+	}
+	#section2{
+		background-image: url(imgs/bg3.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3{
+		background-image: url(imgs/bg4.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3 h1{
+		color: #000;
+	}
+
+
+	/*Adding background for the slides
+	* --------------------------------------- */
+	#slide1{
+        background-image: url(https://www.np.edu.sg/ict/PublishingImages/Pages/accountancy/3d_banner.jpg);
+        
+	
+	}
+	#slide2{
+		background-image: url(imgs/bg5.jpg);
+
+	}
