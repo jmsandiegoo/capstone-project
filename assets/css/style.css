@@ -10,8 +10,16 @@ body {
 
 
 /* Index */
-#courses .course-card {
+#fullpage .container-fluid {
+    width: 80% !important;
+}
+
+.course-card {
     margin: 0 0 30px 0;
+}
+
+.section{
+    text-align:center;
 }
 
 /* Insert other pages */

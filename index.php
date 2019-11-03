@@ -23,7 +23,7 @@
     <main>
         <div id="fullpage">
             <div class="section fp-scrollable">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
                         <?php while ($row = $db->fetch_array($result)): ?>
                             <div class="col-xs-6 col-md-4">
@@ -39,8 +39,11 @@
                     </div>
                 </div>
             </div>
-            <div class="section">Course Overview Grid</div>
-            <div class="section">Course 1</div>
+            <div class="section" id="section1">
+                <div class="slide" id="slide1"><h1>Information Technology</h1></div>
+                <div class="slide" id="slide2"><h1>Course Description</h1></div>
+                <div class="slide" id="slide3"><h1>Course Requirements</h1></div>
+            </div>
             <div class="section">Course 2</div>
             <div class="section">Course 3</div>
             <div class="section">Course 4</div>
