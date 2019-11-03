@@ -19,25 +19,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php include $helper->subviewPath('header.php') ?>
+    
     <main>
-        <!-- <section id="courses">
-            <div class="row justify-content-center">
-                <?php while ($row = $db->fetch_array($result)): ?>
-                    <div class="col-xs-6 col-md-4">
-                        <div class="card text-center course-card">
-                            <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
-                            <div class="card-body">
-                                <h5 class="card-title" ><?php echo $row['course_name'] ?></h5>
-                                <h6 class="card-subtitle">(<?php echo $row['course_id'] ?>)</h6>
-                            </div>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-            </div>
-        </section> -->
-
         <div id="fullpage">
-            <div class="section">Full Screen Landing Page</div>
+            <div class="section fp-scrollable">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <?php while ($row = $db->fetch_array($result)): ?>
+                            <div class="col-xs-6 col-md-4">
+                                <div class="card text-center course-card">
+                                    <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
+                                    <div class="card-body">
+                                        <h5 class="card-title" ><?php echo $row['course_name'] ?></h5>
+                                        <h6 class="card-subtitle">(<?php echo $row['course_id'] ?>)</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            </div>
             <div class="section">Course Overview Grid</div>
             <div class="section">Course 1</div>
             <div class="section">Course 2</div>
