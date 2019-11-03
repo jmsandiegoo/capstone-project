@@ -19,11 +19,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php include $helper->subviewPath('header.php') ?>
-    <main class="container">
-        <header>
-            <h1>Fullscreen Landing Page</h1>
-        </header>
-        <section id="courses">
+    <main>
+        <!-- <section id="courses">
             <div class="row justify-content-center">
                 <?php while ($row = $db->fetch_array($result)): ?>
                     <div class="col-xs-6 col-md-4">
@@ -37,7 +34,18 @@
                     </div>
                 <?php endwhile; ?>
             </div>
-        </section>
+        </section> -->
+
+        <div id="fullpage">
+            <div class="section">Full Screen Landing Page</div>
+            <div class="section">Course Overview Grid</div>
+            <div class="section">Course 1</div>
+            <div class="section">Course 2</div>
+            <div class="section">Course 3</div>
+            <div class="section">Course 4</div>
+            <div class="section">Course 5</div>
+            <div class="section">Quiz</div>
+        </div>
     </main>
 
     <?php include $helper->subviewPath('footer.php') ?>
