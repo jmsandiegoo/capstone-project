@@ -4,7 +4,10 @@ body {
 }
 
 /* Header */
-
+.bg-custom {
+	opacity: 80%;
+	background: #202020;
+}
 
 /* Footer */
 
@@ -20,6 +23,12 @@ body {
 
 .section{
     text-align:center;
+}
+
+@media only screen and (max-width: 767px) {
+	.course-card img {
+		display: none;
+	}
 }
 
 /* Insert other pages */
