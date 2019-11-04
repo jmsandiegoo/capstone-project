@@ -1,13 +1,4 @@
-/*!
- * fullPage 3.0.7
- * https://github.com/alvarotrigo/fullPage.js
- *
- * @license GPLv3 for open source use only
- * or Fullpage Commercial License for commercial use
- * http://alvarotrigo.com/fullPage/pricing/
- *
- * Copyright (C) 2018 http://alvarotrigo.com/fullPage - A project by Alvaro Trigo
- */
+
 (function( root, window, document, factory, undefined) {
     if( typeof define === 'function' && define.amd ) {
         // AMD. Register as an anonymous module.
@@ -2974,6 +2965,7 @@
         */
 
         //Gae
+
         function setBodyClass(){
             var section = $(SECTION_ACTIVE_SEL)[0];
             var slide = $(SLIDE_ACTIVE_SEL, section)[0];
@@ -2982,6 +2974,13 @@
             var slideAnchor = getAnchor(slide);
 
             var text = String(sectionAnchor);
+            var count = 6;
+
+     
+     
+            
+            var sql = "SELECT * FROM Course"
+
 
             if(slide){
                 text = text + '-' + slideAnchor;
@@ -2993,32 +2992,18 @@
             //removing previous anchor classes
             var classRe = new RegExp('\\b\\s?' + VIEWING_PREFIX + '-[^\\s]+\\b', "g");
             $body.className = $body.className.replace(classRe, '');
-
+            
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
-            
-            //Display value in button
-            if(text == "1-0"){
-				text = "N54";
-			}
-			else if(text == "2-0"){
-				text = "N55";
-			}
-			else if(text == "3-0"){
-				text = "N81";
-			}
-			else if(text == "4-0"){
-				text = "N94";
-			}
-			else if(text == "5-0"){
-				text = "N95";
-			}
-			else if(text == "6-0"){
-				text = "Go";
-			}
-			else if(text == "0"){
-				text = "Quiz";
-			}
+            if(text == "0"){
+                text = "School of ICT";
+            }
+            else if(parseInt(sectionAnchor) > 0 && parseInt(sectionAnchor) < count){
+                text = "Module Information";
+            }
+            else{
+                text = "Get back to Top";
+            }
 			document.getElementById("floatingBtnTxt").innerHTML = text;
         }
 

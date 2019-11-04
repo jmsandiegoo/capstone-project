@@ -15,6 +15,7 @@
     $result = $db->query($sql);
     $db->close();
 
+    $sql1 = "SELECT * FROM Course "
 ?>
 <?php
 while ($row = $db->fetch_array($result)): 
@@ -23,5 +24,7 @@ while ($row = $db->fetch_array($result)):
 #<?php echo $row['course_id'] . '-section'?>{
     padding-top:0px !important;
 }
-
+#<?php echo $row['course_id'] . '-slide1'?>{
+    background-image: url(https://www.np.edu.sg/ict/PublishingImages/Pages/accountancy/3d_banner.jpg);
+}
 <?php endwhile; ?>

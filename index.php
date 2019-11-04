@@ -26,7 +26,7 @@
 
 <html lang="en">
     <?php include $helper->subviewPath('header.php') ?>
-    <a href="" id="floatingBtn" ><h5 id="floatingBtnTxt"></h5></a>
+    <a href="" id="floatingBtn"><h5 id="floatingBtnTxt" style="font-size:0.7vw;"></h5></a>
     <main>
         <div id="fullpage">
             <div class="section fp-scrollable" id="section0">
@@ -51,13 +51,15 @@
             while ($row1 = $db->fetch_array($result2)): 
             ?>
                     <div class="section" id="<?php echo $row1['course_id'] . '-section'?>">
-                    <div class="slide" id="slide1">
+                    <div class="slide" id="<?php echo $row1['course_id'] . '-slide1'?>">
                     <div class="intro">
                         <h1 style="color:white;"><?php echo $row1['course_name'] ?></h1></div>
                         <p style="color:white;"><?php echo $row1['course_short_description'] ?></p>
                     </div>
-                    <div class="slide" id="slide2"><p><?php echo $row1['course_description'] ?></p></div>
-                    <div class="slide" id="slide3"><h1><?php echo $row1['course_requirements'] ?></h1></div>
+                    <div class="container">
+                        <div class="slide" id="<?php echo $row1['course_id'] . '-slide2'?>"><p><?php echo $row1['course_description'] ?></p></div>
+                        <div class="slide" id="<?php echo $row1['course_id'] . '-slide3'?>"><h1><?php echo $row1['course_requirements'] ?></h1></div>
+                    </div>
                 </div>
             <?php endwhile; ?>
             <div class="section" id="section1">
@@ -70,4 +72,5 @@
     </main>
 
     <?php include $helper->subviewPath('footer.php') ?>
+
 </html>

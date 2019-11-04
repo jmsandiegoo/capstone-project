@@ -18,4 +18,5 @@
 <script src="<?php echo $helper->jsPath("easings.js") ?>" ></script>
 <script src="<?php echo $helper->jsPath("fullpage.js") ?>" ></script>
 <script src="<?php echo $helper->jsPath("script.js") ?>"></script>
+
 </body>
