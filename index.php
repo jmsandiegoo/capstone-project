@@ -28,12 +28,12 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <?php while ($row = $db->fetch_array($result)): ?>
-                            <div class="col-xs-6 col-md-4">
+                            <div class="col-xs-6 col-md-4 ">
                                 <div class="card text-center course-card">
                                     <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
                                     <div class="card-body">
-                                        <h5 class="card-title" ><?php echo $row['course_name'] ?></h5>
-                                        <h6 class="card-subtitle">(<?php echo $row['course_id'] ?>)</h6>
+                                        <h5 class="card-title" style="font-size:1.1vw"><?php echo $row['course_name'] ?></h5>
+                                        <h6 class="card-subtitle" style="font-size:0.6vw">(<?php echo $row['course_id'] ?>)</h6>
                                     </div>
                                 </div>
                             </div>

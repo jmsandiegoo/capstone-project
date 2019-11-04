@@ -18,7 +18,7 @@ body {
 }
 
 .course-card {
-    margin: 0 0 30px 0;
+    margin: 5px 0 5px 0;
 }
 
 .section{
@@ -45,8 +45,8 @@ body {
 		background-image: url(imgs/bg1.jpg);
     }
     
-    #section1{
-        padding-top:50px !important;
+    #section1.section.fp-section{
+        padding-top:0px !important;
     }
 
 	#section0 h1{
