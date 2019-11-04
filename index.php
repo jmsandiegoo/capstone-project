@@ -50,8 +50,8 @@
             <?php 
             while ($row1 = $db->fetch_array($result2)): 
             ?>
-                    <div class="section" id="<?php echo $row1['course_id'] . '-section'?>">
-                    <div class="slide" id="<?php echo $row1['course_id'] . '-slide1'?>">
+                    <div class="section" id="<?php echo $row1['id'] . '-section'?>">
+                    <div class="slide" id="<?php echo $row1['id'] . '-slide1'?>">
                     <div class="intro">
                         <h1 style="color:white;"><?php echo $row1['course_name'] ?></h1></div>
                         <p style="color:white;"><?php echo $row1['course_short_description'] ?></p>
