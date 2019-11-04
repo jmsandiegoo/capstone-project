@@ -50,15 +50,15 @@
             <?php 
             while ($row1 = $db->fetch_array($result2)): 
             ?>
-                    <div class="section" id="<?php echo $row1['id'] . '-section'?>">
-                    <div class="slide" id="<?php echo $row1['id'] . '-slide1'?>">
+                    <div class="section" id="<?php echo 'section-' . $row1['id']?>">
+                    <div class="slide" id="<?php echo 'slide1-' . $row1['id']?>">
                     <div class="intro">
                         <h1 style="color:white;"><?php echo $row1['course_name'] ?></h1></div>
                         <p style="color:white;"><?php echo $row1['course_short_description'] ?></p>
                     </div>
                     <div class="container">
-                        <div class="slide" id="<?php echo $row1['course_id'] . '-slide2'?>"><p><?php echo $row1['course_description'] ?></p></div>
-                        <div class="slide" id="<?php echo $row1['course_id'] . '-slide3'?>"><h1><?php echo $row1['course_requirements'] ?></h1></div>
+                        <div class="slide" id="<?php echo 'slide2-' . $row1['id']?>"><p><?php echo $row1['course_description'] ?></p></div>
+                        <div class="slide" id="<?php echo 'slide3-' . $row1['id']?>"><h1><?php echo $row1['course_requirements'] ?></h1></div>
                     </div>
                 </div>
             <?php endwhile; ?>

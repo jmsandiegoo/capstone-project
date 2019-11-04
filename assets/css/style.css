@@ -94,6 +94,7 @@ body {
 		background-image: url();
 	}
 
-#-section{
-	padding-top:0px !important;
-}
+	#sectionquiz{    
+		background-size:cover;
+		background-image: url(https://www.np.edu.sg/ict/PublishingImages/Pages/accountancy/3d_banner.jpg);
+	}

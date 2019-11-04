@@ -2976,12 +2976,6 @@
             var text = String(sectionAnchor);
             var count = 6;
 
-     
-     
-            
-            var sql = "SELECT * FROM Course"
-
-
             if(slide){
                 text = text + '-' + slideAnchor;
             }

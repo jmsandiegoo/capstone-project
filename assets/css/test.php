@@ -21,10 +21,11 @@
 while ($row = $db->fetch_array($result)): 
 ?>
 
-#<?php echo $row['course_id'] . '-section'?>{
-    padding-top:0px !important;
-}
-#<?php echo $row['course_id'] . '-slide1'?>{
-    background-image: url(https://www.np.edu.sg/ict/PublishingImages/Pages/accountancy/3d_banner.jpg);
-}
+    #<?php echo 'section-' . $row['id']?>{
+        padding-top:0px !important;
+    }
+    #<?php echo 'slide1-' . $row['id'] ?>{
+        background-size:cover;
+        background-image: url(https://www.np.edu.sg/ict/PublishingImages/Pages/accountancy/3d_banner.jpg);
+    }
 <?php endwhile; ?>
