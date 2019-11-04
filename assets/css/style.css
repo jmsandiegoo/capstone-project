@@ -42,12 +42,10 @@ body {
 	/* Defining each section background and styles
 	* --------------------------------------- */
 	#section0{
-		background-image: url(imgs/bg1.jpg);
+		background-image: url();
     }
     
-    #section1.section.fp-section{
-        padding-top:0px !important;
-    }
+ 
 
 	#section0 h1{
 		top: 50%;
@@ -55,11 +53,11 @@ body {
 		position: relative;
 	}
 	#section2{
-		background-image: url(imgs/bg3.jpg);
+		background-image: url();
 		padding: 6% 0 0 0;
 	}
 	#section3{
-		background-image: url(imgs/bg4.jpg);
+		background-image: url();
 		padding: 6% 0 0 0;
 	}
 	#section3 h1{
@@ -75,6 +73,9 @@ body {
 	
 	}
 	#slide2{
-		background-image: url(imgs/bg5.jpg);
-
+		background-image: url();
 	}
+
+#-section{
+	padding-top:0px !important;
+}

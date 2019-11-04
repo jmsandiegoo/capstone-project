@@ -35,7 +35,7 @@ class Mysql_Driver
       	$result = mysqli_query($this->connection,$qry);
 		if (!$result) 
 			trigger_error("Query Failed! SQL: $qry - Error: " . 
-			               mysqli_error($this->connection));
+			mysqli_error($this->connection));
 		else
 			return $result;
 	}

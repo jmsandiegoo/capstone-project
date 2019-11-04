@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo $helper->cssPath("fullpage.css") ?>" />
     <link rel="stylesheet" href="<?php echo $helper->cssPath("style.css") ?>"/>
+    <link rel="stylesheet" href="<?php echo $helper->cssPath("dcss.php") ?>"/>
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-custom">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark bg-custom">
     <div class="container">
         <a class="navbar-brand mb-0 h1" href=<?php echo $helper->pageUrl("index.php")?>>ICT OPEN HOUSE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
