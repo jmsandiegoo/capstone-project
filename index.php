@@ -26,7 +26,7 @@
 
 <html lang="en">
     <?php include $helper->subviewPath('header.php') ?>
-    
+    <a href="" id="floatingBtn" ><h5 id="floatingBtnTxt"></h5></a>
     <main>
         <div id="fullpage">
             <div class="section fp-scrollable" id="section0">

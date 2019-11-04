@@ -2972,6 +2972,8 @@
         /**
         * Sets a class for the body of the page depending on the active section / slide
         */
+
+        //Gae
         function setBodyClass(){
             var section = $(SECTION_ACTIVE_SEL)[0];
             var slide = $(SLIDE_ACTIVE_SEL, section)[0];
@@ -2994,6 +2996,30 @@
 
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
+            
+            //Display value in button
+            if(text == "1-0"){
+				text = "N54";
+			}
+			else if(text == "2-0"){
+				text = "N55";
+			}
+			else if(text == "3-0"){
+				text = "N81";
+			}
+			else if(text == "4-0"){
+				text = "N94";
+			}
+			else if(text == "5-0"){
+				text = "N95";
+			}
+			else if(text == "6-0"){
+				text = "Go";
+			}
+			else if(text == "0"){
+				text = "Quiz";
+			}
+			document.getElementById("floatingBtnTxt").innerHTML = text;
         }
 
         /**

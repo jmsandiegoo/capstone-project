@@ -64,6 +64,26 @@ body {
 		color: #000;
 	}
 
+	/*Floating button for index page*/
+	
+	#floatingBtn {
+		height: 50px;
+		color: #FFFFFF;
+		background-color: #202020;
+		position: fixed;
+		z-index: 70;
+		bottom: 50px;
+		right: 30px;
+		width: 50px;
+		text-align: right;
+		font-size: 0.9em;
+		padding: 8px 0 8px 0;
+		border-radius: 1em;
+	}
+	h5{
+		text-align: center;
+	}
+
 
 	/*Adding background for the slides
 	* --------------------------------------- */
