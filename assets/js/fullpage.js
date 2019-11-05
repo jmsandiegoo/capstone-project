@@ -2974,7 +2974,6 @@
             var slideAnchor = getAnchor(slide);
 
             var text = String(sectionAnchor);
-            var count = 6;
 
             if(slide){
                 text = text + '-' + slideAnchor;
@@ -2989,6 +2988,7 @@
             
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
+<<<<<<< HEAD
             if(text == "0"){
                 text = "School of ICT";
             }
@@ -2999,8 +2999,28 @@
             }
             else{
                 text = "Get back to Top";
+=======
+            
+            modifyFloatingButton(sectionAnchor);
+        }
+
+        function modifyFloatingButton(sectionAnchor) {
+            sectionAnchor = parseInt(sectionAnchor);
+
+            var btn = document.getElementById("floatingBtnTxt");
+
+            if (sectionAnchor === 0) {
+                btn.innerHTML = "Course Overview";
+                btn.setAttribute("href", "#");
+                
+            } else if (sectionAnchor < 6) {
+                btn.innerHTML = "Module Information";
+                btn.setAttribute("href", `views/modules.php?id=${sectionAnchor}`)
+            } else {
+                btn.innerHTML = "Go Back to Top";
+                btn.setAttribute("href", "#");
+>>>>>>> 3412340657ae316ca1f7d2d3060274608b67ec00
             }
-			document.getElementById("floatingBtnTxt").innerHTML = text;
         }
         
         /**

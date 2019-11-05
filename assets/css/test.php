@@ -2,8 +2,8 @@
     header("Content-type: text/css; charset: UTF-8");
     header("Cache-Control: must-revalidate");
 
-    include_once dirname(__DIR__,2).'\helpers\mysql.php';
-    include_once dirname(__DIR__,2).'\helpers\helper.php';
+    include_once dirname(__DIR__,2).'/helpers/mysql.php';
+    include_once dirname(__DIR__,2).'/helpers/helper.php';
     
     $helper = new Helper();
 
