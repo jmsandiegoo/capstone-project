@@ -2989,7 +2989,7 @@
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
             var i;
-			for(i = 0; i < cid.length; i++)
+			for(i = 0; i < cid.length+1; i++)
 			{
 				if(parseInt(sectionAnchor) == parseInt(i))
 				{
