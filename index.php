@@ -11,9 +11,11 @@
     $sql = "SELECT * FROM Course";
     $result = $db->query($sql);
     
-    $result2 = $db->query($sql);
+    $resultArray = [];
 
-    $result3 = $db->query($sql);
+    while ($row = $db->fetch_array($result)) {
+        $resultArray[] = $row;
+    }
 
     $db->close();
 
@@ -32,7 +34,7 @@
             <div class="section fp-scrollable" id="section0">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <?php while ($row = $db->fetch_array($result)): ?>
+                        <?php foreach ($resultArray as $key => $row): ?>
                             <div class="col-xs-6 col-md-4 ">
                                 <div class="card text-center course-card">
                                     <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
@@ -42,26 +44,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php endwhile; ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
  
-            <?php 
-            while ($row1 = $db->fetch_array($result2)): 
-            ?>
-                    <div class="section" id="<?php echo 'section-' . $row1['id']?>">
-                    <div class="slide" id="<?php echo 'slide1-' . $row1['id']?>">
+            <?php foreach ($resultArray as $key => $row): ?>
+                    <div class="section" id="<?php echo 'section-' . $row['id']?>">
+                    <div class="slide" id="<?php echo 'slide1-' . $row['id']?>">
                     <div class="intro">
-                        <h1 style="color:white;"><?php echo $row1['course_name'] ?></h1></div>
-                        <p style="color:white;"><?php echo $row1['course_short_description'] ?></p>
+                        <h1 style="color:white;"><?php echo $row['course_name'] ?></h1></div>
+                        <p style="color:white;"><?php echo $row['course_short_description'] ?></p>
                     </div>
                     <div class="container">
-                        <div class="slide" id="<?php echo 'slide2-' . $row1['id']?>"><p><?php echo $row1['course_description'] ?></p></div>
-                        <div class="slide" id="<?php echo 'slide3-' . $row1['id']?>"><h1><?php echo $row1['course_requirements'] ?></h1></div>
+                        <div class="slide" id="<?php echo 'slide2-' . $row['id']?>"><p><?php echo $row['course_description'] ?></p></div>
+                        <div class="slide" id="<?php echo 'slide3-' . $row['id']?>"><h1><?php echo $row['course_requirements'] ?></h1></div>
                     </div>
                 </div>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
             <div class="section" id="section1">
                 <div class="slide" id="slide1">
                     <div class="intro">
