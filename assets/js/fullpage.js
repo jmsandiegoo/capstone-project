@@ -2974,7 +2974,6 @@
             var slideAnchor = getAnchor(slide);
 
             var text = String(sectionAnchor);
-            var count = 6;
 
             if(slide){
                 text = text + '-' + slideAnchor;
@@ -2989,16 +2988,26 @@
             
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
-            if(text == "0"){
-                text = "School of ICT";
+            
+            modifyFloatingButton(sectionAnchor);
+        }
+
+        function modifyFloatingButton(sectionAnchor) {
+            sectionAnchor = parseInt(sectionAnchor);
+
+            var btn = document.getElementById("floatingBtnTxt");
+
+            if (sectionAnchor === 0) {
+                btn.innerHTML = "Course Overview";
+                btn.setAttribute("href", "#");
+                
+            } else if (sectionAnchor < 6) {
+                btn.innerHTML = "Module Information";
+                btn.setAttribute("href", `views/modules.php?id=${sectionAnchor}`)
+            } else {
+                btn.innerHTML = "Go Back to Top";
+                btn.setAttribute("href", "#");
             }
-            else if(parseInt(sectionAnchor) > 0 && parseInt(sectionAnchor) < count){
-                text = "Module Information";
-            }
-            else{
-                text = "Get back to Top";
-            }
-			document.getElementById("floatingBtnTxt").innerHTML = text;
         }
 
         /**

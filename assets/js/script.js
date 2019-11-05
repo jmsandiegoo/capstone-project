@@ -14,3 +14,5 @@ new fullpage('#fullpage', {
 //methods
 fullpage_api.setAllowScrolling(true);
 
+// Index.php custom js
+
