@@ -2866,7 +2866,7 @@
             }
         }
 
-        /**
+        /** Should be here
         * Creates a landscape navigation bar with dots for horizontal sliders.
         */
         function addSlidesNavigation(section, numSlides){
@@ -2988,7 +2988,20 @@
             
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
-
+            var i;
+			for(i = 0; i < cid.length; i++)
+			{
+				if(parseInt(sectionAnchor) == parseInt(i))
+				{
+					console.log(text[0],courseName[i]);
+                    document.getElementById("floatingBtnTxt").innerHTML = courseName[i];
+                    return courseName;
+                    break;
+                }
+                else{
+                    document.getElementById("floatingBtnTxt").innerHTML = "";
+                }
+			}
         }
         
         /**

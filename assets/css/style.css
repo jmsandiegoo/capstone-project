@@ -66,24 +66,22 @@ body {
 
 	/*Floating button for index page*/
 	
-	#floatingBtn, #floatingBtnTxt{
-		height: 3.5vw;
+	#floatingBtn {
+		height: 50px;
 		color: #FFFFFF;
 		background-color: #202020;
 		position: fixed;
 		z-index: 70;
-		bottom: 2.5vw;
-		right: 1vw;
-		width: 4vw;
+		bottom: 50px;
+		right: 30px;
+		margin: 20 auto;
 		text-align: right;
 		font-size: 0.9em;
-		padding: 0.9vw 0 0.9vw 0;
+		padding: 10px;
 		border-radius: 1em;
-
 	}
-	#floatingBtnTxt{
-		text-align:center;
-		vertical-align: middle;
+	h5{
+		text-align: center;
 	}
 	
 

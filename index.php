@@ -24,11 +24,15 @@
 
 ?>
 <!DOCTYPE html>
-
-
 <html lang="en">
     <?php include $helper->subviewPath('header.php') ?>
-    <button onclick="myFunction()" id="floatingBtn" style=""><h5 id="floatingBtnTxt" style="font-size:0.7vw;"></h5></button>
+    <a href="" id="floatingBtn"><div id="floatingBtnTxt"></div></a>
+	<script>var courseName = [];</script>
+	<script>var cid = [];</script>
+    <script>
+    courseName.unshift("")
+    </script>
+
     <main>
         <div id="fullpage">
             <div class="section fp-scrollable" id="section0">
@@ -39,6 +43,8 @@
                                 <div class="card text-center course-card">
                                     <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
                                     <div class="card-body">
+                                    <script>courseName.push("<?=$row['course_name']?>")</script>
+									<script>cid.push("<?=$row['id']?>")</script>
                                         <h5 class="card-title" style="font-size:1.1vw"><?php echo $row['course_name'] ?></h5>
                                         <h6 class="card-subtitle" style="font-size:0.6vw">(<?php echo $row['course_id'] ?>)</h6>
                                     </div>
@@ -59,6 +65,7 @@
                     <div class="container">
                         <div class="slide" id="<?php echo 'slide2-' . $row['id']?>"><p><?php echo $row['course_description'] ?></p></div>
                         <div class="slide" id="<?php echo 'slide3-' . $row['id']?>"><h1><?php echo $row['course_requirements'] ?></h1></div>
+                        <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">Use this page for modules, scrolloverflow enabled.</div>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -66,12 +73,11 @@
                 <div class="slide" id="slide1">
                     <div class="intro">
                         <h1 style="color:white;">Quiz</h1></div>
+                        
                     </div>
             </div>
         </div>
     </main>
 
     <?php include $helper->subviewPath('footer.php') ?>
-<script>
-
 </html>
