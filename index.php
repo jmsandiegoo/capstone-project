@@ -26,7 +26,7 @@
 
 <html lang="en">
     <?php include $helper->subviewPath('header.php') ?>
-    <a href="" id="floatingBtn"><h5 id="floatingBtnTxt" style="font-size:0.7vw;"></h5></a>
+    <button onclick="myFunction()" id="floatingBtn" style=""><h5 id="floatingBtnTxt" style="font-size:0.7vw;"></h5></button>
     <main>
         <div id="fullpage">
             <div class="section fp-scrollable" id="section0">
@@ -72,5 +72,6 @@
     </main>
 
     <?php include $helper->subviewPath('footer.php') ?>
+<script>
 
 </html>

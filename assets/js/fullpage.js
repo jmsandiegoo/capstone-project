@@ -2994,13 +2994,15 @@
             }
             else if(parseInt(sectionAnchor) > 0 && parseInt(sectionAnchor) < count){
                 text = "Module Information";
+                
+                
             }
             else{
                 text = "Get back to Top";
             }
 			document.getElementById("floatingBtnTxt").innerHTML = text;
         }
-
+        
         /**
         * Checks for translate3d support
         * @return boolean
@@ -4189,3 +4191,9 @@ if(window.jQuery && window.fullpage){
         };
     })(window.jQuery, window.fullpage);
 }
+function myFunction(){
+    var section = $(SECTION_ACTIVE_SEL)[0];
+
+    var sectionAnchor = getAnchor(section);
+    alert(sectionAnchor);
+};
