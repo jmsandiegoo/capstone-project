@@ -30,7 +30,7 @@
 	<script>var courseName = [];</script>
 	<script>var cid = [];</script>
     <script>
-    courseName.unshift("")
+    courseName.unshift("","")
     </script>
 
     <main>
@@ -81,13 +81,13 @@
                     <div class="slide" id="<?php echo 'slide2-' . $row['id']?>">
                         <div class="container-fluid">
                             <div class="course-information">
-                                <div class="container">
+                                <div class="container" id="courseInfo">
                                     <h1><i class="question-icon"></i> Course Information</h1>
                                     <p><?php echo $row['course_description'] ?></p>
                                 </div>
                             </div>
                             <div class="course-career">
-                                <div class="container">
+                                <div class="container" id="careerPathway">
                                     <h1><i class="binoculars-icon"></i> Career Pathway</h1>
                                     <p><?php echo $row['course_description'] ?></p>
                                 </div>

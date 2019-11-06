@@ -79,7 +79,7 @@ html.fp-enabled,
 .fp-controlArrow.fp-next {
     right: 3rem;
     border-width: 38.5px 0 38.5px 34px;
-    border-color: transparent transparent transparent black;
+    border-color: transparent transparent transparent white;
 }
 .fp-scrollable {
     overflow: hidden;

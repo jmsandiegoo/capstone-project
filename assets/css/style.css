@@ -66,6 +66,16 @@ body {
 	background: #380E7F;
 }
 
+#courseInfo {
+	padding-top:30px;
+}
+#careerPathway{
+	padding-top:10px;
+}
+
+.fp-controlArrow.fp-prev{
+	display:none;
+}
 
 @media only screen and (min-width: 1200px) {
 	#fullpage .container, .navbar .container {

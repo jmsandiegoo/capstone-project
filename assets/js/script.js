@@ -8,7 +8,7 @@ new fullpage('#fullpage', {
     scrollHorizontally: true,        
     navigation:true,
     scrollOverflow:true,
-    controlArrows:false,
+    //controlArrows:false,
     navigationTooltips: ['01', '02', '03']
 });
 
