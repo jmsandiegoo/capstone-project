@@ -15,7 +15,6 @@
     $result = $db->query($sql);
 
 
-    $db->close();
 ?>
 <?php
 while ($row = $db->fetch_array($result)): 
@@ -41,12 +40,23 @@ while ($row = $db->fetch_array($result)):
         font-size: 2.5em;
         font-weight: 600;
     }    
-
+    <?php 
+        $db = new Mysql_Driver();
+        $db->connect();
+    
+        $sql1 = "SELECT * FROM Item WHERE course_id =" . $row['id'];
+        $result1 = $db->query($sql1);
+        $db -> close();
+        while ($row1 = $db->fetch_array($result1)): 
+    ?>
     /* Slide 1 styles*/
     #<?php echo 'slide1-' . $row['id'] ?>{
         background-size: cover;
-        background-image: url(<?php echo $row["course_bg1"]?>);
+        background-image: url(<?php echo $row1['item_path']?>);
     }
+
+    <?php endwhile; ?>
+
 
     #<?php echo 'slide1-' . $row['id'] . ' .overlay' ?>{
         background-color: rgba(0, 0, 0, 0.35);
@@ -82,4 +92,4 @@ while ($row = $db->fetch_array($result)):
     /* background-image: url(<?php echo $row["course_bg3"]?>); */
     }
 
-<?php endwhile; ?>
+    <?php endwhile; ?>

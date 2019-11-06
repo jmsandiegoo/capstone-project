@@ -86,12 +86,24 @@
                                     <p><?php echo $row['course_description'] ?></p>
                                 </div>
                             </div>
+                            
                             <div class="course-career">
                                 <div class="container" id="careerPathway">
                                     <h1><i class="binoculars-icon"></i> Career Pathway</h1>
-                                    <p><?php echo $row['course_description'] ?></p>
+                                    <?php 
+                                        $db = new Mysql_Driver();
+                                        $db->connect();
+                                    
+                                        $sql1 = "SELECT * FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id =" . $row['id'];
+                                        $result1 = $db->query($sql1);
+                                        $db -> close();
+                                        while ($row1 = $db->fetch_array($result1)): 
+                                    ?>
+                                    <p><?php echo $row1['job_name']?></p>
+                                    <?php endwhile; ?>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="slide" id="<?php echo 'slide3-' . $row['id']?>"><h1><?php echo $row['course_requirements'] ?></h1></div>
