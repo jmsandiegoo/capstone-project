@@ -22,7 +22,7 @@ while ($row = $db->fetch_array($result)):
 ?>
 
     #<?php echo 'section-' . $row['id']?>{
-        padding-top:0px !important;
+        
     }
     #<?php echo 'slide1-' . $row['id'] ?>{
         background-size:cover;

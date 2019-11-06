@@ -2988,13 +2988,13 @@
             
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
-            var i;
-			for(i = 0; i < cid.length+1; i++)
+			for(let i = 0; i < cid.length+1; i++)
 			{
 				if(parseInt(sectionAnchor) == parseInt(i))
 				{
 					console.log(text[0],courseName[i]);
                     document.getElementById("floatingBtnTxt").innerHTML = courseName[i];
+                    document.getElementById("floatingBtn").setAttribute("href", `views/modules.php?id=${sectionAnchor}`);
                     return courseName;
                     break;
                 }
