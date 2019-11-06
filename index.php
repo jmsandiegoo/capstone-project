@@ -77,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- Slide 2 -->
                     <div class="slide" id="<?php echo 'slide2-' . $row['id']?>">
                         <div class="container-fluid">
                             <div class="course-information">
@@ -106,8 +106,16 @@
                             
                         </div>
                     </div>
-                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>"><h1><?php echo $row['course_requirements'] ?></h1></div>
-                </div>
+                    <!-- Slide 3-->
+                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">
+                        <div class="container">
+                                <div class="container" id="courseEntry">
+                                    <h1><i class="question-icon"></i> Entry Requirements</h1>
+                                    <p><?php echo $row['course_requirements'] ?></p>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
             <?php endforeach; ?>
 
             <div class="section" id="section1">
