@@ -3,26 +3,63 @@ body {
     background-color: #FFFFFF;
 }
 
-/* Header */
+/* Header Nav */
 .bg-custom {
 	opacity: 80%;
 	background: #202020;
+	background-color: #5904BF;
+	color: white;
 }
 
 /* Footer */
 
 
 /* Index */
-#fullpage .container-fluid {
-    width: 80% !important;
+
+#section-header {
+	background-size: cover;
+	background-image: url("../img/General/BG_Index.png");
+	color: white;
+	text-align: center;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+#section-header h1 {
+	font-size: 3.5rem;
+}
+
+#section-header h2 {
+	font-size: 2.2rem;
+	border-bottom: 4px solid white;
+	display: inline-block;
+	padding: 0 2rem 0.5rem 2rem;
 }
 
 .course-card {
-    margin: 5px 0 5px 0;
+    margin: 10px 0 10px 0;
 }
 
-.section{
-    text-align:center;
+.section .fp-slidesNav {
+	text-align: center;
+}
+
+.slide .overlay {
+	background-color: rgba(0, 0, 0, 0.35);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+
+@media only screen and (min-width: 1200px) {
+	#fullpage .container, .navbar .container {
+		max-width: none !important;
+		width: 70% !important;
+	}
 }
 
 @media only screen and (max-width: 767px) {
@@ -35,34 +72,6 @@ body {
 
 /* Backgrounds will cover all the section
 	* --------------------------------------- */
-	.slide{
-		background-size: cover;
-	}
-
-	/* Defining each section background and styles
-	* --------------------------------------- */
-	#section0{
-		background-image: url();
-    }
-    
- 
-
-	#section0 h1{
-		top: 50%;
-		transform: translateY(-50%);
-		position: relative;
-	}
-	#section2{
-		background-image: url();
-		padding: 6% 0 0 0;
-	}
-	#section3{
-		background-image: url();
-		padding: 6% 0 0 0;
-	}
-	#section3 h1{
-		color: #000;
-	}
 
 	/*Floating button for index page*/
 	

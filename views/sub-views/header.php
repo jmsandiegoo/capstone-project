@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo $helper->cssPath("dynamicStyle.php") ?>"/>
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark bg-custom">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-custom">
     <div class="container">
         <a class="navbar-brand mb-0 h1" href=<?php echo $helper->pageUrl("index.php")?>>ICT OPEN HOUSE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

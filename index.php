@@ -35,8 +35,14 @@
 
     <main>
         <div id="fullpage">
-            <div class="section fp-scrollable" id="section0">
-                <div class="container-fluid">
+            <div class="section" id="section-header">
+                <div class="container">
+                    <h2>WELCOME TO</h2>
+                    <h1>THE SCHOOL OF INFOCOMM </br> TECHNOLOGY</h1>
+                </div>
+            </div>
+            <div class="section" id="section-overview">
+                <div class="container">
                     <div class="row justify-content-center">
                         <?php foreach ($resultArray as $key => $row): ?>
                             <div class="col-xs-6 col-md-4 ">
@@ -56,19 +62,31 @@
             </div>
  
             <?php foreach ($resultArray as $key => $row): ?>
-                    <div class="section" id="<?php echo 'section-' . $row['id']?>">
+                <div class="section" id="<?php echo 'section-' . $row['id']?>">
+                    <!-- Slide 1 -->
                     <div class="slide" id="<?php echo 'slide1-' . $row['id']?>">
-                    <div class="intro">
-                        <h1 style="color:white;"><?php echo $row['course_name'] ?></h1></div>
-                        <p style="color:white;"><?php echo $row['course_short_description'] ?></p>
+                        <div class="overlay">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-7">                      
+                                        <h1>Diploma in </br> <?php echo $row['course_name'] ?></h1>
+                                        <h2><?php echo $row['course_id'] ?></h2>
+                                        <!-- <p><?php echo $row['course_short_description'] ?></p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="container">
-                        <div class="slide" id="<?php echo 'slide2-' . $row['id']?>"><p><?php echo $row['course_description'] ?></p></div>
-                        <div class="slide" id="<?php echo 'slide3-' . $row['id']?>"><h1><?php echo $row['course_requirements'] ?></h1></div>
-                        <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">Use this page for modules, scrolloverflow enabled.</div>
+
+                    <div class="slide" id="<?php echo 'slide2-' . $row['id']?>">
+                        <div class="slide"></div>
+                        <p><?php echo $row['course_description'] ?></p>
                     </div>
+                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>"><h1><?php echo $row['course_requirements'] ?></h1></div>
+                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">Use this page for modules, scrolloverflow enabled.</div>
                 </div>
             <?php endforeach; ?>
+
             <div class="section" id="section1">
                 <div class="slide" id="slide1">
                     <div class="intro">
