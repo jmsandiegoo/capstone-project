@@ -88,6 +88,54 @@ body {
 	.course-card img {
 		display: none;
 	}
+	#courseTitle h1{
+		font-size: 8vw !important;
+		width:60%;
+		
+	}
+	#courseTitle h2{
+		font-size: 6vw !important;
+        border-top: 2px solid white !important;
+	}
+	
+	#courseInfo h1{
+		font-size: 4vw !important;
+	}
+	.question-icon{
+		width:1.5em !important;
+	}
+
+	#courseInfo p{
+		font-size: 2.5vw !important;
+	}
+	#careerPathway h1{
+		font-size: 4vw !important;
+	}
+	.binoculars-icon{
+		width:1.5em !important;
+	}
+
+	#careerPathway p{
+		font-size: 2.5vw !important;
+	}
+
+	.course-card h5{
+		font-size:3.3vw !important;
+	}
+	.course-card h6{
+		font-size:1.8vw !important;
+	}
+	#section-header h1 {
+		font-size:10vw !important;
+	}
+	#section-header h2 {
+		font-size:7.5vw !important;
+	}
+	.fp-controlArrow.fp-next{
+		border-width: 25.25px 0 25.25px 17px !important;
+		top:52% !important;
+	}
+
 }
 
 /* Insert other pages */

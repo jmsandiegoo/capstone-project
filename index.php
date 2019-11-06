@@ -66,7 +66,7 @@
                     <!-- Slide 1 -->
                     <div class="slide" id="<?php echo 'slide1-' . $row['id']?>">
                         <div class="overlay">
-                            <div class="container">
+                            <div class="container" id ="courseTitle">
                                 <div class="row">
                                     <div class="col-md-7">                      
                                         <h1>Diploma in </br> <?php echo $row['course_name'] ?></h1>
