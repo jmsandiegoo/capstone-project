@@ -5,11 +5,11 @@ body {
 
 /* Header Nav */
 .bg-custom {
-	opacity: 80%;
-	background: #202020;
-	background-color: #5904BF;
+	opacity: 90%;
+	background-color: #181818;
 	color: white;
 }
+
 
 /* Footer */
 
@@ -43,15 +43,27 @@ body {
 	text-align: center;
 }
 
-.slide .overlay {
-	background-color: rgba(0, 0, 0, 0.35);
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	position: relative;
-	display: flex;
-	align-items: center;
+.course-information, .course-career {
+	flex-basis: 100%;
+	padding-top: 56px;
+}
+
+.course-information {
+	background: #181818;
+}
+
+.question-icon {
+	width: 3.5rem;
+	content: url("../img/General/question.svg");
+}
+
+.binoculars-icon {
+	width: 3.5rem;
+	content: url("../img/General/binoculars.svg");
+}
+
+.course-career {
+	background: #380E7F;
 }
 
 

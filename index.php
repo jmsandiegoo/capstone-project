@@ -79,11 +79,22 @@
                     </div>
 
                     <div class="slide" id="<?php echo 'slide2-' . $row['id']?>">
-                        <div class="slide"></div>
-                        <p><?php echo $row['course_description'] ?></p>
+                        <div class="container-fluid">
+                            <div class="course-information">
+                                <div class="container">
+                                    <h1><i class="question-icon"></i> Course Information</h1>
+                                    <p><?php echo $row['course_description'] ?></p>
+                                </div>
+                            </div>
+                            <div class="course-career">
+                                <div class="container">
+                                    <h1><i class="binoculars-icon"></i> Career Pathway</h1>
+                                    <p><?php echo $row['course_description'] ?></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="slide" id="<?php echo 'slide3-' . $row['id']?>"><h1><?php echo $row['course_requirements'] ?></h1></div>
-                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">Use this page for modules, scrolloverflow enabled.</div>
                 </div>
             <?php endforeach; ?>
 
