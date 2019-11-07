@@ -80,6 +80,22 @@ body {
 	border-top: 3px solid white;
 }
 
+#section-overview{
+	background: #d7d1c9   ; 
+}
+.course-card{
+	
+	background: #d7d1c9   ; 
+}
+.card-body{
+	background:black;
+	box-shadow: 2px 8px 5px rgba(0,0,0,0.2);
+}
+
+.course-card h5, h6{
+	color:white;
+}
+
 @media only screen and (min-width: 1200px) {
 	#fullpage .container, .navbar .container {
 		max-width: none !important;

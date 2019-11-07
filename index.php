@@ -52,7 +52,7 @@
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
 									<script>cid.push("<?=$row['id']?>")</script>
                                         <h5 class="card-title" style="font-size:1.1vw"><?php echo $row['course_name'] ?></h5>
-                                        <h6 class="card-subtitle" style="font-size:0.6vw">(<?php echo $row['course_id'] ?>)</h6>
+                                        <h6 class="card-subtitle" style="font-size:0.6vw"><?php echo $row['course_short_description'] ?></h6>
                                     </div>
                                 </div>
                             </div>
