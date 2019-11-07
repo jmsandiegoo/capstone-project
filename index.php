@@ -46,7 +46,7 @@
                     <div class="row justify-content-center">
                         <?php foreach ($resultArray as $key => $row): ?>
                             <div class="col-xs-6 col-md-4 ">
-                                <div class="card text-center course-card"; style="cursor: pointer;" onclick="window.location='#section<?php echo $row['id']?>';">
+                                <div class="card text-center course-card" style="cursor: pointer;" onclick="window.location='#section<?php echo $row['id']?>';">
                                     <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
                                     <div class="card-body">
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
@@ -62,7 +62,7 @@
             </div>
  
             <?php foreach ($resultArray as $key => $row): ?>
-                <div class="section" id="<?php echo 'section-' . $row['id']?>"">
+                <div class="section" id="<?php echo 'section-' . $row['id']?>">
                     <!-- Slide 1 -->
                     <div class="slide" id="<?php echo 'slide1-' . $row['id']?>">
                         <div class="overlay">
@@ -112,7 +112,7 @@
                             <div id="courseEntry">
                                 <h1><i class="question-icon"></i> Entry Requirements</h1>
                                 <h3> <u>For Students with 'O' Levels:</u> </h3>
-                                <h5>Range of Net ELR2B2 for 2020 JAE: <strong><?php echo $row['course_requirements'] ?></strong></h5>
+                                <h5>Range of Net ELR2B2 for 2020 JAE:<strong><?php echo $row['course_requirements'] ?></strong></h5>
                                 <h5>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
                                 <br>
                                 <h3><strong> Aggregate Type ELR2B2-C </strong></h3>
