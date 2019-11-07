@@ -84,11 +84,14 @@ while ($row = $db->fetch_array($result)):
         padding: 0;
     }
 
+    
+
     /* Slide 3 styles */
     #<?php echo 'slide3-' . $row['id'] ?>{
 
-    background-size:cover;
-    background-image: url(../img/General/bg_1.jpg);
+        background: #380E7F;
+        background-size:cover;
+        background-image: url(../img/General/bg_1.jpg);
     }
 
     <?php endwhile; ?>

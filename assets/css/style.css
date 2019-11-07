@@ -44,12 +44,22 @@ body {
 }
 
 .course-information, .course-career {
+	min-height:50%;
 	flex-basis: 100%;
 	padding-top: 56px;
 }
 
 .course-information {
 	background: #181818;
+}
+
+#courseEntry{
+	background:black;
+	padding: 15px 0px 5px 15px
+}
+#courseEntry{
+	background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .question-icon {
@@ -73,7 +83,7 @@ body {
 	padding-top:10px;
 }
 #careerPathway p{
-	width: 33.3% !important;
+	width: 25% !important;
 	float:left !important;
 }
 #courseSeperator{
@@ -86,10 +96,10 @@ body {
 .course-card{
 	
 	background: #d7d1c9   ; 
+	box-shadow: 6px 8px 5px rgba(0,0,0,0.2);
 }
 .card-body{
 	background:black;
-	box-shadow: 2px 8px 5px rgba(0,0,0,0.2);
 }
 
 .course-card h5, h6{
@@ -118,17 +128,17 @@ body {
 	}
 	
 	#courseInfo h1{
-		font-size: 4vw !important;
+		font-size: 5vw !important;
 	}
 	.question-icon{
 		width:1.5em !important;
 	}
 
 	#courseInfo p{
-		font-size: 2.5vw !important;
+		font-size: 3.5vw !important;
 	}
 	#careerPathway h1{
-		font-size: 4vw !important;
+		font-size: 5vw !important;
 	}
 	.binoculars-icon{
 		width:1.5em !important;
@@ -136,8 +146,18 @@ body {
 
 	#careerPathway p{
 		font-size: 2.5vw !important;
+		width: 33.3% !important;
 	}
 
+	#courseEntry h1{
+		font-size: 6vw !important;
+	}
+	#courseEntry h3{
+		font-size: 3.51vw !important;
+	}
+	#courseEntry h5, h6, p{
+		font-size: 3vw !important;
+	}
 	.course-card h5{
 		font-size:3.3vw !important;
 	}

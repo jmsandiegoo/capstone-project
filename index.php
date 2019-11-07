@@ -112,8 +112,8 @@
                             <div id="courseEntry">
                                 <h1><i class="question-icon"></i> Entry Requirements</h1>
                                 <h3> <u>For Students with 'O' Levels:</u> </h3>
-                                <h5><?php echo "Range of Net ELR2B2 for 2020 JAE: ". $row['course_requirements'] ?></h5>
-                                <h5><?php echo "Planned Intake (2020): ". $row['course_intake'] ?></h5>  
+                                <h5>Range of Net ELR2B2 for 2020 JAE: <strong><?php echo $row['course_requirements'] ?></strong></h5>
+                                <h5>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
                                 <br>
                                 <h3><strong> Aggregate Type ELR2B2-C </strong></h3>
                                 <h6> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </h6>
@@ -130,7 +130,10 @@
                                 ?>     
                                 <p style="width:50%; float:left;"><?php echo "+ " . $row2['req_subject']?></p>
                                 <p style="width:50%; float:right;"><?php echo $row2['req_grade']?></p>
+                                <br>
                                 <?php endwhile; ?>
+                                <p style="width:80%;">You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements. </p>
+                                <p>Candidates with severe vision deficiency should not apply for the course.</p>
                             </div>
                         </div>
                     </div>
