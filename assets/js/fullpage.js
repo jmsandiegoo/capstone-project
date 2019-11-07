@@ -2988,20 +2988,27 @@
             
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
-			for(let i = 0; i < cid.length+2; i++)
-			{
-				if(parseInt(sectionAnchor) == parseInt(i))
-				{
-					console.log(text[0],courseName[i]);
-                    document.getElementById("floatingBtnTxt").innerHTML = courseName[i];
-                    document.getElementById("floatingBtn").setAttribute("href", `views/modules.php?id=${sectionAnchor}`);
-                    return courseName;
-                    break;
-                }
-                else{
-                    document.getElementById("floatingBtnTxt").innerHTML = "";
-                }
-			}
+
+            if(parseInt(sectionAnchor) > 0 && parseInt(slideAnchor) == 1 || 2)
+            {
+                document.getElementById("floatingBtn").setAttribute("href", `views/modules.php?id=${sectionAnchor}`);
+                document.getElementById("floatingBtnTxt").innerHTML = "Discover More!";
+            }
+            if(sectionAnchor == 'home'){               
+                document.getElementById("floatingBtnTxt").innerHTML = "Course Overview";
+                document.getElementById("floatingBtn").setAttribute("href", `#overview`);
+            }
+            if(sectionAnchor == 'overview'){               
+                document.getElementById("floatingBtnTxt").innerHTML = "Discover More!";
+                document.getElementById("floatingBtn").setAttribute("href", `#overview`);
+            }
+            if(parseInt(slideAnchor) == 0){
+                document.getElementById("floatingBtnTxt").innerHTML = "Back to TOP";
+                document.getElementById("floatingBtn").setAttribute("href", `#overview`);
+                
+            }
+			
+            console.log()
         }
         
         /**

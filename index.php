@@ -30,7 +30,7 @@
 	<script>var courseName = [];</script>
 	<script>var cid = [];</script>
     <script>
-    courseName.unshift("","")
+    courseName.unshift("")
     </script>
 
     <main>
@@ -46,7 +46,7 @@
                     <div class="row justify-content-center">
                         <?php foreach ($resultArray as $key => $row): ?>
                             <div class="col-xs-6 col-md-4 ">
-                                <div class="card text-center course-card" style="cursor: pointer;" onclick="window.location='#section<?php echo $row['id']?>';">
+                                <div class="card text-center course-card" style="cursor: pointer;" onclick="window.location='#<?php echo $row['id']?>';">
                                     <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
                                     <div class="card-body">
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
