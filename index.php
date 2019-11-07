@@ -46,7 +46,7 @@
                     <div class="row justify-content-center">
                         <?php foreach ($resultArray as $key => $row): ?>
                             <div class="col-xs-6 col-md-4 ">
-                                <div class="card text-center course-card">
+                                <div class="card text-center course-card"; style="cursor: pointer;" onclick="window.location='#section<?php echo $row['id']?>';">
                                     <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
                                     <div class="card-body">
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
@@ -62,7 +62,7 @@
             </div>
  
             <?php foreach ($resultArray as $key => $row): ?>
-                <div class="section" id="<?php echo 'section-' . $row['id']?>">
+                <div class="section" id="<?php echo 'section-' . $row['id']?>"">
                     <!-- Slide 1 -->
                     <div class="slide" id="<?php echo 'slide1-' . $row['id']?>">
                         <div class="overlay">
@@ -140,7 +140,7 @@
                     </div>
             <?php endforeach; ?>
 
-            <div class="section" id="section1">
+            <div class="section" id="sectionquiz">
                 <div class="slide" id="slide1">
                     <div class="intro">
                         <h1 style="color:white;">Quiz</h1></div>

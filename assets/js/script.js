@@ -9,7 +9,8 @@ new fullpage('#fullpage', {
     navigation:true,
     scrollOverflow:true,
     //controlArrows:false,
-    navigationTooltips: ['01', '02', '03']
+    navigationTooltips: ['01', '02', '03'],
+    anchors: ['', 'overview', 'section1', 'section2','section3','section4','section5','quiz']
 });
 
 //methods
