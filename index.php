@@ -99,7 +99,7 @@
                                         $db -> close();
                                         while ($row1 = $db->fetch_array($result1)): 
                                     ?>
-                                    <p><?php echo $row1['job_name']?></p>
+                                    <p><?php echo "+ ". $row1['job_name']?></p>
                                     <?php endwhile; ?>
                                 </div>
                             </div>

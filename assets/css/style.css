@@ -72,7 +72,10 @@ body {
 #careerPathway{
 	padding-top:10px;
 }
-
+#careerPathway p{
+	width: 33.3% !important;
+	float:left !important;
+}
 
 
 @media only screen and (min-width: 1200px) {
