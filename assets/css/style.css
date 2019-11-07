@@ -76,7 +76,9 @@ body {
 	width: 33.3% !important;
 	float:left !important;
 }
-
+#courseSeperator{
+	border-top: 3px solid white;
+}
 
 @media only screen and (min-width: 1200px) {
 	#fullpage .container, .navbar .container {
@@ -165,9 +167,7 @@ body {
 		padding: 10px;
 		border-radius: 1em;
 	}
-	h5{
-		text-align: center;
-	}
+
 	
 
 	/*Adding background for the slides

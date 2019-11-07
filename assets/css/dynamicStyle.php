@@ -88,8 +88,7 @@ while ($row = $db->fetch_array($result)):
     #<?php echo 'slide3-' . $row['id'] ?>{
 
     background-size:cover;
-    background-image: url(https://www.np.edu.sg/ict/PublishingImages/Pages/accountancy/3d_banner.jpg);
-    /* background-image: url(<?php echo $row["course_bg3"]?>); */
+    background-image: url(../img/General/bg_1.jpg);
     }
 
     <?php endwhile; ?>

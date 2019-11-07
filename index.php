@@ -109,11 +109,30 @@
                     <!-- Slide 3-->
                     <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">
                         <div class="container">
-                                <div class="container" id="courseEntry">
-                                    <h1><i class="question-icon"></i> Entry Requirements</h1>
-                                    <p><?php echo $row['course_requirements'] ?></p>
-                                </div>
+                            <div id="courseEntry">
+                                <h1><i class="question-icon"></i> Entry Requirements</h1>
+                                <h3> <u>For Students with 'O' Levels:</u> </h3>
+                                <h5><?php echo "Range of Net ELR2B2 for 2020 JAE: ". $row['course_requirements'] ?></h5>
+                                <h5><?php echo "Planned Intake (2020): ". $row['course_intake'] ?></h5>  
+                                <br>
+                                <h3><strong> Aggregate Type ELR2B2-C </strong></h3>
+                                <h6> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </h6>
+                                <h5  style="width:50%; float:left;"> Subjects </h5>
+                                <h5  style="width:50%; float:right;">'O' Level Grade </h5>
+                                <?php 
+                                    $db = new Mysql_Driver();
+                                    $db->connect();
+                                
+                                    $sql2 = "SELECT * FROM Requirement r INNER JOIN CourseReq cr ON r.req_id = cr.req_id WHERE cr.course_id =" . $row['id'];
+                                    $result2 = $db->query($sql2);
+                                    $db -> close();
+                                    while ($row2 = $db->fetch_array($result2)): 
+                                ?>     
+                                <p style="width:50%; float:left;"><?php echo "+ " . $row2['req_subject']?></p>
+                                <p style="width:50%; float:right;"><?php echo $row2['req_grade']?></p>
+                                <?php endwhile; ?>
                             </div>
+                        </div>
                     </div>
                     </div>
             <?php endforeach; ?>
