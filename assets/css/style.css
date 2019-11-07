@@ -132,12 +132,14 @@ body {
 	.fp-controlArrow.fp-next{
 		border-width: 25.25px 0 25.25px 17px !important;
 		top:52% !important;
-	}
-	.fp-controlArrow.fp-prev{
-		display:none;
-	}
+}}
 
+@media only screen and (max-width: 1110px) {
+.fp-controlArrow.fp-prev{
+	display:none !important;
 }
+}
+
 
 /* Insert other pages */
 
