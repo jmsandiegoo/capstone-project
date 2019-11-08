@@ -43,8 +43,7 @@ while ($row = $db->fetch_array($result)):
     <?php 
         $db = new Mysql_Driver();
         $db->connect();
-    
-        $sql1 = "SELECT * FROM Item WHERE course_id =" . $row['id'];
+        $sql1 = "SELECT * FROM Item WHERE course_id = " . $row['id'] . " AND item_path LIKE '%BG_1.jpg'";
         $result1 = $db->query($sql1);
         $db -> close();
         while ($row1 = $db->fetch_array($result1)): 

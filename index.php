@@ -47,7 +47,16 @@
                         <?php foreach ($resultArray as $key => $row): ?>
                             <div class="col-xs-6 col-md-4 ">
                                 <div class="card text-center course-card" style="cursor: pointer;" onclick="window.location='#<?php echo $row['id']?>';">
-                                    <img class="img-fluid" src="<?php echo $img ?>" alt="Course Image">
+                                    <?php 
+                                        $db = new Mysql_Driver();
+                                        $db->connect();
+                                        $sql3 = "SELECT * FROM Item WHERE course_id = " . $row['id'] . " AND item_path LIKE '%BG_Card.png'";
+                                        $result3 = $db->query($sql3);
+                                        $db -> close();
+                                        while ($row3 = $db->fetch_array($result3)): 
+                                    ?>
+                                    <img class="img-fluid" src="<?php echo $row3["item_path"] ?>" alt="Course Image">                                    
+                                    <?php endwhile; ?>
                                     <div class="card-body">
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
 									<script>cid.push("<?=$row['id']?>")</script>
@@ -65,7 +74,6 @@
                 <div class="section" id="<?php echo 'section-' . $row['id']?>">
                     <!-- Slide 1 -->
                     <div class="slide" id="<?php echo 'slide1-' . $row['id']?>">
-                        <div class="overlay">
                             <div class="container" id ="courseTitle">
                                 <div class="row">
                                     <div class="col-md-7">                      
@@ -74,7 +82,7 @@
                                         <!-- <p><?php echo $row['course_short_description'] ?></p> -->
                                     </div>
                                 </div>
-                            </div>
+                           
                         </div>
                     </div>
                     <!-- Slide 2 -->
