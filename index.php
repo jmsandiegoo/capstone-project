@@ -108,6 +108,7 @@
                     </div>
                     <!-- Slide 3-->
                     <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">
+                    <div class="overlay">
                         <div class="container">
                             <div id="courseEntry">
                                 <h1><i class="question-icon"></i> Entry Requirements</h1>
@@ -133,10 +134,12 @@
                                     <p style="width:40%; float:right; text-align: center;"><?php echo $row2['req_grade']?></p>
                                 </div>
                                 <?php endwhile; ?>
+                                    </br>
                                 <p style="width:80%;">You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements. </p>
                                 <p>Candidates with severe vision deficiency should not apply for the course.</p>
                             </div>
                         </div>
+                    </div>
                     </div>
                     </div>
             <?php endforeach; ?>

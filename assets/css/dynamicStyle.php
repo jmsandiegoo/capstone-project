@@ -92,6 +92,7 @@ while ($row = $db->fetch_array($result)):
         background: #380E7F;
         background-size:cover;
         background-image: url(../img/General/bg_1.jpg);
+
     }
 
     #<?php echo 'slide3-' . $row['id'] . ' .subject-wrapper' ?> {
@@ -100,5 +101,6 @@ while ($row = $db->fetch_array($result)):
         clear:both;
         width: 70%;
     } 
+
 
     <?php endwhile; ?>

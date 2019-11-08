@@ -48,7 +48,9 @@ body {
 	padding-top: 56px;
 	min-height: 50%;
 }
-
+#courseEntry{
+	padding-top:140px !important;
+}
 
 .course-information {
 	background: #181818;
@@ -115,7 +117,12 @@ body {
 	color: white;
 	padding: 20px;
 }
-
+.overlay{
+	width: 100%;
+	height: 100%;
+	background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
+	background: rgba(0, 0, 0, 0.5);
+}
 @media only screen and (min-width: 1200px) { /* For extra large screens */ 
 	#fullpage .container, .navbar .container {
 		max-width: none !important;
@@ -160,13 +167,13 @@ body {
 	}
 
 	#courseEntry h1{
-		font-size: 6vw !important;
+		font-size: 5vw !important;
 	}
 	#courseEntry h3{
-		font-size: 3.51vw !important;
+		font-size: 2.925vw !important;
 	}
 	#courseEntry h5, h6, p{
-		font-size: 3vw !important;
+		font-size: 2.5vw !important;
 	}
 	.course-card h5{
 		font-size:3.3vw !important;
@@ -189,7 +196,9 @@ body {
 	.course-information, .course-career {
 		min-height: initial;
 	}
-
+	#courseEntry{
+		padding-top: 56px !important;
+	}
 }
 
 @media only screen and (max-width: 1110px) {
