@@ -45,7 +45,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <?php foreach ($resultArray as $key => $row): ?>
-                            <div class="col-xs-6 col-md-4 ">
+                            <div class="col-xs-6 col-md-4 d-flex align-items-stretch">
                                 <div class="card text-center course-card" style="cursor: pointer;" onclick="window.location='#<?php echo $row['id']?>';">
                                     <?php 
                                         $db = new Mysql_Driver();
