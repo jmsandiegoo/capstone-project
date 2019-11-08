@@ -9,8 +9,8 @@ new fullpage('#fullpage', {
     navigation:true,
     scrollOverflow:true,
     //controlArrows:false,
-    navigationTooltips: ['01', '02', '03'],
-    anchors: ['home', 'overview', '1', '2','3','4','5','quiz']
+    // navigationTooltips: ['01', '02', '03'],
+    anchors: ['home', 'overview', '1', '2','3','4','5','footer']
 });
 
 //methods

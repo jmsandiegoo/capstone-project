@@ -2988,27 +2988,50 @@
             
             //adding the current anchor
             addClass($body, VIEWING_PREFIX + '-' + text);
-
-            if(parseInt(sectionAnchor) > 0 && parseInt(slideAnchor) == 1 || 2)
-            {
-                document.getElementById("floatingBtn").setAttribute("href", `views/modules.php?id=${sectionAnchor}`);
-                document.getElementById("floatingBtnTxt").innerHTML = "Discover More!";
-            }
+            
             if(sectionAnchor == 'home'){               
                 document.getElementById("floatingBtnTxt").innerHTML = "Course Overview";
                 document.getElementById("floatingBtn").setAttribute("href", `#overview`);
+                unfade(document.getElementById("floatingBtn"));
             }
             if(sectionAnchor == 'overview'){               
-                document.getElementById("floatingBtnTxt").innerHTML = "Discover More!";
                 document.getElementById("floatingBtn").setAttribute("href", `#overview`);
+                fade(document.getElementById("floatingBtn"));
             }
-            if(parseInt(slideAnchor) == 0){
-                document.getElementById("floatingBtnTxt").innerHTML = "Back to TOP";
+            if(parseInt(slideAnchor) >= 0 || sectionAnchor == 'footer') {
+                document.getElementById("floatingBtnTxt").innerHTML = "Back to Overview";
                 document.getElementById("floatingBtn").setAttribute("href", `#overview`);
-                
+                if (document.getElementById("floatingBtn").style.display == 'none'){
+                    unfade(document.getElementById("floatingBtn"));
+                }
             }
 			
-            console.log()
+        }
+
+        function fade(element) {
+            var op = 1;  // initial opacity
+            var timer = setInterval(function () {
+                if (op <= 0.1){
+                    clearInterval(timer);
+                    element.style.display = 'none';
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op -= op * 0.1;
+            }, 10);
+        }
+
+        function unfade(element) {
+            var op = 0.1;  // initial opacity
+            element.style.display = 'block';
+            var timer = setInterval(function () {
+                if (op >= 1){
+                    clearInterval(timer);
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op += op * 0.1;
+            }, 10);
         }
         
         /**

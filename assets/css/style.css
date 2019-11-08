@@ -44,23 +44,28 @@ body {
 }
 
 .course-information, .course-career {
-	min-height:50%;
 	flex-basis: 100%;
 	padding-top: 56px;
+	min-height: 50%;
 }
+
 
 .course-information {
 	background: #181818;
 }
 
-#courseEntry{
+.course-career {
+	background: #380E7F;
+}
+
+/* #courseEntry{
 	background:black;
 	padding: 15px 0px 5px 15px
-}
-#courseEntry{
+} */
+/* #courseEntry{
 	background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
-    background: rgba(0, 0, 0, 0.5);
-}
+/*    background: rgba(0, 0, 0, 0.5);
+} */
 
 .question-icon {
 	width: 3.5rem;
@@ -72,13 +77,10 @@ body {
 	content: url("../img/General/binoculars.svg");
 }
 
-.course-career {
-	background: #380E7F;
-}
-
 #courseInfo {
 	padding-top:30px;
 }
+
 #careerPathway{
 	padding-top:10px;
 }
@@ -86,17 +88,19 @@ body {
 	width: 25% !important;
 	float:left !important;
 }
+
 #courseSeperator{
 	border-top: 3px solid white;
 }
 
 #section-overview{
-	background: #d7d1c9   ; 
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url("../img/General/BG_Overview.png"); 
 }
 .course-card{
-	
-	background: #d7d1c9   ; 
-	box-shadow: 6px 8px 5px rgba(0,0,0,0.2);
+	background-color: transparent;
+	box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 .card-body{
 	background:black;
@@ -106,14 +110,20 @@ body {
 	color:white;
 }
 
-@media only screen and (min-width: 1200px) {
+#section-footer {
+	background-color: #181818;
+	color: white;
+	padding: 20px;
+}
+
+@media only screen and (min-width: 1200px) { /* For extra large screens */ 
 	#fullpage .container, .navbar .container {
 		max-width: none !important;
 		width: 70% !important;
 	}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) { /* For mobile devices */
 	.course-card img {
 		display: none;
 	}
@@ -173,7 +183,14 @@ body {
 	.fp-controlArrow.fp-next{
 		border-width: 25.25px 0 25.25px 17px !important;
 		top:52% !important;
-}}
+	
+	}
+
+	.course-information, .course-career {
+		min-height: initial;
+	}
+
+}
 
 @media only screen and (max-width: 1110px) {
 .fp-controlArrow.fp-prev{

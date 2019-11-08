@@ -79,7 +79,7 @@ while ($row = $db->fetch_array($result)):
     #<?php echo 'slide2-' . $row['id'] . ' .container-fluid' ?>{
         display: flex;
         flex-wrap: wrap;
-        align-content: stretch;
+        align-items: stretch;
         height: 100%;
         padding: 0;
     }
@@ -93,5 +93,12 @@ while ($row = $db->fetch_array($result)):
         background-size:cover;
         background-image: url(../img/General/bg_1.jpg);
     }
+
+    #<?php echo 'slide3-' . $row['id'] . ' .subject-wrapper' ?> {
+        border-top: 4px dashed white;
+        padding-top: 5px; 
+        clear:both;
+        width: 70%;
+    } 
 
     <?php endwhile; ?>

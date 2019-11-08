@@ -127,10 +127,11 @@
                                     $result2 = $db->query($sql2);
                                     $db -> close();
                                     while ($row2 = $db->fetch_array($result2)): 
-                                ?>     
-                                <p style="width:50%; float:left;"><?php echo "+ " . $row2['req_subject']?></p>
-                                <p style="width:50%; float:right;"><?php echo $row2['req_grade']?></p>
-                                <br>
+                                ?>
+                                <div class="subject-wrapper">
+                                    <p style="width:60%; float:left;"><?php echo "+ " . $row2['req_subject']?></p>
+                                    <p style="width:40%; float:right; text-align: center;"><?php echo $row2['req_grade']?></p>
+                                </div>
                                 <?php endwhile; ?>
                                 <p style="width:80%;">You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements. </p>
                                 <p>Candidates with severe vision deficiency should not apply for the course.</p>
@@ -139,13 +140,22 @@
                     </div>
                     </div>
             <?php endforeach; ?>
-
+<!-- 
             <div class="section" id="sectionquiz">
                 <div class="slide" id="slide1">
                     <div class="intro">
                         <h1 style="color:white;">Quiz</h1></div>
                         
                     </div>
+            </div> -->
+            <div class="section fp-auto-height">
+                <footer id="section-footer">
+                    <div class="container">
+                        <h1>Not sure which course to take?</h1>
+                        <p>Don't worry! We have prepared a quiz for you, it will guide you to find the courses you might be interested in!</p>
+                        <a href="<?php echo $helper->pageUrl("quiz.php") ?>"class="btn bg-light">Take Quiz</a>
+                    </div>
+                </footer>
             </div>
         </div>
     </main>
