@@ -7,8 +7,14 @@
     $db = new Mysql_Driver();
     $db->connect();
 
-    $sql = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= '1'";
+    $sql = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = '1'";
+	$sql2 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = '2'";
+	$sql3 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = '3'";
+	$sql4 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = 'Elective'";
     $result = $db->query($sql);
+	$result2 = $db->query($sql2);
+	$result3 = $db->query($sql3);
+	$result4 = $db->query($sql4);
 
     $db->close();
 ?>
@@ -21,10 +27,31 @@
 		<button type="button" class="collapsible">Year 1</button>
 		<div class="content">
 			<?php while ($row = $db->fetch_array($result)): ?>
-			<p><?php echo "<button type=\"button\">+ " . $row['module_name']."</button>"?></p>
+			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
 			
 			<?php endwhile; ?>
-        </div>                            
+        </div>
+		<button type="button" class="collapsible">Year 2</button>
+		<div class="content">
+			<?php while ($row = $db->fetch_array($result2)): ?>
+			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
+			
+			<?php endwhile; ?>
+        </div>
+		<button type="button" class="collapsible">Year 3</button>
+		<div class="content">
+			<?php while ($row = $db->fetch_array($result3)): ?>
+			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
+			
+			<?php endwhile; ?>
+        </div>
+		<button type="button" class="collapsible">Elective</button>
+		<div class="content">
+			<?php while ($row = $db->fetch_array($result4)): ?>
+			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
+			
+			<?php endwhile; ?>
+        </div>
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
 
