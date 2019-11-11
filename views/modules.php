@@ -2,19 +2,19 @@
     include_once __DIR__.'/../helpers/mysql.php';
     include_once __DIR__.'/../helpers/helper.php';
     $helper = new Helper();
-
+	  $val = $_GET['id'];
     // Retrieving the course details
     $db = new Mysql_Driver();
     $db->connect();
 
-    $sql = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = '1'";
-	$sql2 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = '2'";
-	$sql3 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = '3'";
-	$sql4 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $get('id') AND cm.module_year = 'Elective'";
+    $sql = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = '1'";
+	  $sql2 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = '2'";
+	  $sql3 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = '3'";
+	  $sql4 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = 'Elective'";
     $result = $db->query($sql);
-	$result2 = $db->query($sql2);
-	$result3 = $db->query($sql3);
-	$result4 = $db->query($sql4);
+	  $result2 = $db->query($sql2);
+	  $result3 = $db->query($sql3);
+	  $result4 = $db->query($sql4);
 
     $db->close();
 ?>
