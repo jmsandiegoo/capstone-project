@@ -1,62 +1,43 @@
 <?php 
-  //course number passed on from previous page to this
-  //put as session from previous page
-  //for testing
-  $courseID="1";
-   // Retrieving the course details
-   include_once __DIR__.'/helpers/mysql.php';
-   include_once __DIR__.'/helpers/helper.php';
-   
-  ?>
+    include_once __DIR__.'/../helpers/mysql.php';
+    include_once __DIR__.'/../helpers/helper.php';
+    $helper = new Helper();
+	  $val = $_GET['id'];
+    
+    $years = [];
+    // Retrieving the course details
+    $db = new Mysql_Driver();
+    $db->connect();
+    $sql = "SELECT DISTINCT module_year FROM coursemodule WHERE id=$val ORDER BY module_year ASC";
+	  $result = $db->query($sql);
+    $db->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
-  <body>
-    <?php
-      echo "Favorite color is " . $courseID . ".<br>";
-      $db = new Mysql_Driver();
-      $db->connect();
-      $sql = "SELECT *
-      FROM course
-      WHERE id=$courseID";
-      $result = $db->query($sql);
-      $resultArray = [];
-      while ($row = $db->fetch_array($result)) {
-          $resultArray[] = $row;
-          echo $row['course_name'];
-          echo "<button type=\"button\">".$row['course_name']."</button>";
-      }
-      $db->close();
-    ?>
-    <table>
-    <tr>
-      <th><button type="button" onclick="alert('Hello world!')">All</button></th>
-      <th><button type="button" onclick="alert('Hello world!')">Click Me!</button></th>
-      <th><button type="button" onclick="alert('Hello world!')">Click Me!</button></th>
-      <th><button type="button" onclick="alert('Hello world!')">Click Me!</button></th>
-      <th><button type="button" onclick="alert('Hello world!')">Click Me!</button></th>
-    </tr>
-    <tr>
-      <td><button type="button" onclick="alert('Hello world!')">Click Me!</button></td>
-      <td><button type="button" onclick="alert('Hello world!')">Click Me!</button></td>
-      <td><button type="button" onclick="alert('Hello world!')">Click Me!</button></td>
-    </tr>
-    </table>
-    <p>Collapsible Set:</p>
-    <button type="button" class="collapsible">Year 1</button>
-    <div class="content">
-      <p>1</p>
-    </div>
-    <button type="button" class="collapsible">Year 2</button>
-    <div class="content">
-      <p>2</p>
-    </div>
-    <button type="button" class="collapsible">Year 3</button>
-    <div class="content">
-      <p>3</p>
-    </div>
-  </body>
-  
-  <style>
+<?php include $helper->subviewPath('header.php') ?>
+    
+    <main class="container">
+<!--make the header dont block my view first-->
+  </br></br></br>
+    <?php 
+          while ($row = $db->fetch_array($result)){
+            $module_year = $row['module_year'];
+            echo "<button type=\"button\" class=\"collapsible\">".$module_year."</button><div class=\"content\">";
+            $db->connect();
+            $sql2 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year ='$module_year' ORDER BY module_name ASC";
+            $result2 = $db->query($sql2);
+            while ($row2 = $db->fetch_array($result2)){
+              echo "<p>".$row2['module_name']."</p></br>";
+            }
+          echo "</div>";
+            $db->close();
+           }
+        ?>
+    </main>
+    <?php include $helper->subviewPath('footer.php') ?>
+
+</html>
+<style>
     table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -110,5 +91,4 @@
           }
         });
         }
-</script>
-</html>
+    </script>

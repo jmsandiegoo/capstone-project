@@ -3,55 +3,36 @@
     include_once __DIR__.'/../helpers/helper.php';
     $helper = new Helper();
 	  $val = $_GET['id'];
+    
+    $years = [];
     // Retrieving the course details
     $db = new Mysql_Driver();
     $db->connect();
-
-    $sql = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = '1'";
-	  $sql2 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = '2'";
-	  $sql3 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = '3'";
-	  $sql4 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year = 'Elective'";
-    $result = $db->query($sql);
-	  $result2 = $db->query($sql2);
-	  $result3 = $db->query($sql3);
-	  $result4 = $db->query($sql4);
-
+    $sql = "SELECT DISTINCT module_year FROM coursemodule WHERE id=$val ORDER BY module_year ASC";
+	  $result = $db->query($sql);
     $db->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-    <?php include $helper->subviewPath('header.php') ?>
+<?php include $helper->subviewPath('header.php') ?>
+    
     <main class="container">
-        <h1>Course Modules</h1>
-		<button type="button" class="collapsible">Year 1</button>
-		<div class="content">
-			<?php while ($row = $db->fetch_array($result)): ?>
-			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
-			
-			<?php endwhile; ?>
-        </div>
-		<button type="button" class="collapsible">Year 2</button>
-		<div class="content">
-			<?php while ($row = $db->fetch_array($result2)): ?>
-			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
-			
-			<?php endwhile; ?>
-        </div>
-		<button type="button" class="collapsible">Year 3</button>
-		<div class="content">
-			<?php while ($row = $db->fetch_array($result3)): ?>
-			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
-			
-			<?php endwhile; ?>
-        </div>
-		<button type="button" class="collapsible">Elective</button>
-		<div class="content">
-			<?php while ($row = $db->fetch_array($result4)): ?>
-			<p><?php echo "<a href>+ " . $row['module_name']."</a>"?></p>
-			
-			<?php endwhile; ?>
-        </div>
+<!--make the header dont block my view first-->
+  </br></br></br>
+    <?php 
+          while ($row = $db->fetch_array($result)){
+            $module_year = $row['module_year'];
+            echo "<button type=\"button\" class=\"collapsible\">".$module_year."</button><div class=\"content\">";
+            $db->connect();
+            $sql2 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year ='$module_year' ORDER BY module_name ASC";
+            $result2 = $db->query($sql2);
+            while ($row2 = $db->fetch_array($result2)){
+              echo "<p>".$row2['module_name']."</p></br>";
+            }
+          echo "</div>";
+            $db->close();
+           }
+        ?>
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
 
@@ -110,4 +91,4 @@
           }
         });
         }
-</script>
+    </script>
