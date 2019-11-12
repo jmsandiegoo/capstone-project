@@ -17,7 +17,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("index.php") ?>">COURSES<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="<?php echo $helper->pageUrl("quiz.php") ?>">QUIZ</a>
