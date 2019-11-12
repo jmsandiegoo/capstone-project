@@ -2,7 +2,8 @@
     include_once __DIR__.'/helpers/mysql.php';
     include_once __DIR__.'/helpers/helper.php';
     $helper = new Helper();
-	  //$val = $_GET['id'];
+    //$val = $_GET['id'];
+    //hi
     $val = 1;
     $years = [];
     // Retrieving the course details
