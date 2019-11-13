@@ -46,12 +46,12 @@
       
       <section class="container">
         <?php foreach ($moduleYear as $key => $row){
-          $module_year = $row['module_year'];
-          echo "<button type=\"button\" class=\"collapsible\">".$module_year."</button><div class=\"content\">";
+          $moduleYear = $row['module_year'];
+          echo "<button type=\"button\" class=\"collapsible\">".$moduleYear."</button><div class=\"content\">";
           $db->connect();
-          $sql2 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $val AND cm.module_year ='$module_year' ORDER BY module_name ASC";
-          $result2 = $db->query($sql2);
-          while ($row2 = $db->fetch_array($result2)){
+          $sql4 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $id AND cm.module_year ='$moduleYear' ORDER BY module_name ASC";
+          $courseModuleResult = $db->query($sql4);
+          while ($row2 = $db->fetch_array($courseModuleResult)){
             echo "<p>".$row2['module_name']."</p></br>";
           }
           echo "</div>";
@@ -60,6 +60,7 @@
         ?>
       </section>
     </main>
+    
     <?php include $helper->subviewPath('footer.php') ?>
 
 </html>
@@ -98,7 +99,7 @@
     .content {
       padding: 0 18px;
       display: none;
-      overflow: hidden;
+      /* overflow: hidden; */
       background-color: #f1f1f1;
     }
     </style>
