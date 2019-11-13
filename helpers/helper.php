@@ -32,5 +32,12 @@ class Helper
         return $url;
     }
 
+    function flatten_array($array, $prefix = '' ) {
+        $result = array();
+        foreach ($array as $key => $value) {
+            
+        }
+    }
+
 }
 ?>

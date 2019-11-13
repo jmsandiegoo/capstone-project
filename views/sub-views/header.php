@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="navbar-placeholder">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-custom">
         <div class="container">
             <a class="navbar-brand mb-0 h1" href=<?php echo $helper->pageUrl("index.php")?>>ICT OPEN HOUSE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

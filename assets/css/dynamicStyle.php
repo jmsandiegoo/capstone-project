@@ -12,12 +12,15 @@
     $db->connect();
 
     $sql = "SELECT * FROM Course";
-    $result = $db->query($sql);
-
-
+    $coursesResult = $db->query($sql);
+    $courses = [];
+    while ($row = $db->fetch_array($coursesResult)) {
+        $courses[] = $row;
+    }
+    $db -> close();
 ?>
 <?php
-while ($row = $db->fetch_array($result)): 
+foreach ($courses as $key => $row): 
 ?>
 /* Dynamic style for each course sections and its respective slides */
 
@@ -40,18 +43,19 @@ while ($row = $db->fetch_array($result)):
         font-size: 2.5em;
         font-weight: 600;
     }    
-    <?php 
+    <?php
         $db = new Mysql_Driver();
         $db->connect();
-        $sql1 = "SELECT * FROM Item WHERE course_id = " . $row['id'] . " AND item_path LIKE '%BG_1.jpg'";
-        $result1 = $db->query($sql1);
+        $sql2 = "SELECT * FROM Item WHERE course_id = " . $row['id'] . " AND item_path LIKE '%BG_1.jpg'";
+        $courseItemResult = $db->query($sql2);
         $db -> close();
-        while ($row1 = $db->fetch_array($result1)): 
+        while ($row2 = $db->fetch_array($courseItemResult)):
+            $itemPath = '../../' . $row2['item_path'];
     ?>
     /* Slide 1 styles*/
     #<?php echo 'slide1-' . $row['id'] ?>{
         background-size: cover;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(<?php echo $row1['item_path']?>);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(<?php echo $itemPath?>);
     }
 
     <?php endwhile; ?>
@@ -102,4 +106,4 @@ while ($row = $db->fetch_array($result)):
     } 
 
 
-    <?php endwhile; ?>
+<?php endforeach; ?>
