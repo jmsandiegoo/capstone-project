@@ -1,15 +1,21 @@
 /* Shared */
-body {
-    background-color: #FFFFFF;
+html, body {
+	background-color: #FFFFFF;
+	height: 100%;
 }
 
 /* Header Nav */
 .bg-custom {
-	opacity: 90%;
 	background-color: #181818;
 	color: white;
 }
 
+.sticky-top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
 
 /* Footer */
 
@@ -155,7 +161,6 @@ body {
 		width: 70% !important;
 	}
 	
-	
 }
 
 @media only screen and (max-width: 767px) { /* For mobile devices */
@@ -250,10 +255,15 @@ body {
 
 
 
-	/*Adding background for the slides
-	* --------------------------------------- */
+/* Modules Page */
 
-	#sectionquiz{    
-		background-size:cover;
-		background-image: url(https://www.np.edu.sg/ict/PublishingImages/Pages/accountancy/3d_banner.jpg);
-	}
+.modules-container {
+	height: 100%;
+}
+
+
+.modules-container .hero-image {
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/IT/BG_1.jpg");
+	height: 70%;
+}

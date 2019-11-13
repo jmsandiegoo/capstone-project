@@ -51,7 +51,7 @@ while ($row = $db->fetch_array($result)):
     /* Slide 1 styles*/
     #<?php echo 'slide1-' . $row['id'] ?>{
         background-size: cover;
-        background-image: url(<?php echo $row1['item_path']?>);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(<?php echo $row1['item_path']?>);
     }
 
     <?php endwhile; ?>
