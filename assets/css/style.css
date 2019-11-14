@@ -113,10 +113,11 @@ body {
 	color:white;
 }
 
-#section-footer {
-	background-color: #181818;
+#sectionfooter {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url("../img/General/BG_footer.png"); 
 	color: white;
-	padding: 20px;
 }
 .overlay{
 	width: 100%;

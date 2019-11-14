@@ -159,14 +159,14 @@
                         
                     </div>
             </div> -->
-            <div class="section fp-auto-height">
-                <footer id="section-footer">
+            <div class="section" id="sectionfooter">
                     <div class="container">
+                <footer>
                         <h1>Not sure which course to take?</h1>
                         <p>Don't worry! We have prepared a quiz for you, it will guide you to find the courses you might be interested in!</p>
                         <a href="<?php echo $helper->pageUrl("quiz.php") ?>"class="btn bg-light">Take Quiz</a>
-                    </div>
                 </footer>
+                    </div>
             </div>
         </div>
     </main>

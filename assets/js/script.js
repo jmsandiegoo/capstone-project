@@ -21,9 +21,10 @@ new fullpage('#fullpage', {
     afterLoad: function(origin, destination, direction) {
         removeStickyNav(destination, direction);
         var dest = fullpage_api.getActiveSection().index -1 
-        if(destination.index > 1 && destination.item.id != "" && fullpage_api.getActiveSlide().index > 0 ){
+        if(destination.index > 1 && destination.item.id != "sectionfooter" && fullpage_api.getActiveSlide().index > 0 ){
             fullpage_api.moveTo(dest,0);    
             }
+            
         
     }
     
