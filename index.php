@@ -145,6 +145,13 @@
                                     </br>
                                 <p style="width:80%;">You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements. </p>
                                 <p>Candidates with severe vision deficiency should not apply for the course.</p>
+                                </br>
+                                <p style="width:80%; float:left;"><em>You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements.<br/>
+                                    Candidates with severe vision deficiency should not apply for the course.</em>
+                                </p>
+                                <a id="learnMoreBtn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
+                                    Learn More
+                                </a>
                             </div>
                         </div>
                     </div>
