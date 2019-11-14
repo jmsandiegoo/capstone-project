@@ -16,6 +16,9 @@
     }
     $courseInfo = $courseInfo[0];
 
+    // print "<pre>";
+    // print_r($courseInfo);
+    // print "</pre>";
     // Retrieving the module year
     $sql2 = "SELECT DISTINCT module_year FROM CourseModule WHERE id=$id ORDER BY module_year ASC";
     $moduleYearResult = $db->query($sql2);
@@ -43,7 +46,25 @@
           Diploma in <br/> <?php echo $courseInfo['course_name'] ?>
         </h1>
       </section>
-      
+      <section class="module-year-description container">
+        <!-- Description is still hardcoded -->
+        <?php foreach ($courseInfo as $key => $value): ?>
+
+          <?php if ($key === 'course_year1_description'): ?>
+            <h2>Year 1</h2>
+            <p><?php echo $value ?></p>
+          <?php elseif ($key === 'course_year2_description'): ?>
+            <h2>Year 2</h2>
+            <p><?php echo $value ?></p>
+          <?php elseif ($key === 'course_year3_description'): ?> 
+            <h2>Year 3</h2>
+            <p><?php echo $value ?></p>
+          <?php else:
+            continue;
+          endif;?>
+        <?php endforeach; ?>
+      </section>
+
       <section class="container">
         <?php foreach ($moduleYear as $key => $row){
           $moduleYear = $row['module_year'];
