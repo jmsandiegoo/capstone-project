@@ -99,7 +99,7 @@
     .content {
       padding: 0 18px;
       display: none;
-      /* overflow: hidden; */
+      overflow: hidden;
       background-color: #f1f1f1;
     }
     </style>

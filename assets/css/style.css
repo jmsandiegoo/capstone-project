@@ -1,14 +1,16 @@
 /* Shared */
 html, body {
 	background-color: #FFFFFF;
-	height: 100%;
+}
+body, main {
+	min-height: 100vh;
 }
 
 .main-banner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 70%;
+	height: 65vh;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -173,9 +175,9 @@ html, body {
 }
 
 @media only screen and (min-width: 1200px) { /* For extra large screens */ 
-	#fullpage .container, .navbar .container {
+	.container {
 		max-width: none !important;
-		width: 70% !important;
+		width: 80% !important;
 	}
 	
 }
@@ -273,7 +275,3 @@ html, body {
 
 
 /* Modules Page */
-
-.modules-container {
-	height: 100%;
-}
