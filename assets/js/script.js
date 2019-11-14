@@ -8,16 +8,25 @@ new fullpage('#fullpage', {
     scrollHorizontally: true,        
     navigation:true,
     scrollOverflow:true,
+    resetSliders:true,
     //controlArrows:false,
     // navigationTooltips: ['01', '02', '03'],
     anchors: ['home', 'overview', '1', '2','3','4','5','footer'],
     onLeave: function(origin, destination, direction) {
-        addStickyNav(destination, direction);
+        addStickyNav(destination, direction);           
+        
+        
         // add more functions here
     },
     afterLoad: function(origin, destination, direction) {
         removeStickyNav(destination, direction);
+        var dest = fullpage_api.getActiveSection().index -1 
+        if(destination.index > 1 && destination.item.id != "" && fullpage_api.getActiveSlide().index > 0 ){
+            fullpage_api.moveTo(dest,0);    
+            }
+        
     }
+    
 });
 
 //methods
