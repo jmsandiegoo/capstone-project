@@ -13,11 +13,9 @@ new fullpage('#fullpage', {
     // navigationTooltips: ['01', '02', '03'],
     anchors: ['home', 'overview', '1', '2','3','4','5','footer'],
     onLeave: function(origin, destination, direction) {
-        addStickyNav(destination, direction);         
+        addStickyNav(destination, direction);      
         if (origin.index > 1 && origin.item.id != "sectionfooter") {
-            setTimeout(function() {
-                fullpage_api.resetSlides(origin.item.id, 0);
-            }, 200);
+            fullpage_api.resetSlides(origin.item.id, 0);
         }
 
     },
