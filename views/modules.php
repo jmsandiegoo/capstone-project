@@ -2,16 +2,10 @@
     include_once __DIR__.'/../helpers/mysql.php';
     include_once __DIR__.'/../helpers/helper.php';
     $helper = new Helper();
-	  //$id = $_GET['id'];
-    $id = 1;
+	  $id = $_GET['id'];
     // Retrieving the course information
     $db = new Mysql_Driver();
-    $db->connect();
-    // print "<pre>";
-    // print_r($courseInfo);
-    // print "</pre>";
-    // Retrieving the module year
-        
+    $db->connect(); 
     $sql = "SELECT * FROM Course WHERE id=$id";
     $courseInfoResult = $db->query($sql);
     $courseInfo = [];
@@ -104,9 +98,12 @@
                 while ($row4 = $db->fetch_array($filterJobNameResult)){
                   array_push($filterJobName,$row4['job_name']);
                 } 
-              
+                
                 $filterJobNameString = implode( ", ", $filterJobName );
-                echo "<div class=\"filterDiv ".$filterJobNameString." \">".$row2['module_name']."</div></br>";
+                echo"<section class='cards'>";
+                
+                echo "<article class=\"filterDiv ".$filterJobNameString." \"><p>".$row2['module_name']."</p></article>";
+                echo"</section>";
               }
 
               echo "</div>";
@@ -124,6 +121,30 @@
 
 
 <style>
+
+
+    #tableContainer{
+      margin-bottom: 5px;
+      left: 0;
+      top: 0;
+    }
+    .cards{
+      text-align:center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 0.5em;	
+      margin-top: 0.25em;
+      float:auto;
+    }
+    .filterDiv {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);    
+      flex: 0 1 calc(25% - 1em);
+    }
+    .filterDiv:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
     table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -166,7 +187,7 @@
     
     .filterDiv {
       float: left
-      text-align: center;
+      text-align:center;
       margin: 2px;
       display: block;
       color: #D3D3D3;
@@ -183,11 +204,16 @@
 
     /* Style the buttons */
     .btn {
-      border: none;
-      outline: none;
-      padding: 12px 16px;
-      background-color: #f1f1f1;
+      display: inline-block;
+      padding: 11px 0;
+      border: 1px solid;
+      border-radius: 12px;
+      font-size: 16px;
       cursor: pointer;
+      outline: none;
+      width: 300px;
+      margin-right: 5px;
+      margin: 5px;
     }
 
     .btn:hover {
@@ -214,9 +240,14 @@
           } else {
             content.style.display = "none";
           }
+          if (content.style.maxHeight){
+              content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } 
         });
         }
-        
+
         /* filter */
         filterSelection("all")
         function filterSelection(c) {

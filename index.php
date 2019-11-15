@@ -167,7 +167,7 @@
                         
                     </div>
             </div> -->
-            <div class="section fp-auto-height" id="sectionfooter">
+            <div class="section" id="sectionfooter">
                 <div class="container">
                     <footer>
                         <h1>Not sure which course to take?</h1>
