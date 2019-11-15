@@ -599,6 +599,7 @@
             FP.destroy = destroy;
             FP.getActiveSection = getActiveSection;
             FP.getActiveSlide = getActiveSlide;
+            FP.resetSlides = resetSlides;
 
             FP.test = {
                 top: '0px',
@@ -3621,6 +3622,25 @@
         */
         function Slide(el){
             Item.call(this, el, SLIDE_SEL);
+        }
+
+        /* Custom function to reset slides */
+        function resetSlides(section_id , slide_anchor) {
+            console.log("custom fullpage_api reset slide function triggerred");
+            if (typeof slide_anchor != 'undefined') {
+                var slides = document.querySelector(`#${section_id} .fp-slides`);
+                var destiny = document.querySelector(`#${section_id} .slide[data-anchor="${slide_anchor}"]`);
+
+                if (!destiny) {
+                    destiny = document.querySelector(`#${section_id} .slide`);
+                }
+
+                if (destiny) {
+                    console.log("destiny: ", destiny);
+                    console.log("slides: ", slides);
+                    landscapeScroll(slides, destiny);
+                }
+            }
         }
 
         return FP;

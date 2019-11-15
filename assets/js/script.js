@@ -14,15 +14,19 @@ new fullpage('#fullpage', {
     anchors: ['home', 'overview', '1', '2','3','4','5','footer'],
     onLeave: function(origin, destination, direction) {
         addStickyNav(destination, direction);         
-        
-        // add more functions here
+        if (origin.index > 1 && origin.item.id != "sectionfooter") {
+            setTimeout(function() {
+                fullpage_api.resetSlides(origin.item.id, 0);
+            }, 200);
+        }
+
     },
     afterLoad: function(origin, destination, direction) {
-        removeStickyNav(destination, direction);     
-        var dest = fullpage_api.getActiveSection().index - 1 
-        if(destination.index > 1 && destination.item.id != "sectionfooter" && fullpage_api.getActiveSlide().index > 0 ){
-            fullpage_api.MoveTo(dest,0);    
-            }     
+        removeStickyNav(destination, direction);    
+        // var dest= fullpage_api.getActiveSection().index - 1;
+        // if(destination.index > 1 && destination.item.id != "sectionfooter" && fullpage_api.getActiveSlide().index > 0 ){
+        //     fullpage_api.moveTo(dest ,0);    
+        // }      
     }
     
 });
@@ -51,6 +55,7 @@ function removeStickyNav(destination, direction) {
         navbar.classList.remove("sticky-top");
     }
 }
+
 // fullpage_api.setAllowScrolling(true);
 
 

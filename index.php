@@ -73,7 +73,7 @@
             <?php foreach ($resultArray as $key => $row): ?>
                 <div class="section" id="<?php echo 'section-' . $row['id']?>">
                     <!-- Slide 1 -->
-                    <div class="slide" id="<?php echo 'slide1-' . $row['id']?>">
+                    <div class="slide" id="<?php echo 'slide1-' . $row['id']?>" data-anchor="0">
                             <div class="container" id ="courseTitle">
                                 <div class="row">
                                     <div class="col-md-7">                      
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <!-- Slide 2 -->
-                    <div class="slide" id="<?php echo 'slide2-' . $row['id']?>">
+                    <div class="slide" id="<?php echo 'slide2-' . $row['id']?>" data-anchor="1">
                         <div class="container-fluid">
                             <div class="course-information">
                                 <div class="container" id="courseInfo">
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <!-- Slide 3-->
-                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>">
+                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>" data-anchor="2">
                     <div class="overlay">
                         <div class="container">
                             <div id="courseEntry">
