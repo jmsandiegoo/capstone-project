@@ -3636,8 +3636,8 @@
                 }
 
                 if (destiny) {
-                    console.log("destiny: ", destiny);
-                    console.log("slides: ", slides);
+                    // console.log("destiny: ", destiny);
+                    // console.log("slides: ", slides);
                     landscapeScroll(slides, destiny);
                 }
             }
