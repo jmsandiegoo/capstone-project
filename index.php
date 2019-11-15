@@ -120,14 +120,14 @@
                         <div class="container">
                             <div id="courseEntry">
                                 <h1><i class="question-icon"></i> Entry Requirements</h1>
-                                <h3> <u>For Students with 'O' Levels:</u> </h3>
-                                <h5>Range of Net ELR2B2 for 2020 JAE:<strong><?php echo $row['course_requirements'] ?></strong></h5>
-                                <h5>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
+                                <h4> <u>For Students with 'O' Levels:</u> </h3>
+                                <h6>Range of Net ELR2B2 for 2020 JAE: <strong><?php echo $row['course_requirements'] ?></strong></h5>
+                                <h6>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
                                 <br>
-                                <h3><strong> Aggregate Type ELR2B2-C </strong></h3>
-                                <h6> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </h6>
-                                <h5  style="width:50%; float:left;"> Subjects </h5>
-                                <h5  style="width:50%; float:right;">'O' Level Grade </h5>
+                                <h4><u> Aggregate Type ELR2B2-C </u></h3>
+                                <p><i> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </i> </p>
+                                <h6 style="width:50%; float:left;"> Subjects </h6>
+                                <h6 style="width:50%; float:right;">'O' Level Grade </h6>
                                 <?php 
                                     $db = new Mysql_Driver();
                                     $db->connect();
@@ -146,8 +146,9 @@
                                 <p style="width:80%;">You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements. </p>
                                 <p>Candidates with severe vision deficiency should not apply for the course.</p>
                                 </br> -->
-                                <p style="width:80%; float:left;"><em>You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements.<br/>
-                                    Candidates with severe vision deficiency should not apply for the course.</em>
+                                <p style="width:80%; float:left;">
+                                    <em>* You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements.<br/>
+                                    * Candidates with severe vision deficiency should not apply for the course.</em>
                                 </p>
                                 <a id="learnMoreBtn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
