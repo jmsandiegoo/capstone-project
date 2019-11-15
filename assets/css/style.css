@@ -76,7 +76,8 @@ body {
 	min-height: 50%;
 }
 #courseEntry{
-	padding-top:140px !important;
+	/* padding-top:140px !important; */
+	padding-top: 80px;
 }
 
 .course-information {
@@ -141,19 +142,23 @@ body {
 }
 
 #learnMoreBtn {
-	position: absolute;
-	right: 100px;
+	/* position: absolute;
+	right: 100px;  */
+	position: fixed;
+	right: 0;
 	padding: .5rem 1rem;
     font-size: 1.5rem;
     line-height: 1.5;
-    border-radius: .3rem;
+	border-radius: .3rem;
+	margin-right: 100px;
 }
 
 
 #sectionfooter {
-	background-size: cover;
+	/* background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url("../img/General/BG_footer.png"); 
+	background-image: url("../img/General/BG_footer.png");  */
+	background-color: #181818;
 	color: white;
 }
 .overlay{
@@ -272,7 +277,7 @@ body {
 		background-color: #202020;
 		position: fixed;
 		z-index: 70;
-		bottom: 50px;
+		bottom: 20px;
 		right: 30px;
 		margin: 20 auto;
 		text-align: right;
