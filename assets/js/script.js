@@ -13,19 +13,17 @@ new fullpage('#fullpage', {
     // navigationTooltips: ['01', '02', '03'],
     anchors: ['home', 'overview', '1', '2','3','4','5','footer'],
     onLeave: function(origin, destination, direction) {
-        addStickyNav(destination, direction);           
+        addStickyNav(destination, direction); 
+        var dest = fullpage_api.getActiveSection().index -1 
+        if(destination.index > 1 && destination.item.id != "sectionfooter" && fullpage_api.getActiveSlide().index > 0 ){
+            fullpage_api.silentMoveTo(dest,0);    
+            }          
         
         
         // add more functions here
     },
     afterLoad: function(origin, destination, direction) {
-        removeStickyNav(destination, direction);
-        var dest = fullpage_api.getActiveSection().index -1 
-        if(destination.index > 1 && destination.item.id != "sectionfooter" && fullpage_api.getActiveSlide().index > 0 ){
-            fullpage_api.moveTo(dest,0);    
-            }
-            
-        
+        removeStickyNav(destination, direction);        
     }
     
 });

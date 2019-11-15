@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include $helper->subviewPath('header.php') ?> 
-    <main class="modules-container">
+    <main>
       <?php 
         $sql2 = "SELECT * FROM Item WHERE course_id = " . $id . " AND item_path LIKE '%BG_1.jpg'";
         $courseItemResult = $db->query($sql2);
@@ -37,7 +37,7 @@
           Diploma in <br/> <?php echo $courseInfo['course_name'] ?>
         </h1>
       </section>
-      <section class="module-year-description container">
+      <section class="year-description-content container">
         <!-- Description is still hardcoded -->
         <?php
         foreach ($courseInfo as $key => $value): ?>
@@ -60,7 +60,7 @@
         
       </section>
 
-      <section class="container">
+      <section class="module-content container">
         <!-- filter buttons !-->
         <div id="myBtnContainer">
           <button class="btn active" onclick="filterSelection('all')"> Show all</button>
@@ -114,7 +114,10 @@
             $db->close();
           ?>
         </div>
-      </section>
+			</section>
+			<section class="project-content container">
+				<h1>Project Portfolio</h1>
+			</section>
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
 </html>
