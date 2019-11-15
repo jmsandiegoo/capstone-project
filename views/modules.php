@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include $helper->subviewPath('header.php') ?> 
-    <main>
+    <main class="module-wrapper">
       <?php 
         $sql2 = "SELECT * FROM Item WHERE course_id = " . $id . " AND item_path LIKE '%BG_1.jpg'";
         $courseItemResult = $db->query($sql2);
@@ -178,7 +178,6 @@
     }
 
     .container {
-      margin-top: 20px;
       overflow: hidden;
     }
 
