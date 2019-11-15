@@ -1,6 +1,8 @@
 
 // Index.php javascript fullpagejs
 
+var runOnce = true;
+
 new fullpage('#fullpage', {
     //options here
     licenseKey: 'CD50B0E4-F5FD4F8C-AF7C78F1-5B645B1D',
@@ -13,18 +15,22 @@ new fullpage('#fullpage', {
     // navigationTooltips: ['01', '02', '03'],
     anchors: ['home', 'overview', '1', '2','3','4','5','footer'],
     onLeave: function(origin, destination, direction) {
-        addStickyNav(destination, direction);      
+        console.log("onleave occured");
+        addStickyNav(destination, direction);
+        if (runOnce === false) {
+            return runOnce;
+        }else {
+            runOnce = false;
+            return !runOnce;
+        }
+    },
+    afterLoad: function(origin, destination, direction) {
+        console.log("afterload occured")
+        removeStickyNav(destination, direction);
         if (origin.index > 1 && origin.item.id != "sectionfooter") {
             fullpage_api.resetSlides(origin.item.id, 0);
         }
-
-    },
-    afterLoad: function(origin, destination, direction) {
-        removeStickyNav(destination, direction);    
-        // var dest= fullpage_api.getActiveSection().index - 1;
-        // if(destination.index > 1 && destination.item.id != "sectionfooter" && fullpage_api.getActiveSlide().index > 0 ){
-        //     fullpage_api.moveTo(dest ,0);    
-        // }      
+        runOnce = true;
     }
     
 });
