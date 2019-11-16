@@ -1,0 +1,112 @@
+/* Modules.php styles */
+
+#tableContainer {
+    margin-bottom: 5px;
+    left: 0;
+    top: 0;
+}
+
+.cards {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    margin-top: 0.25em;
+    float: auto;
+}
+
+.filterDiv {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    flex: 0 1 calc(25% - 1em);
+}
+
+.filterDiv:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: block;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+
+/* Buttons css*/
+
+.filterDiv {
+    float: left;
+    text-align: center;
+    margin: 2px;
+    display: block;
+    color: #D3D3D3;
+}
+
+.show {
+    display: block;
+    color: black;
+}
+
+.container {
+    overflow: hidden;
+}
+
+
+/* Style the buttons */
+
+.btn {
+    display: inline-block;
+    padding: 11px 0;
+    border: 1px solid;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    min-width: 200px;
+    margin-right: 5px;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn .active {
+    background-color: #666;
+    color: white;
+}
