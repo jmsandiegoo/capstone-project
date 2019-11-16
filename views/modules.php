@@ -81,7 +81,13 @@
               $moduleYear[] = $row;
             }
             foreach ($moduleYear as $key => $row): ?>
-              <button type="button" class="collapsible"><?php echo $row['module_year'] ?></button>
+              <?php 
+                $collapsibleLbl = 'Elective';
+                if ($row['module_year'] !== 'Elective') {
+                  $collapsibleLbl = 'Year ' . $row['module_year'];
+                }
+              ?>
+                <button type="button" class="collapsible"><h5><?php echo $collapsibleLbl ?></h5></button>
               <div class="content">
                 <!-- Get module name to display and module id for filtering -->
                 <?php  
