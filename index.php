@@ -60,8 +60,8 @@
                                     <div class="card-body">
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
 									<script>cid.push("<?=$row['id']?>")</script>
-                                        <h5 class="card-title" style="font-size:1.1vw;"><?php echo $row['course_name'] ?></h5>
-                                        <h6 class="card-subtitle" style="font-size:0.8vw; color:#A9A9A9;"><?php echo $row['course_short_description'] ?></h6>
+                                        <h5 class="card-title"><?php echo $row['course_name'] ?></h5>
+                                        <h6 class="card-subtitle"><?php echo $row['course_short_description'] ?></h6>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                 <div class="section" id="<?php echo 'section-' . $row['id']?>">
                     <!-- Slide 1 -->
                     <div class="slide" id="<?php echo 'slide1-' . $row['id']?>" data-anchor="0">
-                            <div class="container" id ="courseTitle">
+                            <div class="container courseTitle">
                                 <div class="row">
                                     <div class="col-md-7">                      
                                         <h1>Diploma in </br> <?php echo $row['course_name'] ?></h1>
@@ -89,26 +89,29 @@
                     <div class="slide" id="<?php echo 'slide2-' . $row['id']?>" data-anchor="1">
                         <div class="container-fluid">
                             <div class="course-information">
-                                <div class="container" id="courseInfo">
+                                <div class="container courseInfo">
                                     <h1><i class="question-icon"></i> Course Information</h1>
                                     <p><?php echo $row['course_description'] ?></p>
                                 </div>
                             </div>
                             
                             <div class="course-career">
-                                <div class="container" id="careerPathway">
+                                <div class="container">
                                     <h1><i class="binoculars-icon"></i> Career Pathway</h1>
-                                    <?php 
-                                        $db = new Mysql_Driver();
-                                        $db->connect();
-                                    
-                                        $sql1 = "SELECT * FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id =" . $row['id'];
-                                        $result1 = $db->query($sql1);
-                                        $db -> close();
-                                        while ($row1 = $db->fetch_array($result1)): 
-                                    ?>
-                                    <p><?php echo "+ ". $row1['job_name']?></p>
-                                    <?php endwhile; ?>
+                                    <div class="job-wrapper">
+                                        <?php 
+                                            $db = new Mysql_Driver();
+                                            $db->connect();
+                                        
+                                            $sql1 = "SELECT * FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id =" . $row['id'];
+                                            $result1 = $db->query($sql1);
+                                            $db -> close();
+                                            while ($row1 = $db->fetch_array($result1)): 
+                                        ?>
+                                        <p><?php echo "+ ". $row1['job_name']?></p>
+                                        <?php endwhile; ?>                               
+                                    </div>
+
                                 </div>
                             </div>
                             
@@ -118,13 +121,13 @@
                     <div class="slide" id="<?php echo 'slide3-' . $row['id']?>" data-anchor="2">
                     <div class="overlay">
                         <div class="container">
-                            <div id="courseEntry">
+                            <div class="course-entry">
                                 <h1><i class="question-icon"></i> Entry Requirements</h1>
-                                <h4> <u>For Students with 'O' Levels:</u> </h3>
+                                <h3> <u>For Students with 'O' Levels:</u> </h3>
                                 <h6>Range of Net ELR2B2 for 2020 JAE: <strong><?php echo $row['course_requirements'] ?></strong></h5>
                                 <h6>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
                                 <br>
-                                <h4><u> Aggregate Type ELR2B2-C </u></h3>
+                                <h3><u> Aggregate Type ELR2B2-C </u></h3>
                                 <p><i> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </i> </p>
                                 <h6 style="width:50%; float:left;"> Subjects </h6>
                                 <h6 style="width:50%; float:right;">'O' Level Grade </h6>
@@ -150,7 +153,7 @@
                                     <em>* You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements.<br/>
                                     * Candidates with severe vision deficiency should not apply for the course.</em>
                                 </p>
-                                <a id="learnMoreBtn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
+                                <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
                                 </a>
                             </div>

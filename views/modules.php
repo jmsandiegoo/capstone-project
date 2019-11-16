@@ -55,9 +55,11 @@
       </section>
 
       <section class="module-content container">
+        <h1>Modules</h1>
+        <hr>
         <!-- filter buttons !-->
         <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <button class="btn active" onclick="filterSelection('all')">Show all</button>
           <?php 
             //Get the job names
             $sql3 = "SELECT j.job_name FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id = $id";
@@ -211,7 +213,7 @@
       font-size: 16px;
       cursor: pointer;
       outline: none;
-      width: 300px;
+      min-width: 200px;
       margin-right: 5px;
       margin: 5px;
     }

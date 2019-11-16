@@ -106,4 +106,20 @@ foreach ($courses as $key => $row):
     } 
 
 
+    @media only screen and (max-width: 767px) { 
+        #<?php echo 'section-' . $row['id'] . ' h1'?> {
+            font-size: 10vw;
+            width: 80%;
+            letter-spacing: 0;
+        }
+        #<?php echo 'section-' . $row['id'] . ' h2'?> {
+            font-size: 6vw;
+            border-top: 2px solid white;
+        }
+
+        #<?php echo 'section-' . $row['id'] . ' p'?> {
+            font-size: 3.5vw;
+        }
+    }
+
 <?php endforeach; ?>
