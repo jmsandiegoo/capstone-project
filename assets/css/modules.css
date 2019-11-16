@@ -82,15 +82,21 @@ tr:nth-child(even) {
     color: black;
 }
 
-.container {
-    overflow: hidden;
-}
-
 
 /* Style the buttons */
 
-.btn {
-    display: inline-block;
+#myBtnContainer {
+    margin: 0 -5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.filter-btn {
+    border: 1px solid;
+    margin: 5px;
+    color: #5904BF;
+    /* display: inline-block;
     padding: 11px 0;
     border: 1px solid;
     border-radius: 12px;
@@ -99,14 +105,11 @@ tr:nth-child(even) {
     outline: none;
     min-width: 200px;
     margin-right: 5px;
-    margin: 5px;
+    margin: 5px; */
 }
 
-.btn:hover {
-    background-color: #ddd;
-}
-
-.btn .active {
-    background-color: #666;
+.filter-btn:hover,
+.active {
+    background-color: #5904BF;
     color: white;
 }

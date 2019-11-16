@@ -56,7 +56,7 @@
         <hr>
         <!-- filter buttons !-->
         <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')">Show all</button>
+          <button class="btn filter-btn active" onclick="filterSelection('all')">Show all</button>
           <?php 
             //Get the job names
             $sql3 = "SELECT j.job_name FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id = $id";
@@ -65,12 +65,9 @@
             while ($row = $db->fetch_array($jobNameResult)) {
               $jobName[] = $row;
             }
-            foreach ($jobName as $key => $row)
-            {
-              $jobName = $row['job_name'];
-              echo "<button class=\"btn\" onclick=\"filterSelection('".$jobName."')\">".$jobName."</button>";
-            }
-          ?>
+            foreach ($jobName as $key => $row): ?>
+              <button class="btn filter-btn" onclick="filterSelection('<?php echo $row['job_name'] ?>')"><?php echo $row['job_name'] ?></button>
+            <?php endforeach; ?>
         </div>
           </br>
         <!--  !-->
@@ -83,32 +80,35 @@
             while ($row = $db->fetch_array($moduleYearResult)) {
               $moduleYear[] = $row;
             }
-            foreach ($moduleYear as $key => $row){
-              $moduleYear = $row['module_year'];
-              echo "<button type=\"button\" class=\"collapsible\">".$moduleYear."</button><div class=\"content\">";
-              //Get module name to display and module id for filtering
-              $sql5 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $id AND cm.module_year ='$moduleYear' ORDER BY module_name ASC";
-              $courseModuleResult = $db->query($sql5);
-              while ($row2 = $db->fetch_array($courseModuleResult)){ 
-                //get names of jobs for the modules
-                $sql6 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN ModuleJob mj ON mj.module_id=m.module_id INNER JOIN Job j ON j.job_id=mj.job_id WHERE cm.id=$id AND m.module_id='".$row2['module_id']."'ORDER BY module_name ASC";
-                $filterJobNameResult = $db->query($sql6);
-                $filterJobName = array();
-                while ($row4 = $db->fetch_array($filterJobNameResult)){
-                  array_push($filterJobName,$row4['job_name']);
-                } 
-                
-                $filterJobNameString = implode( ", ", $filterJobName );
-                echo"<section class='cards'>";
-                
-                echo "<article class=\"filterDiv ".$filterJobNameString." \"><p>".$row2['module_name']."</p></article>";
-                echo"</section>";
-              }
-
-              echo "</div>";
-            }
-            $db->close();
-          ?>
+            foreach ($moduleYear as $key => $row): ?>
+              <button type="button" class="collapsible"><?php echo $row['module_year'] ?></button>
+              <div class="content">
+                <!-- Get module name to display and module id for filtering -->
+                <?php  
+                  //Get module name to display and module id for filtering
+                  $sql5 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $id AND cm.module_year ='$row[module_year]' ORDER BY module_name ASC";
+                  $courseModuleResult = $db->query($sql5);
+                  while ($row2 = $db->fetch_array($courseModuleResult)):
+                    // get names of jobs for the modules
+                    $sql6 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN ModuleJob mj ON mj.module_id=m.module_id INNER JOIN Job j ON j.job_id=mj.job_id WHERE cm.id=$id AND m.module_id='$row2[module_id]'ORDER BY module_name ASC";
+                    $filterJobNameResult = $db->query($sql6);
+                    $filterJobName = array();
+                    while ($row4 = $db->fetch_array($filterJobNameResult)) {
+                      array_push($filterJobName,$row4['job_name']);
+                    }
+                    $filterJobNameString = implode( ",", $filterJobName);
+                ?>
+                  <div class="cards">
+                    <article class="filterDiv <?php echo $filterJobNameString ?>">
+                      <p><?php echo $row2['module_name'] ?></p>
+                    </article>
+                  </div>
+                <?php endwhile; ?>
+              </div>
+            <?php
+              endforeach;
+              $db->close();
+            ?>
         </div>
 			</section>
 			<section class="project-content container">

@@ -10,6 +10,10 @@ main {
     min-height: 100vh;
 }
 
+button:focus {
+    outline: 0;
+}
+
 .main-banner {
     display: flex;
     justify-content: center;
