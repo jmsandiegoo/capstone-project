@@ -19,5 +19,7 @@
 <script src="<?php echo $helper->jsPath("scrolloverflow.js") ?>"></script>
 <script src="<?php echo $helper->jsPath("fullpage.js") ?>" ></script>
 <script src="<?php echo $helper->jsPath("script.js") ?>"></script>
+<script src="<?php echo $helper->jsPath("jquery.tinycarousel.js") ?>"></script>
+
 
 </body>

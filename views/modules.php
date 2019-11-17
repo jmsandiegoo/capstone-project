@@ -125,9 +125,40 @@
               $db->close();
             ?>
         </div>
-			</section>
+        </section>
 			<section class="project-content container">
-				<h1>Project Portfolio</h1>
+        <h1>Project Portfolio</h1>
+        <div id="projectSlider" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#projectSlider" data-slide-to="0" class="active"></li>
+          <li data-target="#projectSlider" data-slide-to="1"></li>
+          <li data-target="#projectSlider" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../assets/img/FI/BG_1.jpg"  />      
+            <div class="carousel-caption">
+            <h3>This is a test only.</h3>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/img/IM/BG_1.jpg"  />    
+            <div class="carousel-caption">
+            <h3>This is a test only.</h3>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/img/IT/BG_1.jpg"  />    
+            <div class="carousel-caption">
+            <h3>This is a test only.</h3>
+        </div>
+
+        <a class="carousel-control-prev" href="#projectSlider" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#projectSlider" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      </div>
 			</section>
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
