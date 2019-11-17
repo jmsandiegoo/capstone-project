@@ -87,7 +87,7 @@
                   $collapsibleLbl = 'Year ' . $row['module_year'];
                 }
               ?>
-                <button type="button" class="collapsible"><h5><?php echo $collapsibleLbl ?></h5></button>
+                <button type="button" class="collapsible"><h5><?php echo $collapsibleLbl ?></h5><i class="fas fa-plus"></i></button>
               <div class="content">
                 <!-- Get module name to display and module id for filtering -->
                 <?php  

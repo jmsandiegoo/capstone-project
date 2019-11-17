@@ -93,17 +93,16 @@ var i;
 
 for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
         var content = this.nextElementSibling;
-        if (content.style.display === "none") {
-            content.style.display = "block";
-        } else {
-            content.style.display = "none";
-        }
+        var icon = this.querySelector("i");
         if (content.style.maxHeight) {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
             content.style.maxHeight = null;
         } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
         }
     });
 }
