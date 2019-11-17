@@ -40,7 +40,9 @@
 }
 
 .module-wrapper .content .card {
-    cursor: pointer;
+    opacity: 60%;
+    color: grey;
+    pointer-events: none;
     border-radius: 0px;
     position: relative;
     flex-basis: calc((100% - 60px) / 5);
@@ -50,6 +52,13 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+
+.module-wrapper .content .card.highlight {
+    color: black;
+    cursor: pointer;
+    opacity: 100%;
+    pointer-events: auto;
+}
 
 .module-wrapper .content .card .card-body {
     text-align: center;
@@ -76,10 +85,10 @@
 
 /* Buttons css*/
 
-.show {
+/* .show {
   display: block;
   color: black;
-}
+} */
 
 /* Style the buttons */
 
