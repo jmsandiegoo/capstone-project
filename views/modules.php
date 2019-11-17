@@ -106,7 +106,16 @@
                   ?>
                   <div class="card filterDiv <?php echo $filterJobNameString ?>">
                     <div class="card-body">
-                      <h6 class="card-title"><?php echo $row2['module_name']?></h6>
+                      <h6 class="card-title"><?php echo $row2['module_name']?></h6>     
+                      <?php 
+                          $db = new Mysql_Driver();
+                          $db->connect();
+                          $sql7 = "SELECT * FROM Item WHERE module_id = " . $row2['module_id'] . " AND item_path LIKE '%_icon.png'";
+                          $result3 = $db->query($sql7);
+                          while ($row5 = $db->fetch_array($result3)): 
+                      ?>
+                      <img class="img-fluid" style="width:50%" src="../<?php echo $row5["item_path"] ?>" alt="Course Image">                         
+                      <?php endwhile; ?>
                     </div>
                   </div>
                   <?php endwhile; ?>
