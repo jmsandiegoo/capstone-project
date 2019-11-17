@@ -1,21 +1,5 @@
 /* Modules.php styles */
 
-#tableContainer {
-  margin-bottom: 5px;
-  left: 0;
-  top: 0;
-}
-
-.cards {
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 0.5em;
-  margin-top: 0.25em;
-  float: auto;
-}
-
 .filterDiv {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   flex: 0 1 calc(25% - 1em);
@@ -25,24 +9,7 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.collapsible {
+.module-wrapper .collapsible {
   background-color: #5904bf;
   color: white;
   cursor: pointer;
@@ -57,18 +24,21 @@ tr:nth-child(even) {
   justify-content: space-between;
 }
 
-.collapsible i {
-    font-weight: bold;
-    font-size: 1.5em;
+.module-wrapper .collapsible i {
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
-.content {
+.module-wrapper .content {
   overflow: hidden;
   max-height: 0;
   padding: 0 18px;
   background-color: #f1f1f1;
   transition: max-height 350ms ease-out;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 
 /* Buttons css*/
 
