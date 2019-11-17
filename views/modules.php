@@ -105,8 +105,7 @@
                       $filterJobNameString = implode( ",", $filterJobName);
                   ?>
                   <div class="card filterDiv <?php echo $filterJobNameString ?>">
-                    <div class="card-body">
-                      <h6 class="card-title"><?php echo $row2['module_name']?></h6>     
+                    <div class="card-body">     
                       <?php 
                           $db = new Mysql_Driver();
                           $db->connect();
@@ -114,7 +113,8 @@
                           $result3 = $db->query($sql7);
                           while ($row5 = $db->fetch_array($result3)): 
                       ?>
-                      <img class="img-fluid" style="width:50%" src="../<?php echo $row5["item_path"] ?>" alt="Course Image">                         
+                      <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $row5["item_path"] ?>" alt="Course Image">   
+                      <h6 class="card-title"><?php echo $row2['module_name']?></h6>                      
                       <?php endwhile; ?>
                     </div>
                   </div>
