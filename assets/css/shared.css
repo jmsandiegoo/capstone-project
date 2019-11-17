@@ -1,70 +1,77 @@
 /* Shared css applies to all pages*/
 
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 html,
 body {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 body,
 main {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 button:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .main-banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65vh;
-    background-size: cover;
-    background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-banner h1 {
-    font-size: 3.5rem;
-    color: white;
-    text-align: center;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-    letter-spacing: 0.1rem;
+  font-size: 3.5rem;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.1rem;
 }
 
 body {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
 }
-
 
 /* Header Nav */
 
 .bg-custom {
-    background-color: #181818;
-    color: white;
+  background-color: #181818;
+  color: white;
 }
 
 .sticky-top {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    opacity: 90%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  opacity: 90%;
 }
 
 .navbar-placeholder {
-    background-color: #181818;
+  background-color: #181818;
 }
 
-
 /* Footer */
-
 
 /* Shared Media */
 
 @media only screen and (min-width: 1200px) {
-    /* For extra large screens */
-    .container {
-        max-width: none !important;
-        width: 80% !important;
-    }
+  /* For extra large screens */
+  .container {
+    max-width: none !important;
+    width: 80% !important;
+  }
 }

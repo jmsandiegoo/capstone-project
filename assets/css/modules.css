@@ -1,13 +1,13 @@
 /* Modules.php styles */
 
-.filterDiv {
+/* .filterDiv {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   flex: 0 1 calc(25% - 1em);
 }
 
 .filterDiv:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
 .module-wrapper .collapsible {
   background-color: #5904bf;
@@ -32,23 +32,49 @@
 .module-wrapper .content {
   overflow: hidden;
   max-height: 0;
-  padding: 0 18px;
+  padding: 0 5px;
   background-color: #f1f1f1;
   transition: max-height 350ms ease-out;
   display: flex;
   flex-wrap: wrap;
 }
 
+.module-wrapper .content .card {
+    cursor: pointer;
+    border-radius: 0px;
+    position: relative;
+    flex-basis: calc((100% - 60px) / 5);
+    margin: 5px 5px;
+}
+.module-wrapper .content .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.module-wrapper .content .card .card-body {
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.module-wrapper .content .card .card-title {
+    font-size: 1rem;
+}
+
+
+
+.module-wrapper .content .card::after {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
 
 /* Buttons css*/
-
-.filterDiv {
-  float: left;
-  text-align: center;
-  margin: 2px;
-  display: block;
-  color: #d3d3d3;
-}
 
 .show {
   display: block;
@@ -84,4 +110,26 @@
 .active {
   background-color: #5904bf;
   color: white;
+}
+
+/* Media Queries */
+
+/* Ipads */
+@media (max-width: 1024px) {
+
+    .module-wrapper .content .card {
+        flex-basis: calc((100% - 60px) / 3);
+    }
+
+    .module-wrapper .content .card .card-title {
+        font-size: 0.75rem;
+    }
+}
+
+/* Smartphones */
+@media only screen and (max-width: 767px) {
+    .module-wrapper .content .card {
+        flex-basis: calc(100% / 2);
+        margin: 0 0;
+    }
 }

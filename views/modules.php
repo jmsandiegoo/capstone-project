@@ -106,7 +106,7 @@
                   ?>
                   <div class="card filterDiv <?php echo $filterJobNameString ?>">
                     <div class="card-body">
-                      <h5 class="card-title"><?php echo $row2['module_name']?></h5>
+                      <h6 class="card-title"><?php echo $row2['module_name']?></h6>
                     </div>
                   </div>
                   <?php endwhile; ?>
