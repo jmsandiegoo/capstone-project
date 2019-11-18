@@ -105,20 +105,16 @@
                       $filterJobNameString = implode( ",", $filterJobName);
                   ?>
                   <div class="card filterDiv <?php echo $filterJobNameString ?>">
-                  <?php
-                    $sql = "SELECT * FROM CourseModule WHERE module_id=$id";
-                    $moduleInfoResult = $db->query($sql);
-                    $moduleInfo = [];
-                    while ($row7 = $db->fetch_array($moduleInfoResult)) {
-                      $moduleInfo[] = $row7;
-                    }
-                  ?>
-                  <a class="card-body" href="<?php echo $helper->pageUrl("moduleDesc.php") . "?id=$row7[module_id]" ?>" >     
-                      <?php 
-                          $db = new Mysql_Driver();
-                          $db->connect();
-                          $sql7 = "SELECT * FROM Item WHERE module_id = " . $row2['module_id'] . " AND item_path LIKE '%_icon.png'";
-                          $result3 = $db->query($sql7);
+                  <?php                  
+                      $sql7 = "SELECT * FROM Item WHERE module_id = " . $row2['module_id'] . " AND item_path LIKE '%_icon.png'";
+                      $result3 = $db->query($sql7);
+                      while ($row7 = $db->fetch_array($result3)): 
+                  ?>    
+                  <a class="card-body" href="<?php echo $helper->subPageUrl("moduleInfoOverlay.php") . "?id=$row7[module_id]" ?>" >                    
+                  <?php endwhile; ?>  
+                      <?php                  
+                          $sql8 = "SELECT * FROM Item WHERE module_id = " . $row2['module_id'] . " AND item_path LIKE '%_icon.png'";
+                          $result3 = $db->query($sql8);
                           while ($row5 = $db->fetch_array($result3)): 
                       ?>
                       <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $row5["item_path"] ?>" alt="Course Image">   

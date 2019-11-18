@@ -38,6 +38,13 @@ class Helper
             
         }
     }
-
+    function subPageUrl($file) { // return a page path for href navigation
+        $httpProtocol = !isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on' ? 'http' : 'https';
+        $url = $httpProtocol . '://' . $_SERVER['HTTP_HOST'] . $this->defaultPath;
+        if ($file !== 'index.php') {
+            $url .= 'views/sub-views/' . $file;
+        }
+        return $url;
+    }
 }
 ?>
