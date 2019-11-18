@@ -105,6 +105,14 @@
                       $filterJobNameString = implode( ",", $filterJobName);
                   ?>
                   <div class="card filterDiv <?php echo $filterJobNameString ?>">
+                  <?php
+                    $sql = "SELECT * FROM CourseModule WHERE module_id=$id";
+                    $moduleInfoResult = $db->query($sql);
+                    $moduleInfo = [];
+                    while ($row7 = $db->fetch_array($moduleInfoResult)) {
+                      $moduleInfo[] = $row7;
+                    }
+                  ?>
                   <a class="card-body" href="<?php echo $helper->pageUrl("moduleDesc.php") . "?id=$row7[module_id]" ?>" >     
                       <?php 
                           $db = new Mysql_Driver();
