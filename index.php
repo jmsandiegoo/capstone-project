@@ -175,7 +175,7 @@
                     <footer>
                         <h1>Not sure which course to take?</h1>
                         <p>Don't worry! We have prepared a quiz for you, it will guide you to find the courses you might be interested in!</p>
-                        <a href="<?php echo $helper->pageUrl("quiz.php") ?>"class="btn bg-light">Take Quiz</a>
+                        <a href="<?php echo $helper->pageUrl("quiz.php") ?>" id="quiz-button" class="btn bg-light">Take Quiz</a>
                     </footer>
                 </div>
             </div>

@@ -113,10 +113,10 @@
 
 
 #sectionfooter {
-	/* background-size: cover;
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url("../img/General/BG_footer.png");  */
-	background-color: #181818;
+	background-image: url("../img/General/BG_footer.png");  
+	/* background-color: #181818; */
 	color: white;
 }
 .overlay{
@@ -124,6 +124,9 @@
 	height: 100%;
 	background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
 	background: rgba(0, 0, 0, 0.5);
+}
+#quiz-button{
+	font-weight: bold;
 }
 
 #floatingBtn {
