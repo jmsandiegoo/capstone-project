@@ -104,14 +104,8 @@
                       }
                       $filterJobNameString = implode( ",", $filterJobName);
                   ?>
-                  <div class="card filterDiv <?php echo $filterJobNameString ?>">
-                  <?php                  
-                      $sql7 = "SELECT * FROM Item WHERE module_id = " . $row2['module_id'] . " AND item_path LIKE '%_icon.png'";
-                      $result3 = $db->query($sql7);
-                      while ($row7 = $db->fetch_array($result3)): 
-                  ?>    
-                  <a class="card-body" href="<?php echo $helper->subPageUrl("moduleInfoOverlay.php") . "?id=$row7[module_id]" ?>" >                    
-                  <?php endwhile; ?>  
+                  <div class="card filterDiv <?php echo $filterJobNameString ?>">  
+                  <a id="<?php echo $row2['module_id'] ?>" class="card-body">                    
                       <?php                  
                           $sql8 = "SELECT * FROM Item WHERE module_id = " . $row2['module_id'] . " AND item_path LIKE '%_icon.png'";
                           $result3 = $db->query($sql8);
@@ -120,7 +114,7 @@
                       <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $row5["item_path"] ?>" alt="Course Image">   
                       <h6 class="card-title"><?php echo $row2['module_name']?></h6>                      
                       <?php endwhile; ?>
-                    </a>
+                  </a>
                   </div>
                   <?php endwhile; ?>
               </div>
@@ -164,6 +158,7 @@
       </div>
       </div>
 			</section>
+      <?php include $helper->subviewPath('moduleInfoOverlay.php') ?>
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
 </html>

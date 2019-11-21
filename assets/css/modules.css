@@ -92,12 +92,6 @@
 
 
 /* Buttons css*/
-
-/* .show {
-  display: block;
-  color: black;
-} */
-
 /* Style the buttons */
 
 #myBtnContainer {
@@ -127,6 +121,42 @@
 .active {
   background-color: #5904bf;
   color: white;
+}
+
+ /* Module Overlay */
+
+.moduleInfoOverlay {
+  display: none;
+  position: fixed;
+  overflow: auto;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1001;
+}
+
+.moduleInfoOverlay .overlay-content {
+  overflow-y: scroll;
+  min-height: 100vh;
+  padding-top: 5rem;
+}
+
+.moduleInfoOverlay.show {
+  display: block;
+}
+
+.moduleInfoOverlay .overlay-content .fas.fa-times {
+  font-size: 3rem;
+  position: absolute;
+  top: 15px;
+  right: 10%;
+  cursor: pointer;
+}
+
+.overlay-open {
+  overflow: hidden;
 }
 
 /* Media Queries */

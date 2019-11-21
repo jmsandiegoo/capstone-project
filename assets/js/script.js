@@ -153,6 +153,57 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+// Adding on click in module cards
+var moduleCards = document.querySelectorAll(".filterDiv .card-body");
+
+for (var i = 0; i < moduleCards.length; i++) {
+    moduleCards[i].addEventListener("click", function() {
+        var module_id = this.id;
+        getAjaxModuleInfo(module_id);
+    });
+}
+
+function getAjaxModuleInfo(module_id) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', `../process/fetchModuleInfo.php?module_id=${module_id}`)
+    xhr.onload = function() {
+        var response = JSON.parse(xhr.response);
+        console.log(response)
+        if (response.status === 200) {
+            var moduleObj = response.data;
+            populateModuleOverlay(moduleObj)
+        } else { // if response is 400 or 404
+            // redirect to server error TO-DO*
+        }
+    }
+    xhr.send()
+}
+
+function populateModuleOverlay(moduleObj) {
+
+    var moduleOverlay = document.querySelector(".moduleInfoOverlay");
+    var moduleName = document.querySelector(".moduleInfoOverlay .module-name");
+    var moduleDescription = document.querySelector(".moduleInfoOverlay .module-description");
+
+    moduleName.innerHTML = moduleObj.module_name;
+    moduleDescription.innerHTML = moduleObj.module_description;
+    moduleOverlay.classList.add("show");
+}
+
+var closeBtn = document.querySelector(".moduleInfoOverlay .close-overlay")
+
+closeBtn.addEventListener("click", function() {
+    closeModuleOverlay()
+})
+// close overlay
+function closeModuleOverlay() {
+    var moduleOverlay = document.querySelector(".moduleInfoOverlay");
+
+    moduleOverlay.classList.remove("show");
+}
+
+// Misc
+
 $(document).ready(function()
 {
     $('#projectSlider').tinycarousel();
