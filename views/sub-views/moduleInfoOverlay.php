@@ -14,8 +14,12 @@
 ?>
 <div class="moduleInfoOverlay">
     <div class="overlay-content container">
+        <div class="blackOverlay">
         <i class="close-overlay fas fa-times"></i>
+    </div>
+    <div class="moduleInfo">
         <h1 class="module-name"></h1>
         <p class="module-description"></p>
+    </div>
     </div>
 </div>

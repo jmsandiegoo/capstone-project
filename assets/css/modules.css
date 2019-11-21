@@ -128,30 +128,53 @@
 .moduleInfoOverlay {
   display: none;
   position: fixed;
-  overflow: auto;
+  overflow:hidden;
   overflow-y: scroll;
   top: 0;
-  left: 0;
   width: 100%;
-  background: white;
   z-index: 1001;
+  
 }
-
 .moduleInfoOverlay .overlay-content {
-  overflow-y: scroll;
   min-height: 100vh;
-  padding-top: 5rem;
 }
 
 .moduleInfoOverlay.show {
   display: block;
+  overflow:hidden;
+}
+.blackOverlay{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  top:50%;
+  left:50%;
+  text-align:center;
+  position:absolute;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.95);
+  width:60%;
+  height:60%;
+}
+.moduleInfo{
+  display:inline-block;
+  font-size:1rem;
+  margin:0;
+  padding:0;
+  top:50%;
+  left:50%;
+  text-align:center;
+  position:absolute;
+  color:white;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .moduleInfoOverlay .overlay-content .fas.fa-times {
   font-size: 3rem;
+  color:white;
   position: absolute;
-  top: 15px;
-  right: 10%;
+  top: 1%;
+  right: 1%;
   cursor: pointer;
 }
 
