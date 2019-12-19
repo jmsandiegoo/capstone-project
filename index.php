@@ -8,7 +8,7 @@
     $db = new Mysql_Driver();
     $db->connect();
 
-    $sql = "SELECT * FROM Course";
+    $sql = "SELECT * FROM Course WHERE course_name NOT LIKE '%Common%'";
     $result = $db->query($sql);
     
     $resultArray = [];
@@ -16,7 +16,13 @@
     while ($row = $db->fetch_array($result)) {
         $resultArray[] = $row;
     }
+    $sql4 = "SELECT * FROM Course WHERE course_name LIKE '%Common%'";
+    $result9 = $db->query($sql4);
+    $resultArray2 = [];
 
+    while ($row = $db->fetch_array($result9)) {
+        $resultArray2[] = $row;
+    }
     $db->close();
 
     $img = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80";
@@ -27,8 +33,8 @@
 <html lang="en">
     <?php include $helper->subviewPath('header.php') ?>
     <a href="" id="floatingBtn"><div id="floatingBtnTxt"></div></a>
-	<script>var courseName = [];</script>
-	<script>var cid = [];</script>
+    <script>var courseName = [];</script>
+    <script>var cid = [];</script>
     <script>
     courseName.unshift("")
     </script>
@@ -59,7 +65,7 @@
                                     <?php endwhile; ?>
                                     <div class="card-body">
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
-									<script>cid.push("<?=$row['id']?>")</script>
+                                    <script>cid.push("<?=$row['id']?>")</script>
                                         <h5 class="card-title"><?php echo $row['course_name'] ?></h5>
                                         <h6 class="card-subtitle"><?php echo $row['course_short_description'] ?></h6>
                                     </div>
@@ -69,7 +75,7 @@
                     </div>
                 </div>
             </div>
- 
+            <!-- For Courses except Common ICT -->
             <?php foreach ($resultArray as $key => $row): ?>
                 <div class="section" id="<?php echo 'section-' . $row['id']?>">
                     <!-- Slide 1 -->
@@ -162,14 +168,105 @@
                 </div>
             </div>
             <?php endforeach; ?>
-<!-- 
-            <div class="section" id="sectionquiz">
-                <div class="slide" id="slide1">
-                    <div class="intro">
-                        <h1 style="color:white;">Quiz</h1></div>
-                        
+
+            <!-- Common ICT section -->                           
+            <?php foreach ($resultArray2 as $key => $row): ?>
+                <div class="section" id="<?php echo 'section-' . $row['id']?>">
+                    <!-- Slide 1 -->
+                    <div class="slide" id="<?php echo 'slide1-' . $row['id']?>" data-anchor="0">
+                            <div class="container courseTitle">
+                                <div class="row">
+                                    <div class="col-md-7">                      
+                                        <h1>Diploma in </br> <?php echo $row['course_name'] ?></h1>
+                                        <h2><?php echo $row['course_id'] ?></h2>
+                                        <!-- <p><?php echo $row['course_short_description'] ?></p> -->
+                                    </div>
+                                </div>
+                           
+                        </div>
                     </div>
-            </div> -->
+                    <!-- Slide 2 -->
+                    <div class="slide" id="<?php echo 'slide2-' . $row['id']?>" data-anchor="1">
+                        <div class="container-fluid">
+                            <div class="course-information">
+                                <div class="container courseInfo">
+                                    <h1><i class="question-icon"></i> Course Information</h1>
+                                    <p><?php echo $row['course_description'] ?></p>
+                                </div>
+                            </div>
+                            
+                            <div class="course-career">
+                                <div class="container">
+                                    <h1><i class="binoculars-icon"></i> Course Pathway</h1>
+                                    <div class="course-wrapper">
+                                        <p>In Year 1, Students are given an opportunity to learn modules from other courses in ICT.</br>
+                                        Upon completion of Year 1 modules, Students are to continue their education by selecting the following courses:</br>
+                                        <?php foreach($resultArray as $key => $row):?>
+                                        <b><a href="<?php echo "index.php#".$row["id"]."/1"?>"><?php echo $row["course_name"]?></a></br></b>
+                                        <? endforeach ?></p>                             
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- Slide 3-->
+                    <div class="slide" id="<?php echo 'slide3-' . $row['id']?>" data-anchor="2">
+                    <div class="overlay">
+                        <div class="container">
+                            <div class="course-entry">
+                                <h1><i class="question-icon"></i> Entry Requirements</h1>
+                                <h3> <u>For Students with 'O' Levels:</u> </h3>
+                                <h6>Range of Net ELR2B2 for 2020 JAE: <strong><?php echo $row['course_requirements'] ?></strong></h5>
+                                <h6>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
+                                <br>
+                                <h3><u> Aggregate Type ELR2B2-C </u></h3>
+                                <p><i> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </i> </p>
+                                <h6 style="width:50%; float:left;"> Subjects </h6>
+                                <h6 style="width:50%; float:right;">'O' Level Grade </h6>
+                                <?php 
+                                    $db = new Mysql_Driver();
+                                    $db->connect();
+                                
+                                    $sql2 = "SELECT * FROM Requirement r INNER JOIN CourseReq cr ON r.req_id = cr.req_id WHERE cr.course_id =" . $row['id'];
+                                    $result2 = $db->query($sql2);
+                                    $db -> close();
+                                    while ($row2 = $db->fetch_array($result2)): 
+                                ?>
+                                <div class="subject-wrapper">
+                                    <p style="width:60%; float:left;"><?php echo "+ " . $row2['req_subject']?></p>
+                                    <p style="width:40%; float:right; text-align: center;"><?php echo $row2['req_grade']?></p>
+                                </div>
+                                <?php endwhile; ?>
+                                <!-- </br>
+                                <p style="width:80%;">You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements. </p>
+                                <p>Candidates with severe vision deficiency should not apply for the course.</p>
+                                </br> -->
+                                <p style="width:80%; float:left;">
+                                    <em>* You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements.<br/>
+                                    * Candidates with severe vision deficiency should not apply for the course.</em>
+                                </p>
+                                <?php 
+                                    $db = new Mysql_Driver();
+                                    $db->connect();
+                                
+                                    $sql = "SELECT * FROM Course WHERE course_name LIKE '%Common%'";
+                                    $result = $db->query($sql);
+                                    $db -> close();
+                                    while ($row = $db->fetch_array($result)): 
+                                ?>
+                                <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
+                                    Learn More
+                                </a>
+
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach;?>                            
             <div class="section" id="sectionfooter">
                 <div class="container">
                     <footer>
