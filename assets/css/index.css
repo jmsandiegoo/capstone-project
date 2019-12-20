@@ -105,9 +105,14 @@
     color: #A9A9A9;
 }
 
+#course-btn{
+    position: relative;
+    margin-top: .5rem;
+    margin-right: .5rem;
+    font-weight: bolder;
+}
+
 #learn-more-btn {
-    /* position: absolute;
-    right: 100px;  */
     position: absolute;
     right: 30px;
     padding: .5rem 1rem;
@@ -122,7 +127,7 @@
 #sectionfooter {
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../img/General/BG_footer.jpg");  
+    background-image: url("../img/General/BG_footer.png");  
     /* background-color: #181818; */
     color: white;
 }
