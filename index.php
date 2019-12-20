@@ -201,14 +201,12 @@
                                     <div class="course-wrapper">
                                         <p>In Year 1, Students are given an opportunity to learn modules from other courses in ICT.</br>
                                         Upon completion of Year 1 modules, Students are to continue their education by selecting the following courses:</br>
-                                        <?php foreach($resultArray as $key => $row):?>
+                                        <?php foreach($resultArray as $key => $row): ?>
                                         <b><a href="<?php echo "index.php#".$row["id"]."/1"?>"><?php echo $row["course_name"]?></a></br></b>
-                                        <? endforeach ?></p>                             
+                                        <?php endforeach; ?></p>                             
                                     </div>
-
                                 </div>
-                            </div>
-                            
+                            </div>                           
                         </div>
                     </div>
                     <!-- Slide 3-->
@@ -278,6 +276,5 @@
             </div>
         </div>
     </main>
-
     <?php include $helper->subviewPath('footer.php') ?>
 </html>
