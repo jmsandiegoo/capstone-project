@@ -55,19 +55,21 @@
         <h1>Modules</h1>
         <hr>
         <!-- filter buttons !-->
-        <div id="myBtnContainer">
-          <button class="btn filter-btn active" onclick="filterSelection('all')">Show all</button>
-          <?php 
-            //Get the job names
-            $sql3 = "SELECT j.job_name FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id = $id";
-            $jobNameResult = $db->query($sql3);
-            $jobName = [];
-            while ($row = $db->fetch_array($jobNameResult)) {
-              $jobName[] = $row;
-            }
-            foreach ($jobName as $key => $row): ?>
-              <button class="btn filter-btn" onclick="filterSelection('<?php echo $row['job_name'] ?>')"><?php echo $row['job_name'] ?></button>
-            <?php endforeach; ?>
+        <div id="myBtnContainer" class="tabs">
+          <div class="tab">
+            <button class="btn filter-btn active" onclick="filterSelection('all')">Show all</button>
+              <?php 
+              //Get the job names
+              $sql3 = "SELECT j.job_name FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id = $id";
+              $jobNameResult = $db->query($sql3);
+              $jobName = [];
+              while ($row = $db->fetch_array($jobNameResult)) {
+                $jobName[] = $row;
+              }
+              foreach ($jobName as $key => $row): ?>
+                <button class="btn filter-btn" onclick="filterSelection('<?php echo $row['job_name'] ?>')"><?php echo $row['job_name'] ?></button>
+              <?php endforeach; ?>
+          </div>
         </div>
           </br>
         <!--  !-->
