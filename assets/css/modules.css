@@ -209,7 +209,7 @@
     height: 100%;
   }
 
-  /* try */
+  /* Horizon scrollbar */
   .tabs {
     position: relative;   
     clear: both;
@@ -220,12 +220,20 @@
     overflow-x: scroll;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.tabs::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar{
+  height: 10px;
 }
 
-/* Hide scrollbar for IE and Edge */
-.tabs {
-  -ms-overflow-style: none;
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
