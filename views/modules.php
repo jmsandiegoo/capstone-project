@@ -28,32 +28,12 @@
       ?>
       <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(<?php echo $backgroundPath ?>);">
         <h1>
-          Diploma in <br/> <?php echo $courseInfo['course_name'] ?>
-        </h1>
-      </section>
-      <section class="year-description-content container">
-        <!-- Description is still hardcoded -->
-        <?php
-        foreach ($courseInfo as $key => $value): ?>
-
-          <?php if ($key === 'course_year1_description'): ?>
-            <h2>Year 1</h2>
-            <p><?php echo $value ?></p>
-          <?php elseif ($key === 'course_year2_description'): ?>
-            <h2>Year 2</h2>
-            <p><?php echo $value ?></p>
-          <?php elseif ($key === 'course_year3_description'): ?> 
-            <h2>Year 3</h2>
-            <p><?php echo $value ?></p>
-          <?php else:
-            continue;
-          endif;?>
-        <?php endforeach; ?>
+          Modules for <?php echo $courseInfo['course_id']?>
+		<br/> Diploma in <?php echo $courseInfo['course_name'] ?></h1>
       </section>
 
       <section class="module-content container">
-        <h1>Modules</h1>
-        <hr>
+	  
         <!-- filter buttons !-->
         <div id="myBtnContainer" class="tabs">
           <div class="tab">
@@ -87,14 +67,30 @@
                 $collapsibleLbl = 'Elective';
                 if ($row['module_year'] !== 'Elective') {
                   $collapsibleLbl = 'Year ' . $row['module_year'];
-                }
-              ?>
-                <button type="button" class="collapsible"><h5><?php echo $collapsibleLbl ?></h5><i class="fas fa-plus"></i></button>
+				}
+				if ($row['module_year'] === '1') {
+                  $test = $courseInfo['course_year1_description'];
+				}
+				if ($row['module_year'] === '2') {
+                  $test = $courseInfo['course_year2_description'];
+				}
+				if ($row['module_year'] === '3') {
+                  $test = $courseInfo['course_year3_description'];
+				}
+				if ($row['module_year'] === 'Elective') {
+					$test = $courseInfo['course_elective_description'];
+				}
+			  ?>
+					
+              <button type="button" class="collapsible"><h5><?php echo $collapsibleLbl ?></h5><i class="fas fa-plus"></i></button>
               <div class="content">
                   <!-- Get module name to display and module id for filtering -->
-                  <?php  
+					<section class="year-description-content">
+						<?php echo $test ?>
+					</section>
+					<?php
                     //Get module name to display and module id for filtering
-                    $sql5 = "SELECT * FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id WHERE cm.id= $id AND cm.module_year ='$row[module_year]' ORDER BY module_name ASC";
+                    $sql5 = "SELECT * FROM Module m INNER JOIN CourseModule cm  ON m.module_id = cm.module_id WHERE cm.id= $id AND cm.module_year ='$row[module_year]' ORDER BY module_name ASC";
                     $courseModuleResult = $db->query($sql5);
                     while ($row2 = $db->fetch_array($courseModuleResult)):
                       // get names of jobs for the modules

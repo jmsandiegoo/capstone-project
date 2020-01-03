@@ -31,10 +31,12 @@ button:focus {
   height: 65vh;
   background-size: cover;
   background-repeat: no-repeat;
+  flex-wrap: wrap;
 }
 
 .main-banner h1 {
   font-size: 3.5rem;
+  flex-basis: 100%;
   color: white;
   text-align: center;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
