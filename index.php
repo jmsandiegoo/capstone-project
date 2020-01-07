@@ -8,13 +8,13 @@
     $db = new Mysql_Driver();
     $db->connect();
 
-    $sql = "SELECT * FROM Course WHERE course_name NOT LIKE '%Common%'";
-    $result = $db->query($sql);
+    $sql = "SELECT * FROM Course WHERE course_name NOT LIKE '%Common%'"; // this is the sql query for this loop
+    $result = $db->query($sql);// connect to the database to get the info
     
-    $resultArray = [];
+    $resultArray = []; // instantiate empty array 
 
-    while ($row = $db->fetch_array($result)) {
-        $resultArray[] = $row;
+    while ($row = $db->fetch_array($result)) { // while loop based on connection 
+        $resultArray[] = $row; // append results into the array
     }
     $sql4 = "SELECT * FROM Course WHERE course_name LIKE '%Common%'";
     $result9 = $db->query($sql4);
@@ -95,29 +95,48 @@
                     <div class="slide" id="<?php echo 'slide2-' . $row['id']?>" data-anchor="1">
                         <div class="container-fluid">
                             <div class="course-information">
-                                <div class="container courseInfo">
+                                <div class="container">
                                     <h1><i class="question-icon"></i> Course Information</h1>
                                     <p><?php echo $row['course_description'] ?></p>
                                 </div>
                             </div>
                             
                             <div class="course-career">
-                                <div class="container">
+                                <div class="container container-fluid py-2">
                                     <h1><i class="binoculars-icon"></i> Career Pathway</h1>
-                                    <div class="job-wrapper">
-                                        <?php 
-                                            $db = new Mysql_Driver();
-                                            $db->connect();
-                                        
-                                            $sql1 = "SELECT * FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id =" . $row['id'];
-                                            $result1 = $db->query($sql1);
-                                            $db -> close();
-                                            while ($row1 = $db->fetch_array($result1)): 
-                                        ?>
-                                        <p><?php echo "+ ". $row1['job_name']?></p>
-                                        <?php endwhile; ?>                               
-                                    </div>
+                                    <div class="d-flex flex-row flex-nowrap">
+                                            <?php 
+                                                $db = new Mysql_Driver();
+                                                $db->connect();
+                                                $sql3 = "SELECT * FROM CategoryJob A INNER JOIN Category B ON A.category_id = B.category_id WHERE A.id =" . $row['id']. " GROUP BY A.category_id";
+                                                $result3 = $db->query($sql3);
+                                                $db -> close();
+                                                while ($row3 = $db->fetch_array($result3)): 
+                                            ?>
+                                                <div class="card card-body1">
+                                                    <div class="align-self-center">
+                                                        <img class="rounded-circle" src="<?php echo $row3["categoryitem_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
+                                                    </div>
+                                                    <h6 class="card-title text-center text-dark"><?php echo $row3['category_name'] ?></h5>
+                                                    <!-- CHECK -->
+                                                    <!-- <?php
+                                                        $db = new Mysql_Driver();
+                                                        $db->connect();
+                                                        $sql = "SELECT * FROM CategoryJob A INNER JOIN Job1 B ON A.job1_id = B.job1_id WHERE GROUP BY A.category_id";
+                                                        $result = $db->query($sql);
 
+                                                        $resultArray = [];
+                                                        while ($row = $db->fetch_array($result)){
+                                                            $resultArray[] = $row;
+                                                        }
+                                                        $db->close();
+                                                    ?> -->
+                                                    <ul>
+                                                        <li class="text-dark"><?php echo $row['job1_name']?><li>
+                                                    </ul>
+                                                </div>
+                                            <?php endwhile; ?>
+                                    </div> 
                                 </div>
                             </div>
                             

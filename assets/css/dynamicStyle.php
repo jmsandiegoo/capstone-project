@@ -80,7 +80,7 @@ foreach ($courses as $key => $row):
 
     /* Slide 2 styles */
     #<?php echo 'slide2-' . $row['id'] . ' .container-fluid' ?>{
-        display: flex;
+        <!-- display: flex; -->
         flex-wrap: wrap;
         align-items: stretch;
         height: 100%;
