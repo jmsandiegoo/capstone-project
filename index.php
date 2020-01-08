@@ -103,7 +103,7 @@
                             
                             <div class="course-career">
                                 <div class="container container-fluid py-2">
-                                    <h1><i class="binoculars-icon"></i> Career Pathway</h1>
+                                    <h1><i class="binoculars-icon"></i> Career Prospects</h1>
                                     <div class="d-flex flex-row flex-nowrap">
                                             <?php 
                                                 $db = new Mysql_Driver();
@@ -111,31 +111,40 @@
                                                 $sql3 = "SELECT * FROM CategoryJob A INNER JOIN Category B ON A.category_id = B.category_id WHERE A.id =" . $row['id']. " GROUP BY A.category_id";
                                                 $result3 = $db->query($sql3);
                                                 $db -> close();
-                                                while ($row3 = $db->fetch_array($result3)): 
+                                                $resultArray4 = [];
+                                                while ($row20 = $db->fetch_array($result3)){
+                                                    $resultArray4[] = $row20;
+                                                }
                                             ?>
+
+                                            <?php foreach ($resultArray4 as $key => $row): ?>
                                                 <div class="card card-body1">
-                                                    <div class="align-self-center">
-                                                        <img class="rounded-circle" src="<?php echo $row3["categoryitem_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
+                                                    <div class="align-self-center">     
+                                                    <img class="rounded-circle" src="<?php echo $row["categoryitem_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
                                                     </div>
-                                                    <h6 class="card-title text-center text-dark"><?php echo $row3['category_name'] ?></h5>
-                                                    <!-- CHECK -->
-                                                    <!-- <?php
+                                                    <h6 class="card-title text-center text-dark"><?php echo $row['category_name'] ?></h5>
+                                                    <?php
                                                         $db = new Mysql_Driver();
                                                         $db->connect();
-                                                        $sql = "SELECT * FROM CategoryJob A INNER JOIN Job1 B ON A.job1_id = B.job1_id WHERE GROUP BY A.category_id";
-                                                        $result = $db->query($sql);
+                                                        $sql13 = "SELECT * FROM CategoryJob A INNER JOIN Job1 B ON A.job1_id = B.job1_id WHERE A.category_id = $row[category_id]";
+                                                        $result13 = $db->query($sql13);
 
-                                                        $resultArray = [];
-                                                        while ($row = $db->fetch_array($result)){
-                                                            $resultArray[] = $row;
+                                                        $resultArray3 = [];
+                                                        while ($row19 = $db->fetch_array($result13)){
+                                                            $resultArray3[] = $row19;
                                                         }
                                                         $db->close();
-                                                    ?> -->
+                                                        
+                                                    ?>
                                                     <ul>
-                                                        <li class="text-dark"><?php echo $row['job1_name']?><li>
+                                                    <?php foreach ($resultArray3 as $key => $row1): 
+                                                        ?>
+                                                        
+                                                        <li class="text-dark"><?php echo $row1['job1_name']?><li>
                                                     </ul>
+                                                    <?php endforeach;?>
                                                 </div>
-                                            <?php endwhile; ?>
+                                            <?php endforeach; ?>
                                     </div> 
                                 </div>
                             </div>
@@ -160,7 +169,7 @@
                                     $db = new Mysql_Driver();
                                     $db->connect();
                                 
-                                    $sql2 = "SELECT * FROM Requirement r INNER JOIN CourseReq cr ON r.req_id = cr.req_id WHERE cr.course_id =" . $row['id'];
+                                    $sql2 = "SELECT * FROM Requirement r INNER JOIN CourseReq cr ON r.req_id = cr.req_id WHERE cr.course_id = $row[id]";
                                     $result2 = $db->query($sql2);
                                     $db -> close();
                                     while ($row2 = $db->fetch_array($result2)): 
