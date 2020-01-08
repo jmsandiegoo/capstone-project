@@ -228,9 +228,11 @@
 }
 
 .card-body1 {
-    min-height: 200px;
-    min-width: 30px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
     margin-right: 5px;
+    padding: 1px;
 }
 
 .rounded-circle{

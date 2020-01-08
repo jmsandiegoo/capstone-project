@@ -133,15 +133,11 @@
                                                         while ($row19 = $db->fetch_array($result13)){
                                                             $resultArray3[] = $row19;
                                                         }
-                                                        $db->close();
-                                                        
+                                                        $db->close();                                                       
                                                     ?>
-                                                    <ul>
-                                                    <?php foreach ($resultArray3 as $key => $row1): 
-                                                        ?>
                                                         
-                                                        <li class="text-dark"><?php echo $row1['job1_name']?><li>
-                                                    </ul>
+                                                    <?php foreach ($resultArray3 as $key => $row1): ?>
+                                                    <span class="text-dark"> <b>+</b> <?php echo $row1['job1_name']?><span><br/>
                                                     <?php endforeach;?>
                                                 </div>
                                             <?php endforeach; ?>
