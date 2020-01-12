@@ -117,27 +117,31 @@
                                                 }
                                             ?>
 
-                                            <?php foreach ($resultArray4 as $key => $row): ?>
+                                            <?php foreach ($resultArray4 as $key => $row2): ?>
                                                 <div class="card card-body1">
                                                     <div class="align-self-center">     
-                                                    <img class="rounded-circle" src="<?php echo $row["categoryitem_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
+                                                    <img class="rounded-circle" src="<?php echo $row2["categoryitem_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
                                                     </div>
-                                                    <h6 class="card-title text-center text-dark"><?php echo $row['category_name'] ?></h5>
+                                                    <h6 class="card-title text-center text-dark"><?php echo $row2['category_name'] ?></h5>
                                                     <?php
                                                         $db = new Mysql_Driver();
                                                         $db->connect();
-                                                        $sql13 = "SELECT * FROM CategoryJob A INNER JOIN Job1 B ON A.job1_id = B.job1_id WHERE A.category_id = $row[category_id]";
+                                                        $sql13 = "SELECT * FROM CategoryJob A INNER JOIN Job1 B ON A.job1_id = B.job1_id WHERE A.category_id = $row2[category_id]";
                                                         $result13 = $db->query($sql13);
 
                                                         $resultArray3 = [];
                                                         while ($row19 = $db->fetch_array($result13)){
                                                             $resultArray3[] = $row19;
                                                         }
-                                                        $db->close();                                                       
-                                                    ?>
+                                                        $db->close();
                                                         
-                                                    <?php foreach ($resultArray3 as $key => $row1): ?>
-                                                    <span class="text-dark"> <b>+</b> <?php echo $row1['job1_name']?><span><br/>
+                                                    ?>
+                                                    <ul>
+                                                    <?php foreach ($resultArray3 as $key => $row1): 
+                                                        ?>
+                                                        
+                                                        <li class="text-dark"><?php echo $row1['job1_name']?><li>
+                                                    </ul>
                                                     <?php endforeach;?>
                                                 </div>
                                             <?php endforeach; ?>
