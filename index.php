@@ -38,8 +38,8 @@
     <script>
     courseName.unshift("")
     </script>
-
     <main>
+        <?php include $helper->subviewPath('fullpageNav.php') ?>
         <div id="fullpage">
             <div class="section" id="section-header">
                 <div class="container">
