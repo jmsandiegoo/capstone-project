@@ -104,7 +104,7 @@
                             <div class="course-career">
                                 <div class="container container-fluid py-2">
                                     <h1><i class="binoculars-icon"></i> Career Prospects</h1>
-                                    <div class="d-flex flex-row flex-nowrap">
+                                    <div class="d-flex flex-row flex-wrap">
                                             <?php 
                                                 $db = new Mysql_Driver();
                                                 $db->connect();
@@ -118,11 +118,11 @@
                                             ?>
 
                                             <?php foreach ($resultArray4 as $key => $row2): ?>
-                                                <div class="card card-body1">
+                                                <div class="card card-body1 category">
                                                     <div class="align-self-center">     
                                                     <img class="rounded-circle" src="<?php echo $row2["categoryitem_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
                                                     </div>
-                                                    <h6 class="card-title text-center text-dark"><?php echo $row2['category_name'] ?></h5>
+                                                    <h6 class="card-title text-center text-dark" id="categoryjob"><?php echo $row2['category_name'] ?></h5>
                                                     <?php
                                                         $db = new Mysql_Driver();
                                                         $db->connect();
@@ -136,12 +136,14 @@
                                                         $db->close();
                                                         
                                                     ?>
-                                                    <ul>
+                                                    <div id="categoryjobname">
                                                     <?php foreach ($resultArray3 as $key => $row1): 
                                                         ?>
-                                                        <li class="text-dark"><?php echo $row1['job1_name']?><li>
-                                                    </ul>
+                                                        <?php if($row1["job1_name"] != ""): ?>
+                                                        <li class="text-dark"><?php echo $row1['job1_name']?></br></li>
+                                                        <?php endif;?>                                                 
                                                     <?php endforeach;?>
+                                                        </div>
                                                 </div>
                                             <?php endforeach; ?>
                                     </div> 

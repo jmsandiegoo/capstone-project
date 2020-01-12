@@ -11,7 +11,8 @@ class Mysql_Driver
      */ 
     public function connect()
     {
-		// MAMP Config
+
+		//MAMP Config
 		//connection parameters
 		$host = 'localhost:8889';
 		$user = 'root';
