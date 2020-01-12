@@ -25,20 +25,21 @@ button:focus {
 }
 
 .main-banner {
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65vh;
+  height: 60vh;
   background-size: cover;
   background-repeat: no-repeat;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .main-banner h1 {
   font-size: 3.5rem;
   flex-basis: 100%;
   color: white;
-  text-align: center;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   letter-spacing: 0.1rem;
 }

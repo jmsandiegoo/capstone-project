@@ -139,7 +139,6 @@
                                                     <ul>
                                                     <?php foreach ($resultArray3 as $key => $row1): 
                                                         ?>
-                                                        
                                                         <li class="text-dark"><?php echo $row1['job1_name']?><li>
                                                     </ul>
                                                     <?php endforeach;?>
