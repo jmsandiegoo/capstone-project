@@ -15,7 +15,6 @@ new fullpage('#fullpage', {
     anchors: ['home', 'overview', '1', '2', '3', '4', '5', 'footer'],
     onLeave: function(origin, destination, direction) {
         console.log("onleave occured");
-        addStickyNav(destination, direction);
         if (runOnce === false) {
             return runOnce;
         } else {
@@ -25,7 +24,6 @@ new fullpage('#fullpage', {
     },
     afterLoad: function(origin, destination, direction) {
         console.log("afterload occured")
-        removeStickyNav(destination, direction);
         if (origin.index > 1 && origin.item.id != "sectionfooter") {
             fullpage_api.resetSlides(origin.item.id, 0);
         }
@@ -33,31 +31,6 @@ new fullpage('#fullpage', {
     }
 
 });
-
-//methods
-
-// method for fullpagejs page such as Index php
-function addStickyNav(destination, direction) {
-    var navbar = document.getElementsByClassName("navbar")[0];
-    var navbarPlaceholder = document.getElementsByClassName("navbar-placeholder")[0];
-
-    if (direction === "down") {
-        navbar.classList.add("sticky-top");
-        navbar.style.opacity = "90%";
-        navbarPlaceholder.style.height = "0px";
-    } else if (direction === "up" && destination.item.id === "section-header") {
-        navbar.style.opacity = "100%";
-        navbarPlaceholder.style.height = "56px";
-    }
-}
-
-function removeStickyNav(destination, direction) {
-    var navbar = document.getElementsByClassName("navbar")[0];
-
-    if (direction === "up" && destination.item.id === "section-header") {
-        navbar.classList.remove("sticky-top");
-    }
-}
 
 // fullpage_api.setAllowScrolling(true);
 

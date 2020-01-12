@@ -17,7 +17,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include $helper->subviewPath('header.php') ?> 
+
     <main class="module-wrapper">
+      <?php include $helper->subviewPath('navbar.php') ?> 
       <?php 
         $sql2 = "SELECT * FROM Item WHERE course_id = " . $id . " AND item_path LIKE '%BG_1.jpg'";
         $courseItemResult = $db->query($sql2);
@@ -27,9 +29,7 @@
         }
       ?>
       <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(<?php echo $backgroundPath ?>);">
-        <h1>
-          Modules for <?php echo $courseInfo['course_id']?>
-		<br/> Diploma in <?php echo $courseInfo['course_name'] ?></h1>
+        <h1>Diploma in <br> Information Technology N54</h1>
       </section>
 
       <section class="module-content container">

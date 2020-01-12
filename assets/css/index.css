@@ -30,13 +30,12 @@
 .course-information{
     flex-basis: 100%;
     /*Give more whitespace*/
-    padding-top: 86px;
+    padding-top: 50px;
     min-height: 50vh;
 } 
 
 .course-career {
     flex-basis: 100%;
-    padding-top: 20px;
     min-height: 50vh;
 }
 .course-entry{
@@ -49,7 +48,6 @@
 }
 
 .course-career {
-    background: #380E7F;
 }
 
 .course-career .job-wrapper {
@@ -161,7 +159,7 @@
 /* Media Queries for index php */
 
 @media only screen and (max-width: 1110px) {
-    .fp-controlArrow.fp-prev{
+    .fp-controlArrow.fp-prev, .fp-controlArrow.fp-next{
         display:none !important;
     }
 }
@@ -212,9 +210,17 @@
         top:52% !important;
     
     }
-    
-    .course-information, .course-career {
-        min-height: initial;
+    #categoryjob{
+        font-size: 4.0vw !important;
+    }
+    #categoryjobname{
+        font-size:3.0vw !important;
+    }
+    .card-body1.category{    
+        flex-basis: calc(100% / 3) !important;
+        margin-top:1.5vw;
+        margin-right:1.5vw;
+        width:80% !important;
     }
 
     #learn-more-btn{
@@ -223,6 +229,13 @@
         font-size: .875rem;
         line-height: 1.5;
         border-radius: .2rem;
+    }
+
+    .rounded-circle{
+    display:none !important;}
+
+    #floatingBtn{
+        display:none !important;
     }
     
 }
@@ -246,6 +259,9 @@
     -webkit-border-radius: 99em;
     -moz-border-radius: 99em;
     border-radius: 99em;
-    border: 5px solid #eee;
+    border: 5px solid white;
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
+}
+#course-btn{
+    font-size:3.5vw;
 }

@@ -57,13 +57,10 @@ body {
 .sticky-top {
   position: fixed;
   top: 0;
+  opacity: 90%;
   width: 100%;
   z-index: 1000;
-  opacity: 90%;
-}
-
-.navbar-placeholder {
-  background-color: #181818;
+  opacity: 100%;
 }
 
 /* Footer */
