@@ -237,6 +237,9 @@
     #floatingBtn{
         display:none !important;
     }
+    #course-btn{
+        font-size:3.5vw;
+    }
     
 }
 
@@ -261,7 +264,4 @@
     border-radius: 99em;
     border: 5px solid white;
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
-}
-#course-btn{
-    font-size:3.5vw;
 }
