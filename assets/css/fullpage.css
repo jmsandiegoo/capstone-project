@@ -71,15 +71,24 @@ html.fp-enabled,
     transform: translate3d(0,0,0);
 }
 .fp-controlArrow.fp-prev {
-    left: 3rem;
-    width: 0;
-    border-width: 38.5px 34px 38.5px 0;
-    border-color: transparent #fff transparent transparent;
+    border-right:5px solid black;
+    left: 4rem;
+    border-bottom:5px solid black;
+    width:3vw;
+    height:3vw;
+    transform: rotate(-225.5deg);
+    
+    border-color: transparent #fff #fff transparent;
 }
-.fp-controlArrow.fp-next {
-    right: 3rem;
-    border-width: 38.5px 0 38.5px 34px;
-    border-color: transparent transparent transparent white;
+.fp-controlArrow.fp-next {    
+    border-right:5px solid black;
+    right: 4rem;
+    border-bottom:5px solid black;
+    width:3vw;
+    height:3vw;
+    transform: rotate(-45deg);
+    
+    border-color: transparent #fff #fff transparent;
 }
 .fp-scrollable {
     overflow: hidden;
