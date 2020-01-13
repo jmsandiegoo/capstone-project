@@ -154,7 +154,10 @@
     border-radius: 0.5em;
 }
 
-
+.col-md-4.courses{
+    flex: 0 0 40% !important;
+    max-width:40% !important;
+}
 
 /* Media Queries for index php */
 
