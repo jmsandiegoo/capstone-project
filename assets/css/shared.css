@@ -32,6 +32,7 @@ button:focus {
   height: 60vh;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   flex-wrap: wrap;
   text-align: center;
 }

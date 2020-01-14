@@ -11,14 +11,14 @@ class Mysql_Driver
      */ 
     public function connect()
     {
-
+		/*
 		//MAMP Config
 		//connection parameters
-		// $host = 'localhost:8889';
-		// $user = 'root';
-		// $password = 'root';
-		// $database = 'ict_open_house';
-
+		$host = 'localhost:8889';
+		$user = 'root';
+		$password = 'root';
+		$database = 'ict_open_house';
+		*/
 		
 		// XAMPP Config
         //connection parameters

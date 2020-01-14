@@ -35,6 +35,31 @@
     while ($row = $db->fetch_array($moduleYearResult)) {
         $moduleYear[] = $row;
     }
+
+    $courseModule = [];
+    foreach ($moduleYear as $key => $row) {
+        $sql = "SELECT m.module_id, m.module_name, i.item_path FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN Item i ON m.module_id = i.module_id WHERE cm.id = $id AND cm.module_year ='$row[module_year]' ORDER BY module_name ASC";
+        $courseModuleResult = $db->query($sql);
+        $modules= [];
+        while ($row2 = $db->fetch_array($courseModuleResult)) {
+            $sql = "SELECT j.job_name FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN ModuleJob mj ON mj.module_id=m.module_id INNER JOIN Job j ON j.job_id=mj.job_id WHERE cm.id=$id AND m.module_id='$row2[module_id]'ORDER BY module_name ASC";
+            $jobResult = $db->query($sql);
+            $jobArray = [];
+            while ($row3 = $db->fetch_array($jobResult)) {
+                array_push($jobArray, $row3['job_name']);
+            }
+            $row2['job_string'] = implode(",", $jobArray);
+            $modules[] = $row2;
+        }
+        $courseModule["$row[module_year]"] = $modules;
+    }
+
+    $db->close();
+
+    // echo '<pre>';
+    // print_r($courseModule);
+    // echo '</pre>';
+    // Fetch the module name to display for each courses
 ?>
 
 <!DOCTYPE html>
@@ -72,32 +97,53 @@
                         $tablinkLbl = 'Year ' . $row['module_year'];
                     }
                 ?>
-                    <button class="btn tab-link" onclick="openCity(event, 'London')"><b><?php echo $tablinkLbl ?></b></button>
+                    <button class="btn tab-link" onclick="openPage('<?php echo $tablinkLbl ?>', this)"><b><?php echo $tablinkLbl ?></b></button>
                 <?php endforeach; ?>
             </div>
-            <?php foreach ($moduleYearResult as $key => $row):
-                $desc = ""; 
+            <?php foreach ($moduleYear as $key => $row):
+                $contentYear = "Elective";
+
+                $desc = "";
 				if ($row['module_year'] === '1') {
                     $desc = $courseInfo['course_year1_description'];
+                    $contentYear = 'Year ' . $row['module_year'];
                 }
                 else if ($row['module_year'] === '2') {
                     $desc = $courseInfo['course_year2_description'];
+                    $contentYear = 'Year ' . $row['module_year'];
                 }
                 else if ($row['module_year'] === '3') {
                     $desc = $courseInfo['course_year3_description'];
+                    $contentYear = 'Year ' . $row['module_year'];
                 }
                 else if ($row['module_year'] === 'Elective') {
                     $desc = $courseInfo['course_elective_description'];
                 }
             ?>
-                <div class="tab-content">
-                    <p><?php echo $desc ?></p>
-                    <?php echo $row['module_year'] ?>
+
+            <div id="<?php echo $contentYear ?>" class="tab-content">
+                <p><?php echo $desc ?></p>
+                <div class="modules">
+                <?php foreach ($courseModule as $key => $modules): ?>
+                    <?php if ($key == $row['module_year']): ?>
+                        <?php foreach ($modules as $key => $module): ?>
+                            <div class="card filterDiv <?php echo $module['job_string'] ?>">
+                            <a id="<?php echo $module['module_id'] ?>" class="card-body">
+                            <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $module["item_path"] ?>" alt="Module Image">
+                            <h6 class="card-title"><?php echo $module['module_name'] ?></h6>
+                            </a>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
                 </div>
+            </div>
             <?php endforeach; ?>
+
         </div>
     </section>
 
 </main>
+<script src="<?php echo $helper->jsPath("modules.js") ?>" ></script>
 <?php include $helper->subviewPath('footer.php') ?>
 </html>
