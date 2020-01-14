@@ -152,9 +152,9 @@ CREATE TABLE Project
   project_id INT(4) NOT NULL AUTO_INCREMENT,
   project_name VARCHAR(50) NOT NULL,
   project_desc TEXT DEFAULT NULL,
-  module_id INT(4) NOT NULL,
+  id INT(4) NOT NULL,
   CONSTRAINT pk_project PRIMARY KEY (project_id),
-  CONSTRAINT fk_project_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id)
+  CONSTRAINT fk_project_id FOREIGN KEY (id) REFERENCES Course(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE ElectiveModule
@@ -796,8 +796,27 @@ INSERT INTO Module(module_id, module_name, module_description) VALUES
 ;
 
 /*------ Project -------*/
-INSERT INTO Project(project_id, project_name, project_desc, module_id) VALUES
-(1, "Test Project", "Project Testing", 1);
+INSERT INTO Project(project_id, project_name, project_desc, id) VALUES
+/*------ Information Technology -------*/
+(1, 'Patch', 'A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 1),
+(2, 'Clip Go', 'Our team will be inventing a product that addresses the issues faced by working adults when using the Healthy 365 mobile application and HPB Steps Tracker, as well as the National Steps Challenge, to better suit the needs of its users. We brainstormed and integrated ideas on how to implement all users’ requirements into creating a product that works similarly to the Healthy 365 mobile application, the HPB Steps Tracker, as well as the National Steps Challenge.', 1),
+(3, 'Purple Project', 'Work with Bethesda care to minimize manual processes by simplifying then with a few clicks. Through a website, we are trying to achieve higher productivity rates',1),
+
+/*------ Financial Informatics -------*/
+(4, '-', 'Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',2),
+
+/*------ Immersive Media -------*/
+(5, 'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',3),
+
+/*------ Cybersecurity & Digital Forensics -------*/
+(6, 'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',4),
+
+/*------ Common ICT Programme -------*/
+(7, 'Patch','A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 5),
+(8, '-','Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',5),
+(9,'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',5),
+(10,'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',5)
+;
 
 /*------ ElectiveModule -------*/
 INSERT INTO ElectiveModule(elective_id,module_id) VALUES
@@ -994,7 +1013,25 @@ INSERT INTO Item(item_id, item_path, item_type, module_id) VALUES
 
 /*------ Item (Project) -------*/
 INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES 
-(113, '/', 'Image', 1);
+/*------ Information Technology-------*/
+(113, 'assets/img/projects/IT1.png', 'Image', 1),
+(114, 'assets/img/projects/IT2.jpg', 'Image', 2),
+(115, 'assets/img/projects/IT3.png', 'Image', 3),
+
+/*------ Financial Information-------*/
+(116, 'assets/img/projects/FI1.png', 'Image', 4),
+
+/*------ Immersive Media-------*/
+(117, 'assets/img/projects/IM1.png', 'Image', 5),
+
+/*------ Cybersecurity & Digital Forensics-------*/
+(118, 'assets/img/projects/CSF1.png', 'Image', 6),
+
+/*------ Common ICT-------*/
+(119, 'assets/img/projects/IT1.png', 'Image', 7),
+(120, 'assets/img/projects/FI1.png', 'Image', 8),
+(121, 'assets/img/projects/IM1.png', 'Image', 9),
+(122, 'assets/img/projects/CSF1.png', 'Image',10);
 
 
 /*------ Modules with Jobs-------*/
