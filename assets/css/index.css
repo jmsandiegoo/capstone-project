@@ -154,7 +154,10 @@
     border-radius: 0.5em;
 }
 
-
+.col-md-4.courses{
+    flex: 0 0 40% !important;
+    max-width:40% !important;
+}
 
 /* Media Queries for index php */
 
@@ -162,6 +165,7 @@
     .fp-controlArrow.fp-prev, .fp-controlArrow.fp-next{
         display:none !important;
     }
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -229,6 +233,7 @@
         font-size: .875rem;
         line-height: 1.5;
         border-radius: .2rem;
+        width:100%;
     }
 
     .rounded-circle{
@@ -264,4 +269,7 @@
     border-radius: 99em;
     border: 5px solid white;
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
+}
+.course-career{
+    background-color:#380E7F;
 }
