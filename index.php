@@ -43,8 +43,18 @@
         <div id="fullpage">
             <div class="section" id="section-header">
                 <div class="container">
-                    <h2>WELCOME TO</h2>
-                    <h1>THE SCHOOL OF INFOCOMM </br> TECHNOLOGY</h1>
+                    <div class="card flex-row flex-wrap intro">
+                        <div class="card-header intro" style="float:left;">
+                            <img class="img-fluid" src="assets/img/General/BG_Logo.png" alt="Logo Image" data-holder-rendered="true">                                                                  
+                        </div>
+                        <div class="card-block px-2 justify-content-center" style="float:right; padding-top:50px;">
+                            <h1 >OPEN HOUSE</h1>
+                            <h2><span class="welcome-text">WELCOME TO ICT,</span><span class="short-text"> Taking IT Higher </span></h2>
+                            <h2 class="hidden-text"> Taking IT Higher </h2>
+                                        
+                        </div>
+                    </div>
+                    <br>
                 </div>
             </div>
             <div class="section" id="section-overview">
@@ -80,7 +90,7 @@
                 <div class="section" id="<?php echo 'section-' . $row['id']?>">
                     <!-- Slide 1 -->
                     <div class="slide" id="<?php echo 'slide1-' . $row['id']?>" data-anchor="0">
-                            <div class="container courseTitle">
+                            <div class="container courseTitle" >
                                 <div class="row">
                                     <div class="col-md-7">                      
                                         <h1>Diploma in </br> <?php echo $row['course_name'] ?></h1>
@@ -95,7 +105,7 @@
                     <div class="slide" id="<?php echo 'slide2-' . $row['id']?>" data-anchor="1">
                         <div class="container-fluid">
                             <div class="course-information">
-                                <div class="container">
+                                <div class="container" style="padding-top:20px">
                                     <h1><i class="question-icon"></i> Course Information</h1>
                                     <p><?php echo $row['course_description'] ?></p>
                                 </div>
@@ -307,3 +317,4 @@
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
 </html>
+
