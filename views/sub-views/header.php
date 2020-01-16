@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo $helper->cssPath("shared.css") ?>"/>
     <link rel="stylesheet" href="<?php echo $helper->cssPath("index.css") ?>"/>
     <link rel="stylesheet" href="<?php echo $helper->cssPath("modules.css") ?>"/>
+    <link rel="stylesheet" href="<?php echo $helper->cssPath("faq.css") ?>"/>
     <link rel="stylesheet" href="<?php echo $helper->cssPath("dynamicStyle.php") ?>"/>
 </head>
 <body>

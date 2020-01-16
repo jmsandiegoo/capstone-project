@@ -1,0 +1,57 @@
+#myBtnContainer-faq {
+    margin: 2rem -5px;
+    position: relative;
+}
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+  
+  .tg-btn{
+    font-size:16px;
+    font-weight:500;
+    text-align:center;
+    border-radius:8px;
+    padding:5px;
+    background:#389ce9;
+    text-decoration:none;
+    color:#fff;
+  }
+  
+  .tg-btn-box{
+    width:30px;
+    height:20px;
+    vertical-align:middle;
+    margin:0px 5px;
+  }
