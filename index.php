@@ -23,6 +23,13 @@
     while ($row = $db->fetch_array($result9)) {
         $resultArray2[] = $row;
     }
+    $sql6 = "SELECT * FROM Course";
+    $result1 = $db->query($sql6);
+    $resultArray3 = [];
+
+    while ($row = $db->fetch_array($result1)) {
+        $resultArray3[] = $row;
+    }
     $db->close();
 
     $img = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80";
@@ -57,32 +64,40 @@
                     <br>
                 </div>
             </div>
+            
             <div class="section" id="section-overview">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <?php foreach ($resultArray as $key => $row): ?>
-                            <div class="col-xs-6 col-md-4 courses d-flex align-items-stretch justify-content-center">
-                                <div class="card text-center course-card" style="cursor: pointer;" onclick="window.location='#<?php echo $row['id']?>';">
-                                    <?php 
-                                        $db = new Mysql_Driver();
-                                        $db->connect();
-                                        $sql3 = "SELECT * FROM Item WHERE course_id = " . $row['id'] . " AND item_path LIKE '%BG_1.jpg'";
-                                        $result3 = $db->query($sql3);
-                                        $db -> close();
-                                        while ($row3 = $db->fetch_array($result3)): 
-                                    ?>
-                                    <img class="img-fluid" src="<?php echo $row3["item_path"] ?>" alt="Course Image">                                    
-                                    <?php endwhile; ?>
-                                    <div class="card-body">
+                <div class="container cour">
+                <?php foreach ($resultArray3 as $key => $row): ?>
+                    <div class="card courses">
+                        <a href="#<?php echo $row["id"]?>">
+                        <div class="row no-gutters">
+                        
+                        <?php 
+                            $db = new Mysql_Driver();
+                            $db->connect();
+                            $sql3 = "SELECT * FROM Item WHERE course_id = " . $row['id'] . " AND item_path LIKE '%BG_1.jpg'";
+                            $result3 = $db->query($sql3);
+                            $db -> close();
+                            while ($row3 = $db->fetch_array($result3)): 
+                        ?>
+                            <div class="col-auto">
+                                <img style="height:100px" src="<?php echo $row3["item_path"] ?>" class="img-fluid" alt="">
+                            </div>
+                                                         
+                            <?php endwhile; ?>
+                            <div class="col info">
                                     <script>courseName.push("<?=$row['course_name']?>")</script>
                                     <script>cid.push("<?=$row['id']?>")</script>
+                                <div class="card-block px-2">
                                         <h5 class="card-title"><?php echo $row['course_name'] ?></h5>
                                         <h6 class="card-subtitle"><?php echo $row['course_short_description'] ?></h6>
-                                    </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                        </div>
+                        </a>
                     </div>
+                        
+                    <?php endforeach; ?>
                 </div>
             </div>
             <!-- For Courses except Common ICT -->
@@ -240,9 +255,12 @@
                                     <div class="course-wrapper">
                                         <p>In Year 1, Students are given an opportunity to learn modules from other courses in ICT.</br>
                                         Upon completion of Year 1 modules, Students are to continue their education by selecting the following courses:</br>
+                                        </p> 
+                                        <div class="referModule">
                                         <?php foreach($resultArray as $key => $row): ?>
-                                        <a id="course-btn" class="btn btn-light" href="<?php echo "index.php#".$row["id"]."/1"?>"><?php echo $row["course_name"]?></a>
-                                        <?php endforeach; ?></p>                             
+                                            <a id="course-btn" class="btn btn-light" href="<?php echo "index.php#".$row["id"]."/1"?>"><?php echo $row["course_name"]?></a>   
+                                        <?php endforeach; ?>    
+                                        </div>                         
                                     </div>
                                 </div>
                             </div>                           
