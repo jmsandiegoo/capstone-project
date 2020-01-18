@@ -11,21 +11,21 @@ class Mysql_Driver
      */ 
     public function connect()
     {
-		
+		/*
 		//MAMP Config
 		//connection parameters
 		$host = 'localhost:8889';
 		$user = 'root';
 		$password = 'root';
 		$database = 'ict_open_house';
-		
+		*/
 		
 		// XAMPP Config
         //connection parameters
-        // $host = 'localhost';
-        // $user = 'root';
-        // $password = '';
-		// $database = 'ict_open_house'; 
+         $host = 'localhost';
+         $user = 'root';
+         $password = '';
+		 $database = 'ict_open_house'; 
 		
     
         $this->connection = mysqli_connect($host, $user, $password, $database);

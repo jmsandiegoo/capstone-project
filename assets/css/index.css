@@ -11,7 +11,38 @@
 
     background-size: cover;
 }
+.container.cour{
+    display: flex;
 
+  flex-flow: row wrap;
+}
+.col.info{
+    position: relative;
+    top: 50%;
+
+}
+.card.courses{
+    background-color:black;
+    color:white;
+    flex:0 0 48%;
+    max-width:48%;
+    float:left;
+    align-items:stretch;
+    margin:9px 9px 9px 9px;
+    text-align:center;
+    justify-content:center;
+    border:0px !important;
+}
+
+.card.courses h6{
+    font-weight:50;
+    color:grey;
+}    
+.card.courses a{
+
+    text-decoration:none;
+    color:white;
+}
 #section-header h1 {
     font-size: 6rem;
     margin-bottom:0;
@@ -176,8 +207,8 @@
 }
 
 .col-md-4.courses{
-    flex: 0 0 40% !important;
-    max-width:40% !important;
+    flex: 0 0 33.333333% !important;
+    max-width:33.333333% !important;
 }
 /* Media Queries for index php */
 
@@ -186,14 +217,21 @@
         display:none !important;
     }
 
-    .col-md-4.courses{
+    .card.courses{
         flex:0 0 100% !important;
-        max-width:100% !important;
+        max-width:80% !important;
+        display:block !important;
+        height:7vw;
     }.card-header.intro{
         display:none;}
-    .course-card img {
-            display: none;
-        }
+    .col-auto img{
+
+        height:7vw !important;
+    }
+    .container.cour{
+        justify-content: center !important;
+    }
+    
 }
 
 @media only screen and (max-width: 767px) {
@@ -203,15 +241,17 @@
     #section-header h2 {
         font-size: 7.5vw;
     }
-
-    .course-card {
-        width: 80%;
+    .col-auto img {
+        display: none;
+    }
+    .card.courses {
+        height:10vw;
     }
 
-    .course-card h5 {
-        font-size: 18px;
+    .card.courses h5 {
+        font-size: 3vw;
     }
-    .course-card h6 {
+    .card.courses h6 {
         font-size: 2.5vw;
     }
 
