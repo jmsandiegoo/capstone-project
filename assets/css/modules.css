@@ -41,12 +41,7 @@
 
 .module-wrapper .tabs {
   display: flex;
-}
-
-.module-wrapper .tab-link {
-  margin: 0px;
-  border-radius: 0px;
-  margin-right: 10px;
+  margin: 0px -5px;
 }
 
 .module-wrapper .tab-content {
@@ -94,8 +89,6 @@
 .module-wrapper .modules .card .card-title {
     font-size: 1rem;
 }
-
-
 
 .module-wrapper .modules .card::after {
     content: '';
@@ -183,7 +176,7 @@
     margin: 5px; */
 }
 
-.filter-btn:hover,
+.filter-btn:hover, .tab-link:hover,
 .module-wrapper .active {
   background-color: #5904bf;
   color: white;
@@ -193,18 +186,14 @@
 
 .tab-link {
   border: 1px solid #5904bf;
-  margin: 10px;
-  border-radius: 3px;
   color: black;
   cursor: pointer;
   transition: 0.3s;
   min-width: 175px;
-}
 
-.tab-link:hover,
-.module-wrapper .active {
-  background-color: #5904bf;
-  color: white;
+  margin: 0px 5px;
+  border-radius: 0px;
+  border-bottom: none;
 }
 
  /* Module Overlay */
@@ -277,6 +266,12 @@
 
     .module-wrapper .modules .card .card-title {
         font-size: 0.75rem;
+    }
+
+    .module-wrapper .tab-link {
+      min-width: 0;
+      flex-grow: 1;
+
     }
 }
 

@@ -32,7 +32,7 @@ function w3RemoveClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-// Add active class to the current button (highlight it)
+// Add active class to the current button filters (highlight it)
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("filter-btn");
 for (var i = 0; i < btns.length; i++) {
@@ -43,15 +43,33 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
-// Event for tablinks
-// function openPage('Year 1', document.getE)
+// Add active class to the clicked tab btn
+var tabBtns = document.querySelectorAll(".tabs .tab-link");
+for (var i = 0; i < tabBtns.length; i++) {
+    tabBtns[i].addEventListener("click", function() {
+        var current = document.querySelectorAll(".tab-link.active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    })
+}
 
-function openPage(pageName, elmnt) {
+// Event for tablinks
+openPage('Year 1');
+
+function openPage(pageName, button = null) {
     // Hide all elements with class="tabcontent" by default */
     var i, tabcontent, tablinks;
+
+    // Hide all tabs first and remove active
     tabcontent = document.getElementsByClassName("tab-content");
+
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
+    }
+
+    if (!button) {
+        var tabBtns = document.querySelectorAll(".tabs .tab-link");
+        tabBtns[0].classList.add("active");
     }
 
     // Show the specific tab content
@@ -100,6 +118,7 @@ var closeBtn = document.querySelector(".moduleInfoOverlay .close-overlay")
 closeBtn.addEventListener("click", function() {
     closeModuleOverlay()
 })
+
 // close overlay
 function closeModuleOverlay() {
     var moduleOverlay = document.querySelector(".moduleInfoOverlay");
