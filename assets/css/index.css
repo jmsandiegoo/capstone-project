@@ -33,6 +33,16 @@
     justify-content:center;
     border:0px !important;
 }
+.referModule{
+    display: flex;
+    flex-flow: wrap;
+    align-items: stretch;
+    justify-content: stretch;
+}
+.referModule a{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
 
 .card.courses h6{
     font-weight:50;
@@ -256,7 +266,7 @@
     }
 
     .course-information h1, .course-career h1 {
-        font-size: 7.2vw !important;
+        font-size: 4.2vw !important;
     }
 
     .course-entry h1 {
@@ -281,10 +291,10 @@
     
     }
     #categoryjob{
-        font-size: 4.0vw !important;
+        font-size: 3.5vw !important;
     }
     #categoryjobname{
-        font-size:3.0vw !important;
+        font-size:2.5vw !important;
     }
     .card-body1.category{    
         flex-basis: calc(100% / 3) !important;
@@ -309,7 +319,7 @@
         display:none !important;
     }
     #course-btn{
-        font-size:3.5vw;
+        font-size:2.5vw;
     }
     .short-text{
         display:none;

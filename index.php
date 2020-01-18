@@ -255,9 +255,12 @@
                                     <div class="course-wrapper">
                                         <p>In Year 1, Students are given an opportunity to learn modules from other courses in ICT.</br>
                                         Upon completion of Year 1 modules, Students are to continue their education by selecting the following courses:</br>
+                                        </p> 
+                                        <div class="referModule">
                                         <?php foreach($resultArray as $key => $row): ?>
-                                        <a id="course-btn" class="btn btn-light" href="<?php echo "index.php#".$row["id"]."/1"?>"><?php echo $row["course_name"]?></a>
-                                        <?php endforeach; ?></p>                             
+                                            <a id="course-btn" class="btn btn-light" href="<?php echo "index.php#".$row["id"]."/1"?>"><?php echo $row["course_name"]?></a>   
+                                        <?php endforeach; ?>    
+                                        </div>                         
                                     </div>
                                 </div>
                             </div>                           
