@@ -1,22 +1,39 @@
 /* Index.php styles */
 
 #section-header {
-    background-size: cover;
-    background-image: url("../img/General/BG_Index.png");
     color: white;
     text-align: center;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5)
+      ),url("../img/General/BG_Index.png");
+
+    background-size: cover;
 }
 
 #section-header h1 {
-    font-size: 3.5rem;
+    font-size: 6rem;
+    margin-bottom:0;
 }
 
 #section-header h2 {
-    font-size: 2.2rem;
-    border-bottom: 4px solid white;
+    font-size: 2.5rem;
     display: inline-block;
-    padding: 0 2rem 0.5rem 2rem;
+}
+
+.card.intro, .card-header.intro{
+    background-color: transparent;
+    border:none;
+    display:inline-block;
+}
+.short-text{
+    font-weight:250;
+    font-size:0.7em;
+}
+
+#section-header p{
+    font-size:2em;
 }
 
 .course-card {
@@ -47,8 +64,7 @@
     background: #181818;
 }
 
-.course-career {
-}
+
 
 .course-career .job-wrapper {
     display: flex;
@@ -121,6 +137,11 @@
     font-weight: bold;
 }
 
+.hidden-text{
+    font-weight:250;
+    font-size:0.7em;
+    display:none !important;
+}
 
 #sectionfooter {
     background-size: cover;
@@ -158,7 +179,6 @@
     flex: 0 0 40% !important;
     max-width:40% !important;
 }
-
 /* Media Queries for index php */
 
 @media only screen and (max-width: 1110px) {
@@ -166,6 +186,11 @@
         display:none !important;
     }
 
+    .col-md-4.courses{
+        flex:0 0 100% !important;
+        max-width:100% !important;
+    }.card-header.intro{
+        display:none;}
 }
 
 @media only screen and (max-width: 767px) {
@@ -244,6 +269,18 @@
     }
     #course-btn{
         font-size:3.5vw;
+    }
+    .short-text{
+        display:none;
+    }
+    .hidden-text{
+        font-weight:250 !important;
+        font-size:1.2em !important;
+        display:block !important;
+        width:100%;
+    }
+    .navbar{
+        background-color: rgba(0, 0, 0, 0.99) !important;
     }
     
 }

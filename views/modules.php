@@ -28,6 +28,16 @@
         $jobName[] = $row;
     }
 
+    // Retrieving the project information
+    $db = new Mysql_Driver();
+    $db->connect(); 
+    $sql = "SELECT * FROM Project WHERE id=$id";
+    $projectInfoResult = $db->query($sql);
+    $projectInfo = [];
+    while ($row = $db->fetch_array($projectInfoResult)) {
+      $projectInfo[] = $row;
+    }
+
     // Fetch Module_Year for IT Courses
     $sql = "SELECT DISTINCT module_year FROM CourseModule WHERE id=$id ORDER BY module_year ASC";
     $moduleYearResult = $db->query($sql);
@@ -141,8 +151,45 @@
             <?php endforeach; ?>
 
         </div>
-    </section>
 
+    </section>
+    <section class="project-content container">
+        <h1>Project Portfolio</h1>
+        <div id="projectSlider" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <?php foreach ($projectInfo as $key => $row): ?>
+            <?php if($key === 0): ?>
+                <li data-target="#projectSlider" data-slide-to="<?php echo $key?>" class="active"></li>
+              <?php else:?>
+                <li data-target="#projectSlider" data-slide-to="<?php echo $key?>"></li>
+            <?php endif?>
+          <?php endforeach; ?>
+        </ul>
+        
+        <div class="carousel-inner">
+          <?php foreach ($projectInfo as $key => $row): ?>
+            <?php if($key === 0): ?>
+              <div class="carousel-item active">
+                <a href="#!">
+                <img class="card-img" src="http://placehold.it/400x400" alt='<?php echo $row['project_name']?>'></a>
+              </div>
+            <?php else:?>
+              <div class="carousel-item">
+                <a href="#!"><img class="card-img" src="http://placehold.it/400x400" alt='<?php echo $row['project_name']?>'></a>
+              </div>
+            <?php endif?>
+          <?php endforeach; ?>
+        </div>
+
+        <a class="carousel-control-prev" href="#projectSlider" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#projectSlider" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      </div>
+			</section>
 </main>
 <script src="<?php echo $helper->jsPath("modules.js") ?>" ></script>
 <?php include $helper->subviewPath('footer.php') ?>

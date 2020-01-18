@@ -207,8 +207,10 @@ CREATE TABLE Appointment
   chat_id bigint NULL DEFAULT NULL COMMENT 'Unique user or chat identifier',
   is_general TINYINT(1) NOT NULL,
   appointment_name VARCHAR(100) NOT NULL,
-  appointment_status ENUM('Pending', 'Now Serving', 'Finished') DEFAULT 'Pending' NOT NULL,
-  appointment_createdate DATETIME NOT NULL,
+  appointment_status ENUM('Pending', 'Now Serving', 'Finished', 'Cancelled') DEFAULT 'Pending' NOT NULL,
+  appointment_createdate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  appointment_lastcalled DATETIME DEFAULT NULL,
+  appointment_calls INT(4) DEFAULT 0 NOT NULL,
   course_id INT(4) DEFAULT NULL,
   phoneNumber varchar(20) DEFAULT NULL COMMENT 'User phone number',
   CONSTRAINT pk_appointment PRIMARY KEY (appointment_id),
@@ -500,11 +502,14 @@ CREATE TABLE IF NOT EXISTS `request_limiter` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
-CREATE TABLE FAQ 
+CREATE TABLE FAQ
 (
-  faq_id INT(4) NOT NULL,
-  CONSTRAINT pk_faq PRIMARY KEY (faq_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  question_id INT(4) NOT NULL,
+  question_text TEXT DEFAULT NULL,
+  question_answer TEXT DEFAULT NULL,
+  CONSTRAINT pk_item PRIMARY KEY (question_id)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 /*******************************************************************************/
 /***                              Add data to table                          ***/
@@ -1097,3 +1102,14 @@ INSERT INTO ModuleJob(job_id, module_id) VALUES
 (20,63), (20,64), (20,74), (20,41), (20,42), (20,43), (20,54), (20,55), (20,7),
 (37, 14), (37, 20), (37, 63), (37, 64), (37, 74),
 (13, 22), (13, 44), (13, 1), (13, 6), (13, 49);
+
+INSERT INTO FAQ(question_id,question_text,question_answer) VALUES
+(1,'What are the internship opportunities if I enter this school?','Answer 1'),
+(2,'What will the course structure of the school be like? What will I learn in (IT/FI/IM/CDF)?','Answer 2'),
+(3,'What are the possible FYPs or Capstone Projects that students will be asked to do in the school?','Answer 3'),
+(4,'What scholarship opportunities does your school offer?','Answer 4'),
+(5,'What University degrees/courses will I be able to apply to after I graduate?','Answer 5'),
+(6,'What are the Further Progression opportunities are there upon graduation?','Answer 6'),
+(7,'Difference between games in IM and games in IT','Answer 7'),
+(8,'Which course in the school should I enter?','Answer 8'),
+(9,'why should i choose this school?','Answer 9');
