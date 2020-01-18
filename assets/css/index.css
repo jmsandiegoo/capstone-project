@@ -191,6 +191,9 @@
         max-width:100% !important;
     }.card-header.intro{
         display:none;}
+    .course-card img {
+            display: none;
+        }
 }
 
 @media only screen and (max-width: 767px) {
@@ -204,9 +207,7 @@
     .course-card {
         width: 80%;
     }
-    .course-card img {
-        display: none;
-    }
+
     .course-card h5 {
         font-size: 18px;
     }
