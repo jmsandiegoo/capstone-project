@@ -10,7 +10,7 @@
     {
         $module_id = $_GET["module_id"];
         $db->connect();
-        $query = "SELECT * FROM Module WHERE module_id=$module_id";
+        $query = "SELECT m.*, i.item_path FROM Module m INNER JOIN Item i ON m.module_id = i.module_id WHERE m.module_id=$module_id";
         $moduleInfoResult = $db->query($query);
         // $moduleInfo = $db->fetch_array($moduleInfoResult);
 

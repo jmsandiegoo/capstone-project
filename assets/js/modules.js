@@ -54,26 +54,19 @@ for (var i = 0; i < tabBtns.length; i++) {
 }
 
 // Event for tablinks
-openPage('Year 1');
+openTab('year-1', true);
 
-function openPage(pageName, button = null) {
-    // Hide all elements with class="tabcontent" by default */
-    var i, tabcontent, tablinks;
-
-    // Hide all tabs first and remove active
-    tabcontent = document.getElementsByClassName("tab-content");
-
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-
-    if (!button) {
+function openTab(tabName, firstLoad = false) {
+    // Set the default current tab-link
+    if (firstLoad) {
         var tabBtns = document.querySelectorAll(".tabs .tab-link");
         tabBtns[0].classList.add("active");
     }
 
-    // Show the specific tab content
-    document.getElementById(pageName).style.display = "block";
+    // Hide all elements with class="tabcontent" by default 
+    $(".tab-content").hide();
+    console.log(`.${tabName}`);
+    $(`.${tabName}`).fadeIn(800);
 }
 
 // Adding on click in module cards
@@ -104,24 +97,18 @@ function getAjaxModuleInfo(module_id) {
 
 function populateModuleOverlay(moduleObj) {
 
-    var moduleOverlay = document.querySelector(".moduleInfoOverlay");
-    var moduleName = document.querySelector(".moduleInfoOverlay .module-name");
-    var moduleDescription = document.querySelector(".moduleInfoOverlay .module-description");
+    var moduleName = document.querySelector(".module-modal .modal-body .title");
+    var moduleImg = document.querySelector(".module-modal .modal-body .image");
+    var moduleDescription = document.querySelector(".module-modal .modal-body .description");
 
     moduleName.innerHTML = moduleObj.module_name;
+    moduleImg.src = `../${moduleObj.item_path}`;
     moduleDescription.innerHTML = moduleObj.module_description;
-    moduleOverlay.classList.add("show");
+    $('.module-modal').modal('show');
 }
 
-var closeBtn = document.querySelector(".moduleInfoOverlay .close-overlay")
+var closeBtn = document.querySelector(".module-modal .close-modal")
 
 closeBtn.addEventListener("click", function() {
-    closeModuleOverlay()
+    $('.module-modal.in').modal('hide');
 })
-
-// close overlay
-function closeModuleOverlay() {
-    var moduleOverlay = document.querySelector(".moduleInfoOverlay");
-
-    moduleOverlay.classList.remove("show");
-}

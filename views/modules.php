@@ -107,49 +107,49 @@
                         $tablinkLbl = 'Year ' . $row['module_year'];
                     }
                 ?>
-                    <button class="btn tab-link" onclick="openPage('<?php echo $tablinkLbl ?>', this)"><b><?php echo $tablinkLbl ?></b></button>
+                    <button class="btn tab-link" onclick="openTab('<?php echo 'year-'.$row['module_year'] ?>')"><b><?php echo $tablinkLbl ?></b></button>
                 <?php endforeach; ?>
             </div>
+
+            <div class="tab-contents">
             <?php foreach ($moduleYear as $key => $row):
                 $contentYear = "Elective";
 
                 $desc = "";
 				if ($row['module_year'] === '1') {
                     $desc = $courseInfo['course_year1_description'];
-                    $contentYear = 'Year ' . $row['module_year'];
                 }
                 else if ($row['module_year'] === '2') {
                     $desc = $courseInfo['course_year2_description'];
-                    $contentYear = 'Year ' . $row['module_year'];
                 }
                 else if ($row['module_year'] === '3') {
                     $desc = $courseInfo['course_year3_description'];
-                    $contentYear = 'Year ' . $row['module_year'];
                 }
                 else if ($row['module_year'] === 'Elective') {
                     $desc = $courseInfo['course_elective_description'];
                 }
             ?>
-
-            <div id="<?php echo $contentYear ?>" class="tab-content">
-                <p><?php echo $desc ?></p>
-                <div class="modules">
-                <?php foreach ($courseModule as $key => $modules): ?>
-                    <?php if ($key == $row['module_year']): ?>
-                        <?php foreach ($modules as $key => $module): ?>
-                            <div class="card filterDiv <?php echo $module['job_string'] ?>">
-                            <a id="<?php echo $module['module_id'] ?>" class="card-body">
-                            <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $module["item_path"] ?>" alt="Module Image">
-                            <h6 class="card-title"><?php echo $module['module_name'] ?></h6>
-                            </a>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                <div class="tab-content year-<?php echo $row['module_year'] ?>">
+                    <h4>Description</h4>
+                    <p><?php echo $desc ?></p>
+                    <h4>Modules</h4>
+                    <div class="modules">
+                    <?php foreach ($courseModule as $key => $modules): ?>
+                        <?php if ($key == $row['module_year']): ?>
+                            <?php foreach ($modules as $key => $module): ?>
+                                <div class="card filterDiv <?php echo $module['job_string'] ?>">
+                                <a id="<?php echo $module['module_id'] ?>" class="card-body">
+                                <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $module["item_path"] ?>" alt="Module Image">
+                                <h6 class="card-title"><?php echo $module['module_name'] ?></h6>
+                                </a>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    </div>
                 </div>
-            </div>
             <?php endforeach; ?>
-
+            </div>
         </div>
 
     </section>
@@ -189,8 +189,9 @@
         </a>
       </div>
       </div>
-			</section>
+    </section>
+    <?php include $helper->subviewPath('moduleInfoOverlay.php') ?>
 </main>
-<script src="<?php echo $helper->jsPath("modules.js") ?>" ></script>
 <?php include $helper->subviewPath('footer.php') ?>
+<script src="<?php echo $helper->jsPath("modules.js") ?>" ></script>
 </html>
