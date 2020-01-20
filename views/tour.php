@@ -9,7 +9,7 @@
     <?php include $helper->subviewPath('header.php')?>
     <main class="container">
         <h1 class="text-center">Map</h1>
-        <img src='../assets/img/tourmap/TourMap.png' alt="Tour Map">
+        <img src='../assets/img/tourmap/TourMap.png' alt="Tour Map" width="100%" height="100%">
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
 
