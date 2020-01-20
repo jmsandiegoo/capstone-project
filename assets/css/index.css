@@ -13,8 +13,7 @@
 }
 .container.cour{
     display: flex;
-
-  flex-flow: row wrap;
+    flex-flow: row wrap;
 }
 .col.info{
     position: relative;

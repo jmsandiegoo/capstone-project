@@ -1,0 +1,20 @@
+.project-wrapper .row{
+  border: 2px solid #5904bf;
+  margin: 1em auto;
+}
+
+.project-wrapper .project-right {
+  border-left: 1px solid gray;
+  padding: 1%;
+  margin: 0 auto;
+}
+
+.project-wrapper .project-image{
+  border: 1px solid white;
+}
+
+@media only screen and (max-width: 540px) {
+  .project-wrapper .project-right {
+    border-left: none;
+  }
+}

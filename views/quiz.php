@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    <?php include $helper->subviewPath('navbar.php')?>
     <?php include $helper->subviewPath('header.php') ?>
     <main class="container">
         <h1>Course Quiz! Discover the right course for you</h1>
