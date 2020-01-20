@@ -16,47 +16,57 @@
     }
     $projectInfo = $projectInfo[0];
 
+    // Retrieving the project's course information
+    $sql = "SELECT * FROM Course WHERE id=".$projectInfo['id'];
+    $projectCourseResult = $db->query($sql);
+    $projectCourse = [];
+    while ($row = $db->fetch_array($projectCourseResult)) {
+      $projectCourse[] = $row;
+    }
+    $projectCourse = $projectCourse[0];
+
     // Fetch the background
     $sql = "SELECT * FROM Item WHERE project_id = " . $id;
     $projectItemResult = $db->query($sql);
     $row = $db->fetch_array($projectItemResult);
     $projectImagePath = '../' . $row['item_path'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    
 <?php include $helper->subviewPath('header.php') ?> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <main class="project-wrapper">
       <?php include $helper->subviewPath('navbar.php') ?>  
+
       <!--<section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(<?php //echo $backgroundPath ?>);">-->
       <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25))"> 
         <h1>
           <?php echo $projectInfo['project_name']; ?>  
         </h1>
       </section>
-      <body>
-      <section class="project-image container">
-        <div class="project-content">
-          <div class="project-product">
-            <img src="<?php echo $projectImagePath ?>" class="img-fluid" alt="Responsive image">
+
+      <section class="project-content container">
+        <div class="projectContainer">
+          <div class="project-contents">
+            <div class="left-half">
+              <article>
+                <h1><?php echo $projectInfo['project_name']; ?></h1>
+                <p><?php echo $projectCourse['course_name']; ?></p>
+                <p><?php echo $projectInfo['project_desc']; ?></p>
+              </article>
+            </div>
+            <div class="right-half">
+              <article>
+                <img src="<?php echo $projectImagePath ?>" class="img-fluid" alt="Responsive image">  
+              </article>
+            </div>
           </div>
         </div>
       </section>
-      <section class="project-description container">
-            <?php echo $projectInfo['project_desc']; ?>  
-      </section>
-      <section class="project-popup">
-        <div class="project-popup-div">
-          <div class="project-content">
-            <a style="color: #f00;display: block;position: absolute;text-decoration: navajowhite;transform: rotate(45deg);font-size: 50px;right: 10px;top: 10px;">+</a>
-            <strong>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</strong>
-            <br />
-            "a"
-            <strong>1914 translation by H. Rackham</strong><br />
-            "b"
-          </div>
-        </div>
-      </section>
-      </body>
+      
     </main>
     
     <script src="<?php echo $helper->jsPath("projects.js") ?>" ></script>
