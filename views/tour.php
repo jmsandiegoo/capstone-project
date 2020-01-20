@@ -5,9 +5,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php include $helper->subviewPath('header.php') ?>
+    <?php include $helper->subviewPath('navbar.php')?>
+    <?php include $helper->subviewPath('header.php')?>
     <main class="container">
-        <h1>Tour and Navigation Page</h1>
+        <h1 class="text-center">Map</h1>
+        <img src='../assets/img/tourmap/TourMap.png' alt="Tour Map">
     </main>
     <?php include $helper->subviewPath('footer.php') ?>
 
