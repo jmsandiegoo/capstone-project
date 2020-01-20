@@ -47,23 +47,28 @@
           <?php echo $projectInfo['project_name']; ?>  
         </h1>
       </section>
-
+<!--https://getbootstrap.com/docs/4.0/layout/grid/-->
       <section class="project-content container">
         <div class="projectContainer">
-          <div class="project-contents">
-            <div class="left-half">
-              <article>
+          <div class="row"> 
+
+            <div class="col-sm-6">
+              <div class="project-left">
                 <h1><?php echo $projectInfo['project_name']; ?></h1>
-                <p><?php echo $projectCourse['course_name']; ?></p>
+                <p style="font-style:italic;"><?php echo $projectCourse['course_name']; ?></p>
                 <p><?php echo $projectInfo['project_desc']; ?></p>
-              </article>
+              </div>
             </div>
-            <div class="right-half">
-              <article>
-                <img src="<?php echo $projectImagePath ?>" class="img-fluid" alt="Responsive image">  
-              </article>
-            </div>
-          </div>
+
+            <div class="col-sm-6">
+              <div class="project-right">
+                <div class="project-image">
+                  <img src="<?php echo $projectImagePath; ?>" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
+            </div> 
+
+          </div> 
         </div>
       </section>
       
