@@ -104,10 +104,14 @@ CREATE TABLE Category
 
 CREATE TABLE CategoryJob
 (
+  categoryjob_id INT(4) NOT NULL AUTO_INCREMENT,
   category_id INT(4) NOT NULL,
   job_id INT(4) NOT NULL,
+  id INT(4) NOT NULL,
+  CONSTRAINT pk_categoryjob PRIMARY KEY (categoryjob_id),
   CONSTRAINT fk_categoryjob_category_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id),
-  CONSTRAINT fk_categoryjob_job_job_id FOREIGN KEY (job_id) REFERENCES )(job_id), 
+  CONSTRAINT fk_categoryjob_job_job_id FOREIGN KEY (job_id) REFERENCES Job(job_id), 
+  CONSTRAINT fk_categoryjob_course_id FOREIGN KEY (id) REFERENCES Course(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -593,54 +597,61 @@ INSERT INTO Category(category_id, category_name, categoryitem_path, categoryitem
 (17, 'Forensics', 'assets/img/category/forensic.png', 'Image');
 
 /*--CategoryJob--*/
-INSERT INTO CategoryJob(category_id, job_id) VALUES
+INSERT INTO CategoryJob(categoryjob_id, category_id, job_id, id) VALUES
 /*--Coding--*/
-(1, 1), (1, 2), (1, 3),
-
-/*--Customer Support--*/
-(2, 4), (2, 5), (2, 6), 
-
-/*--Cloud Computing Engineers--*/
-(3, 7), (3, 8),  (3, 10), 
-
-/*--Information Security Specialist--*/
-(4, 11), (4, 12), (4, 13), 
-
-/*--UX--*/
-(5, 14), (5, 15), (5, 16), (5, 17), 
-
-/*--Game Designer--*/
-(6, 20), (6, 21), (6, 22), (6, 23),
-
-/*--3D/Sketch--*/
-(7, 24), (7, 25), (7, 26),
-
-/*--'Digital'--*/
-(8, 27), (8, 28), (8, 29), 
-
-/*--Banking & Finance--*/
-(9, 30), (9, 31), (9, 32), 
-
-/*--Data Science--*/
-(10, 33), (10, 34), (10, 35),
-
-/*--Customer Service--*/
-(11, 36), (11, 37), 
+(1, 1, 1, 1), (2, 1, 2, 1), (3, 1, 3, 1),
 
 /*--Enterprise--*/
-(12, 38), (12, 39), (12, 40), 
+(7, 2, 4, 1), (8, 2, 5, 1), (9, 2, 6, 1), (10, 2, 7, 1),
 
-/*--Security Analyst [Network/Server] --*/
-(13, 41), (13, 42), (13, 43),
+/*--Cloud Computing Engineers--*/
+(14, 3, 8, 1), (15, 3, 9, 1), (16, 3, 10, 1), (17, 3, 11, 1), 
 
-/*--Penetration Tester--*/
-(15, 47), (15, 48), (15, 49),
+/*--Information Security Specialist--*/
+(18, 4, 12, 1), (19, 4, 13, 1), (20, 4, 14, 1), 
 
-/*--Security Risk Management--*/
-(16, 50), (16, 52), (16, 53), 
+/*--Game Designer--*/
+(21, 5, 15, 3), (22, 5, 16, 3), 
+
+/*--Interactive Media Design--*/
+(23, 6, 17, 3), (24, 6, 18, 3), (25, 6, 19, 3), (26, 6, 20, 3), 
+
+/*--3D/Sketch--*/
+(27, 7, 21, 3), (28, 7, 22, 3), (29, 7, 23, 3),
+
+/*--'Digital'--*/
+(30, 8, 24, 3), (31, 8, 25, 3), (32, 8, 26, 3), 
+
+/*--Banking & Finance--*/
+(33, 9, 28, 2), (34, 9, 29, 2), (35, 9, 30, 2), 
+
+/*--Data--*/
+(36, 10, 31, 2), (37, 10, 32, 2), (38, 10, 33, 2),
+
+/*--Analytics--*/
+(39, 11, 34, 2), (40, 11, 35, 2), 
+
+/*--Customer--*/
+(41, 12, 36, 2), (42, 12, 37, 2), 
+
+/*--Enterprise--*/
+(43, 2, 38, 2), (44, 2, 39, 2), (45, 2, 40, 2), 
+
+/*--Infrastructure Security [Network/Server]--*/
+(46, 13, 41, 4), (47, 13, 42, 4), (48, 13, 43, 4),
+
+/*--Software Security--*/
+(49, 14, 44, 4), (50, 14, 12, 4), (51, 14, 45, 4), 
+
+/*--Risk Management--*/
+(52, 15, 46, 4), (53, 15, 47, 4), (54, 15, 48, 4), (55, 15, 49, 4), 
+
+/*--QA Testing--*/
+(56, 16, 50, 4), (57, 16, 51, 4), (58, 16, 52, 4),
 
 /*--Forensics--*/
- (17, 55), (17, 56), (17, 58);
+(59, 17, 53, 4), (60, 17, 54, 4), (61, 17, 55, 4), (62, 17, 56, 4), (63, 17, 57, 4);
+
 
 /*------ CourseJob -------*/
 INSERT INTO CourseJob(id, job_id) VALUES

@@ -52,13 +52,14 @@
         $courseModuleResult = $db->query($sql);
         $modules= [];
         while ($row2 = $db->fetch_array($courseModuleResult)) {
-            $sql = "SELECT j.job_name FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN ModuleJob mj ON mj.module_id=m.module_id INNER JOIN Job j ON j.job_id=mj.job_id WHERE cm.id=$id AND m.module_id='$row2[module_id]'ORDER BY module_name ASC";
+            //This needs to be redone.
+            /*$sql = "SELECT j.job_name FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN ModuleJob mj ON mj.module_id=m.module_id INNER JOIN Job j ON j.job_id=mj.job_id WHERE cm.id=$id AND m.module_id='$row2[module_id]'ORDER BY module_name ASC";
             $jobResult = $db->query($sql);
             $jobArray = [];
             while ($row3 = $db->fetch_array($jobResult)) {
                 array_push($jobArray, $row3['job_name']);
             }
-            $row2['job_string'] = implode(",", $jobArray);
+            $row2['job_string'] = implode(",", $jobArray);*/
             $modules[] = $row2;
         }
         $courseModule["$row[module_year]"] = $modules;
