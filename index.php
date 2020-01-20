@@ -133,7 +133,7 @@
                                             <?php 
                                                 $db = new Mysql_Driver();
                                                 $db->connect();
-                                                $sql3 = "SELECT * FROM CategoryJob A INNER JOIN Category B ON A.category_id = B.category_id WHERE A.id =" . $row['id']. " GROUP BY A.category_id";
+                                                $sql3 = "SELECT * FROM CategoryJob A INNER JOIN Category B ON A.category_id = B.category_id WHERE B.id =" . $row['id']. " GROUP BY A.category_id";
                                                 $result3 = $db->query($sql3);
                                                 $db -> close();
                                                 $resultArray4 = [];
@@ -145,7 +145,16 @@
                                             <?php foreach ($resultArray4 as $key => $row2): ?>
                                                 <div class="card card-body1 category">
                                                     <div class="align-self-center">     
-                                                    <img class="rounded-circle" src="<?php echo $row2["categoryitem_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
+                                                    <?php 
+                                                        $db = new Mysql_Driver();
+                                                        $db->connect();
+                                                        $sql3 = "SELECT * FROM Item WHERE category_id = " . $row2['category_id'];
+                                                        $result4 = $db->query($sql3);
+                                                        $db -> close();
+                                                        while ($row3 = $db->fetch_array($result4)):
+                                                    ?>
+                                                    <img class="rounded-circle" src="<?php echo $row3["item_path"] ?>" alt="Category Image" data-holder-rendered="true">                                    
+                                                    <?php endwhile?>
                                                     </div>
                                                     <h6 class="card-title text-center text-dark" id="categoryjob"><?php echo $row2['category_name'] ?></h5>
                                                     <?php
@@ -257,8 +266,8 @@
                                         Upon completion of Year 1 modules, Students are to continue their education by selecting the following courses:</br>
                                         </p> 
                                         <div class="referModule">
-                                        <?php foreach($resultArray as $key => $row): ?>
-                                            <a id="course-btn" class="btn btn-light" href="<?php echo "index.php#".$row["id"]."/1"?>"><?php echo $row["course_name"]?></a>   
+                                        <?php foreach($resultArray as $key => $row1): ?>
+                                            <a id="course-btn" class="btn btn-light" href="<?php echo "index.php#".$row1["id"]."/1"?>"><?php echo $row1["course_name"]?></a>   
                                         <?php endforeach; ?>    
                                         </div>                         
                                     </div>

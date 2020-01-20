@@ -14,7 +14,6 @@ DROP TABLE IF EXISTS Account;
 DROP TABLE IF EXISTS PwdReset;
 DROP TABLE IF EXISTS Appointment;
 DROP TABLE IF EXISTS Item;
-DROP TABLE IF EXISTS ModuleJob;
 DROP TABLE IF EXISTS CourseModule;
 DROP TABLE IF EXISTS ElectiveModule;
 DROP TABLE IF EXISTS Project;
@@ -27,7 +26,6 @@ DROP TABLE IF EXISTS CourseReq;
 DROP TABLE IF EXISTS Requirement;
 DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS FAQ;
-DROP TABLE IF EXISTS ModuleJob;
 /*******************************************************************************/
 /***                              Create the tables                          ***/
 /*******************************************************************************/
@@ -85,7 +83,6 @@ CREATE TABLE CourseReq
   CONSTRAINT fk_coursereq_req_id FOREIGN KEY (req_id) REFERENCES Requirement(req_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
 CREATE TABLE Job
 (
   job_id INT(4) NOT NULL AUTO_INCREMENT,
@@ -97,23 +94,18 @@ CREATE TABLE Category
 (
   category_id INT(4) NOT NULL AUTO_INCREMENT,
   category_name VARCHAR(500) NOT NULL,
-  categoryitem_path VARCHAR(512) NOT NULL,
-  categoryitem_type VARCHAR(20) NOT NULL,
-  CONSTRAINT pk_category PRIMARY KEY (category_id)
+  id INT(4) NOT NULL,
+  CONSTRAINT pk_category PRIMARY KEY (category_id),
+  CONSTRAINT fk_category_course_id FOREIGN KEY (id) REFERENCES Course(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE CategoryJob
 (
-  categoryjob_id INT(4) NOT NULL AUTO_INCREMENT,
   category_id INT(4) NOT NULL,
   job_id INT(4) NOT NULL,
-  id INT(4) NOT NULL,
-  CONSTRAINT pk_categoryjob PRIMARY KEY (categoryjob_id),
-  CONSTRAINT fk_categoryjob_category_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id),
-  CONSTRAINT fk_categoryjob_job_job_id FOREIGN KEY (job_id) REFERENCES Job(job_id), 
-  CONSTRAINT fk_categoryjob_course_id FOREIGN KEY (id) REFERENCES Course(id)
+  CONSTRAINT fk_categoryjob_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id),
+  CONSTRAINT fk_categoryjob_job_id FOREIGN KEY (job_id) REFERENCES Job(job_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 CREATE TABLE Elective
 (
@@ -157,13 +149,6 @@ CREATE TABLE CourseModule
   CONSTRAINT fk_coursemodule_module_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE ModuleJob
-(
-  job_id INT(4) NOT NULL, 
-  module_id INT(4) NOT NULL,
-  CONSTRAINT fk_modulejob_job_job_id FOREIGN KEY (job_id) REFERENCES Job(job_id),
-  CONSTRAINT fk_modulejob_module_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE Item 
 (
@@ -173,10 +158,12 @@ CREATE TABLE Item
   module_id INT(4) DEFAULT NULL,
   course_id INT(4) DEFAULT NULL,
   project_id INT(4) DEFAULT NULL,
+  category_id INT(4) DEFAULT NULL,
   CONSTRAINT pk_item PRIMARY KEY (item_id),
   CONSTRAINT fk_item_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id),
   CONSTRAINT fk_item_course_id FOREIGN KEY (course_id) REFERENCES Course(id),
-  CONSTRAINT fk_item_project_id FOREIGN KEY (project_id) REFERENCES Project(project_id)
+  CONSTRAINT fk_item_project_id FOREIGN KEY (project_id) REFERENCES Project(project_id),
+  CONSTRAINT fk_item_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*******************************************************************************/
@@ -571,104 +558,81 @@ INSERT INTO Job(job_id, job_name) VALUES
 (55, 'Cyber Forensic Analyst'), (56, 'Private Investigators'), (58,'Law Enforcer');
 
 /*------ Category -------*/
-INSERT INTO Category(category_id, category_name, categoryitem_path, categoryitem_type) VALUES
+INSERT INTO Category(category_id, category_name, id) VALUES
 /*--IT--*/
-(1, 'Coding', 'assets/img/category/coding.png', 'Image'), 
-(2, 'Computer Support', 'assets/img/category/support.png', 'Image'), 
-(3, 'Cloud Computing Engineers', 'assets/img/category/cloud.png', 'Image'), 
-(4, 'Information Security Specialist', 'assets/img/category/security.png', 'Image'), 
+(1, 'Coding', 1), 
+(2, 'Computer Support', 1), 
+(3, 'Cloud Computing Engineers', 1), 
+(4, 'Information Security Specialist', 1), 
 
 /*--IM--*/
-(5, 'UX', 'assets/img/category/interactivemedia.png', 'Image'), 
-(6, 'Game Designer', 'assets/img/category/gamedesigner.png', 'Image'), 
-(7, '3D/Sketch', 'assets/img/category/3d.png', 'Image'), 
-(8, 'Digital', 'assets/img/category/digital.png', 'Image'),
+(5, 'UX', 3), 
+(6, 'Game Designer', 3), 
+(7, '3D/Sketch', 3), 
+(8, 'Digital', 3),
 
 /*--FI--*/
-(9, 'Banking & Finance', 'assets/img/category/banking.png', 'Image'), 
-(10, 'Data Science', 'assets/img/category/data.png', 'Image'),
-(11, 'Customer Service', 'assets/img/category/customer.png', 'Image'), 
-(12, 'Enterprise Computing','assets/img/category/enterprise.png', 'Image'),
+(9, 'Banking & Finance', 2), 
+(10, 'Data Science', 2),
+(11, 'Customer Service', 2), 
+(12, 'Enterprise Computing',2),
 
 /*--CSF--*/
-(13, 'Security Analyst', 'assets/img/category/Infrastructure.png', 'Image'), 
-(15, 'Penetration  Tester', 'assets/img/category/qa.png', 'Image'), 
-(16, 'Security Risk Management', 'assets/img/category/risk.png', 'Image'), 
-(17, 'Forensics', 'assets/img/category/forensic.png', 'Image');
+(13, 'Security Analyst', 4), 
+(14, 'Penetration  Tester', 4), 
+(15, 'Security Risk Management', 4), 
+(16, 'Forensics', 4);
 
 /*--CategoryJob--*/
-INSERT INTO CategoryJob(categoryjob_id, category_id, job_id, id) VALUES
+INSERT INTO CategoryJob(category_id, job_id) VALUES
 /*--Coding--*/
-(1, 1, 1, 1), (2, 1, 2, 1), (3, 1, 3, 1),
+(1, 1), (1, 2), (1, 3),
 
-/*--Enterprise--*/
-(7, 2, 4, 1), (8, 2, 5, 1), (9, 2, 6, 1), (10, 2, 7, 1),
+/*--Customer Support--*/
+(2, 4), (2, 5), (2, 6), 
 
 /*--Cloud Computing Engineers--*/
-(14, 3, 8, 1), (15, 3, 9, 1), (16, 3, 10, 1), (17, 3, 11, 1), 
+(3, 7), (3, 8),  (3, 10), 
 
 /*--Information Security Specialist--*/
-(18, 4, 12, 1), (19, 4, 13, 1), (20, 4, 14, 1), 
+(4, 11), (4, 12), (4, 13), 
+
+/*--UX--*/
+(5, 14), (5, 15), (5, 16), (5, 17), 
 
 /*--Game Designer--*/
-(21, 5, 15, 3), (22, 5, 16, 3), 
-
-/*--Interactive Media Design--*/
-(23, 6, 17, 3), (24, 6, 18, 3), (25, 6, 19, 3), (26, 6, 20, 3), 
+(6, 20), (6, 21), (6, 22), (6, 23),
 
 /*--3D/Sketch--*/
-(27, 7, 21, 3), (28, 7, 22, 3), (29, 7, 23, 3),
+(7, 24), (7, 25), (7, 26),
 
 /*--'Digital'--*/
-(30, 8, 24, 3), (31, 8, 25, 3), (32, 8, 26, 3), 
+(8, 27), (8, 28), (8, 29), 
 
 /*--Banking & Finance--*/
-(33, 9, 28, 2), (34, 9, 29, 2), (35, 9, 30, 2), 
+(9, 30), (9, 31), (9, 32), 
 
-/*--Data--*/
-(36, 10, 31, 2), (37, 10, 32, 2), (38, 10, 33, 2),
+/*--Data Science--*/
+(10, 33), (10, 34), (10, 35),
 
-/*--Analytics--*/
-(39, 11, 34, 2), (40, 11, 35, 2), 
-
-/*--Customer--*/
-(41, 12, 36, 2), (42, 12, 37, 2), 
+/*--Customer Service--*/
+(11, 36), (11, 37), 
 
 /*--Enterprise--*/
-(43, 2, 38, 2), (44, 2, 39, 2), (45, 2, 40, 2), 
+(12, 38), (12, 39), (12, 40), 
 
-/*--Infrastructure Security [Network/Server]--*/
-(46, 13, 41, 4), (47, 13, 42, 4), (48, 13, 43, 4),
+/*--Security Analyst [Network/Server] --*/
+(13, 41), (13, 42), (13, 43),
 
-/*--Software Security--*/
-(49, 14, 44, 4), (50, 14, 12, 4), (51, 14, 45, 4), 
+/*--Penetration Tester--*/
+(14, 47), (14, 48), (14, 49),
 
-/*--Risk Management--*/
-(52, 15, 46, 4), (53, 15, 47, 4), (54, 15, 48, 4), (55, 15, 49, 4), 
-
-/*--QA Testing--*/
-(56, 16, 50, 4), (57, 16, 51, 4), (58, 16, 52, 4),
+/*--Security Risk Management--*/
+(15, 50), (15, 52), (15, 53), 
 
 /*--Forensics--*/
-(59, 17, 53, 4), (60, 17, 54, 4), (61, 17, 55, 4), (62, 17, 56, 4), (63, 17, 57, 4);
+ (16, 55), (16, 56), (16, 58);
 
-
-/*------ CourseJob -------*/
-INSERT INTO CourseJob(id, job_id) VALUES
-/*------ Common ICT Programme -------*/
-(5,2),(5,4),(5,6),(5,9),(5,10),(5,14),(5,19),(5,20),(5,24),
-(5,27),(5,36),(5,39),(5,44),
-/*------ Cybersecurity & Digital Forensics -------*/
-(4, 1),(4,2),(4,3),(4,4),(4,5),(4,6),(4,7),(4,8),(4,9),(4,10),
-/*------ Immersive Media -------*/
-(3,11),(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18),(3,19),
-/*------ Information Technology -------*/
-(1,20),(1,21),(1,22),(1,23),(1,24),(1,25),(1,26),(1,27),(1,28),
-(1,29),(1,30),(1,31),(1,32),(1,33),(1,34),(1,35),
-/*------ Financial Informatics -------*/
-(2,36),(2,37),(2,38),(2,39),(2,40),(2,41),(2,42),(2,43),(2,44),
-(2,45)
-;
 /*------ Electives -------*/
 INSERT INTO Elective(elective_id, elective_name) VALUES
 (1, 'Banking and Finance'),
@@ -1014,70 +978,25 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (121, 'assets/img/projects/IM1.png', 'Image', 9),
 (122, 'assets/img/projects/CSF1.png', 'Image',10);
 
+/*------ Item (Category) -------*/
+INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
+(123, 'assets/img/category/coding.png', 'Image', 1), 
+(124, 'assets/img/category/support.png', 'Image',2), 
+(125, 'assets/img/category/cloud.png', 'Image',3), 
+(126, 'assets/img/category/security.png', 'Image',4), 
+(127, 'assets/img/category/interactivemedia.png', 'Image',5), 
+(128, 'assets/img/category/gamedesigner.png', 'Image',6), 
+(129, 'assets/img/category/3d.png', 'Image',7), 
+(130, 'assets/img/category/digital.png', 'Image',8),
+(131, 'assets/img/category/banking.png', 'Image',9), 
+(132, 'assets/img/category/data.png', 'Image',10),
+(133, 'assets/img/category/customer.png', 'Image',11), 
+(134,'assets/img/category/enterprise.png', 'Image',12),
+(135, 'assets/img/category/Infrastructure.png', 'Image',13), 
+(136, 'assets/img/category/qa.png', 'Image',14), 
+(137, 'assets/img/category/risk.png', 'Image',15), 
+(138, 'assets/img/category/forensic.png', 'Image',16);
 
-/*------ Modules with Jobs-------*/
-INSERT INTO ModuleJob(job_id, module_id) VALUES
-/*------ Information Technology-------*/
-(20,63), (20,64), (20,74), (20,41), (20,42), (20,43), (20,54), (20,55), (20,7),
-(21,72), (21,37), 
-(22,20), (22,10), (22,19), (22,73),
-(23,17), (23,47),
-(24,17), (24,47),
-(25,17), (25,47),
-(26,16), (26,17),
-(27,20), (27,21), (27,19), (27,73),
-(28,20), (28,21), (28,19), (28,73),
-(29,61), (29,12), 
-(30,12),
-(31,63), (31,20), (31,60), (31,74), (31,54), (31,55), (31,27), (31,74),
-(32,61), (32,12), (32,73), 
-(33,14), (33,63), (33,64), (33,57), (33,74), (33,20), (33,11), (33,19), (33,28),
-(34,14), (34,63), (34,37), (34,64), (34,60), (34,20), (34,74), (34,27), (34,54), (34,55),
-(35,61), 
-
-/*------ Financial Information-------*/
-(36, 31), (36, 30), (36, 32),
-(37, 14), (37, 20), (37, 63), (37, 64), (37, 74),
-(38, 67), (38, 31),
-(39, 30), (39, 32),
-(40, 9),
-(41, 30),
-(42, 20), (42, 5), (42, 21), (42, 35), (42, 66),
-(43, 63), (43, 64), (43, 8),  (43, 9),
-(44, 63), (44, 64),
-(45, 31), (45, 30), (45, 32),
-
-/*------ Immersive Media-------*/
-(11, 22), (11, 44), (11, 1), (11, 6), 
-(12, 22), (12, 44), (12, 1), (12, 70), (12, 6),
-(13, 22), (13, 44), (13, 1), (13, 6), (13, 49), 
-(14, 6), (14, 22), (14, 50), (14, 23), 
-(15, 6), (15, 22), (15, 23), 
-(16, 1),
-(17, 62),
-(18, 23),
-(19, 50), (19, 49),
-
-/*------ Cybersecurity & Digital Forensics-------*/
-(1, 61), (1, 59), (1, 58),
-(2, 15), (2, 18), (2, 20), (2, 31), (2, 61), (2, 26), (2, 52), (2, 68), (2, 75), (2, 58), (2, 45), (2, 57),
-(3, 15), (3, 18), (3, 61), (3, 26), (3, 75), (3, 68), (3, 75), (3, 33), (3, 58), (3, 45), (3, 57),
-(5, 15), (5, 18), (5, 61), (5, 26), (5, 52), (5, 59), (5, 68), (5, 75), (5, 33), (5, 58), (5, 45), (5, 56), (5, 57),
-(6, 15), (6, 61), (6, 26), (6, 52), (6, 68), (6, 33), (6, 58), (6, 45), (6, 56), (6, 57),
-(7, 15), (7,18), (7, 26), (7, 52), (7, 68), (7, 33), (7, 58), (7, 45), (7, 56), (7, 57),
-(8, 14), (8, 20), (8, 37), (8, 63), (8, 64),  
-(9, 15), (9, 20), (9, 33), (9, 75), (9, 61), (9, 26), (9, 59), (9, 68), (9, 58), (9, 57),
-(10, 18), (10, 20), (10, 61), (10, 26), (10, 52), (10, 59), (10, 68), (10, 58), (10, 56), (10, 57),
-
-
-
-
-/*------ Common ICT-------*/
-(5, 15), (5, 18), (5, 61), (5, 26), (5, 52), (5, 59), (5, 68), (5, 75), (5, 33), (5, 58), (5, 45), (5, 56), (5, 57),
-(36, 31), (36, 30), (36, 32),
-(20,63), (20,64), (20,74), (20,41), (20,42), (20,43), (20,54), (20,55), (20,7),
-(37, 14), (37, 20), (37, 63), (37, 64), (37, 74),
-(13, 22), (13, 44), (13, 1), (13, 6), (13, 49);
 
 INSERT INTO FAQ(question_id,question_text,question_answer) VALUES
 (1,'What are the internship opportunities if I enter this school?','Answer 1'),
