@@ -20,11 +20,9 @@ DROP TABLE IF EXISTS ElectiveModule;
 DROP TABLE IF EXISTS Project;
 DROP TABLE IF EXISTS Module;
 DROP TABLE IF EXISTS Elective;
-DROP TABLE IF EXISTS CourseJob; /*--DELETED--*/
 DROP TABLE IF EXISTS CategoryJob;
 DROP TABLE IF EXISTS Category;
-DROP TABLE IF EXISTS Job1;
-DROP TABLE IF EXISTS Job;/*--DELETED--*/
+DROP TABLE IF EXISTS Job;
 DROP TABLE IF EXISTS CourseReq;
 DROP TABLE IF EXISTS Requirement;
 DROP TABLE IF EXISTS Course;
@@ -87,18 +85,12 @@ CREATE TABLE CourseReq
   CONSTRAINT fk_coursereq_req_id FOREIGN KEY (req_id) REFERENCES Requirement(req_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE Job 
+
+CREATE TABLE Job
 (
   job_id INT(4) NOT NULL AUTO_INCREMENT,
   job_name VARCHAR(500) NOT NULL,
   CONSTRAINT pk_job PRIMARY KEY (job_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE Job1 
-(
-  job1_id INT(4) NOT NULL AUTO_INCREMENT,
-  job1_name VARCHAR(500) NOT NULL,
-  CONSTRAINT pk_job PRIMARY KEY (job1_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE Category
@@ -112,25 +104,12 @@ CREATE TABLE Category
 
 CREATE TABLE CategoryJob
 (
-  categoryjob_id INT(4) NOT NULL AUTO_INCREMENT,
   category_id INT(4) NOT NULL,
-  job1_id INT(4) NOT NULL,
-  id INT(4) NOT NULL,
-  CONSTRAINT pk_categoryjob PRIMARY KEY (categoryjob_id),
+  job_id INT(4) NOT NULL,
   CONSTRAINT fk_categoryjob_category_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id),
-  CONSTRAINT fk_categoryjob_job1_job1_id FOREIGN KEY (job1_id) REFERENCES Job1(job1_id), 
-  CONSTRAINT fk_categoryjob_course_id FOREIGN KEY (id) REFERENCES Course(id)
+  CONSTRAINT fk_categoryjob_job_job_id FOREIGN KEY (job_id) REFERENCES )(job_id), 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*DELETED*/
-CREATE TABLE CourseJob
-(
-  id INT(4) NOT NULL,
-  job_id INT(4) NOT NULL,
-  CONSTRAINT pk_coursejob PRIMARY KEY (id, job_id),
-  CONSTRAINT fk_coursejob_course_id FOREIGN KEY (id) REFERENCES Course(id),
-  CONSTRAINT fk_coursejob_job_job_id FOREIGN KEY (job_id) REFERENCES Job(job_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE Elective
 (
@@ -548,22 +527,8 @@ INSERT INTO CourseReq VALUES
 (4, 1),(4, 2),(4, 3),
 (5, 1),(5, 2),(5, 3);
 
-/*------ Job (Deleted) -------*/
-INSERT INTO Job(job_id, job_name) VALUES
-(1,'IT Solutions Providers'),(2,'IT consulting Companies'),(3,'IT Security Product Companies'),(4,'Security Software Development'),(5,'IT Security Divisions'),(6,'Security Analyst/Engineer'),
-(7,'Digital Forensics Investigator'),(8,'Security Software Developer'),(9,'Penetration Tester'),(10,'Malware Analyst'),
-
-(11,'Game Designer'),(12,'Level Designer'),(13,'Game Interface Designer'),(14,'Visual Designer'),(15,'Web Designer'),(16,'Multimedia Designer'),(17,'Producer'),(18,'User Experience Designer'),(19,'Interactive Experience Designer / Developer'),
-
-(20,'Applications Developer'),(21,'UI/UX designer'),(22,'Database Administrator'),(23,'Pre-/post-Sales Consultant'),(24,'Sales Executive'),(25,'Channel Sales Executive'),(26,'Customer Experience Manager'),(27,'Data Analyst'),(28,'Data Engineer'),
-(29,'Infrastructure Executive'),(30,'Cloud Engineer'),(31,'Software Engineer'),(32,'Systems Consultant'),(33,'Analyst Programmer'),(34,'Web & Software Developer'),(35,'Network Administrator'),
-
-(36,'System Analyst'),(37,'Applications Developer'),(38,'IT Consulting analyst'),(39,'Associate Business Analyst'),(40,'Banking Operations'),(41,'Business Consultant'),(42,'Business Intelligence Analyst'),(43,'Application Consultant'),
-(44,'Solutions Architect'),(45,'Project Manager');
-
-
 /*------ Job -------*/
-INSERT INTO Job1(job1_id, job1_name) VALUES
+INSERT INTO Job(job_id, job_name) VALUES
 /*--IT--*/
 (1,'Application Developer'),(2,'Software Architect'),(3,'Front End Developer'),
 
@@ -628,54 +593,54 @@ INSERT INTO Category(category_id, category_name, categoryitem_path, categoryitem
 (17, 'Forensics', 'assets/img/category/forensic.png', 'Image');
 
 /*--CategoryJob--*/
-INSERT INTO CategoryJob(categoryjob_id, category_id, job1_id, id) VALUES
+INSERT INTO CategoryJob(category_id, job_id) VALUES
 /*--Coding--*/
-(1, 1, 1, 1), (2, 1, 2, 1), (3, 1, 3, 1),
+(1, 1), (1, 2), (1, 3),
 
 /*--Customer Support--*/
-(4, 2, 4, 1), (5, 2, 5, 1), (6, 2, 6, 1), 
+(2, 4), (2, 5), (2, 6), 
 
 /*--Cloud Computing Engineers--*/
-(7, 3, 7, 1), (8, 3, 8, 1),  (10, 3, 10, 1), 
+(3, 7), (3, 8),  (3, 10), 
 
 /*--Information Security Specialist--*/
-(11, 4, 11, 1), (12, 4, 12, 1), (13, 4, 13, 1), 
+(4, 11), (4, 12), (4, 13), 
 
 /*--UX--*/
-(14, 5, 14, 3), (15, 5, 15, 3), (16, 5, 16, 3), (17, 5, 17, 3), 
+(5, 14), (5, 15), (5, 16), (5, 17), 
 
 /*--Game Designer--*/
-(20, 6, 20, 3), (21, 6, 21, 3), (22, 6, 22, 3), (23, 6, 23, 3),
+(6, 20), (6, 21), (6, 22), (6, 23),
 
 /*--3D/Sketch--*/
-(24, 7, 24, 3), (25, 7, 25, 3), (26, 7, 26, 3),
+(7, 24), (7, 25), (7, 26),
 
 /*--'Digital'--*/
-(27, 8, 27, 3), (28, 8, 28, 3), (29, 8, 29, 3), 
+(8, 27), (8, 28), (8, 29), 
 
 /*--Banking & Finance--*/
-(30, 9, 30, 2), (31, 9, 31, 2), (32, 9, 32, 2), 
+(9, 30), (9, 31), (9, 32), 
 
 /*--Data Science--*/
-(33, 10, 33, 2), (34, 10, 34, 2), (35, 10, 35, 2),
+(10, 33), (10, 34), (10, 35),
 
 /*--Customer Service--*/
-(36, 11, 36, 2), (37, 11, 37, 2), 
+(11, 36), (11, 37), 
 
 /*--Enterprise--*/
-(38, 12, 38, 2), (39, 12, 39, 2), (40, 12, 40, 2), 
+(12, 38), (12, 39), (12, 40), 
 
 /*--Security Analyst [Network/Server] --*/
-(41, 13, 41, 4), (42, 13, 42, 4), (43, 13, 43, 4),
+(13, 41), (13, 42), (13, 43),
 
 /*--Penetration Tester--*/
-(47, 15, 47, 4), (48, 15, 48, 4), (49, 15, 49, 4),
+(15, 47), (15, 48), (15, 49),
 
 /*--Security Risk Management--*/
-(50, 16, 50, 4), (52, 16, 52, 4), (53, 16, 53, 4), 
+(16, 50), (16, 52), (16, 53), 
 
 /*--Forensics--*/
- (55, 17, 55, 4), (56, 17, 56, 4), (58, 17, 58, 4);
+ (17, 55), (17, 56), (17, 58);
 
 /*------ CourseJob -------*/
 INSERT INTO CourseJob(id, job_id) VALUES

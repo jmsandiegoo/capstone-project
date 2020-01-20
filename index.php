@@ -151,7 +151,7 @@
                                                     <?php
                                                         $db = new Mysql_Driver();
                                                         $db->connect();
-                                                        $sql13 = "SELECT * FROM CategoryJob A INNER JOIN Job1 B ON A.job1_id = B.job1_id WHERE A.category_id = $row2[category_id]";
+                                                        $sql13 = "SELECT * FROM CategoryJob A INNER JOIN job B ON A.job_id = B.job_id WHERE A.category_id = $row2[category_id]";
                                                         $result13 = $db->query($sql13);
 
                                                         $resultArray3 = [];
@@ -164,8 +164,8 @@
                                                     <div id="categoryjobname">
                                                     <?php foreach ($resultArray3 as $key => $row1): 
                                                         ?>
-                                                        <?php if($row1["job1_name"] != ""): ?>
-                                                        <li class="text-dark"><?php echo $row1['job1_name']?></br></li>
+                                                        <?php if($row1["job_name"] != ""): ?>
+                                                        <li class="text-dark"><?php echo $row1['job_name']?></br></li>
                                                         <?php endif;?>                                                 
                                                     <?php endforeach;?>
                                                         </div>
