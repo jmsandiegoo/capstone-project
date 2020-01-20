@@ -41,32 +41,27 @@
     <main class="project-wrapper">
       <?php include $helper->subviewPath('navbar.php') ?>  
 
-      <!--<section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(<?php //echo $backgroundPath ?>);">-->
+      <!--<section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(<?php //echo $backgroundPath ?>);">
       <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25))"> 
         <h1>
-          <?php echo $projectInfo['project_name']; ?>  
+          <?php //echo $projectInfo['project_name']; ?>  
         </h1>
-      </section>
+      </section>-->
 <!--https://getbootstrap.com/docs/4.0/layout/grid/-->
       <section class="project-content container">
         <div class="projectContainer">
           <div class="row"> 
 
-            <div class="col-sm-6">
-              <div class="project-left">
+            <div class="col-md-6 project-left">
                 <h1><?php echo $projectInfo['project_name']; ?></h1>
                 <p style="font-style:italic;"><?php echo $projectCourse['course_name']; ?></p>
                 <p><?php echo $projectInfo['project_desc']; ?></p>
-              </div>
             </div>
-
-            <div class="col-sm-6">
-              <div class="project-right">
+            <div class="col-md-6 project-right">
                 <div class="project-image">
                   <img src="<?php echo $projectImagePath; ?>" class="img-fluid" alt="Responsive image">
                 </div>
-              </div>
-            </div> 
+            </div>
 
           </div> 
         </div>
