@@ -859,8 +859,6 @@ INSERT INTO Item(item_id, item_path, item_type, course_id) VALUES
 (9, 'assets/img/IM/BG_Card.png', 'Image', '3'),
 (10, 'assets/img/CDF/BG_Card.png', 'Image', '4');
 
-
-
 /*------ Item (Modules) -------*/
 INSERT INTO Item(item_id, item_path, item_type, module_id) VALUES
 (11,'assets/img/modules/3E_icon.png','Image','1'),

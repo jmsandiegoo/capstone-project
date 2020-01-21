@@ -9,6 +9,14 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 } */
 
+h1, h4{
+  font-weight: 800;
+}
+
+p{
+  font-size: large;
+}
+
 .module-wrapper .collapsible {
   background-color: #5904bf;
   color: white;
@@ -34,7 +42,7 @@
   margin-bottom:1em;
   margin-left:1em;
   margin-right:1em;
-  font-family: times, Times New Roman, times-roman, georgia, serif;
+  /* font-family: times, Times New Roman, times-roman, georgia, serif; */
   font-size: 28px;
   line-height: 40px;
   letter-spacing: -1px;color: #444;}

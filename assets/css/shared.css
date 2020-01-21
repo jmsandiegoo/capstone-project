@@ -1,6 +1,8 @@
 /* Shared css applies to all pages*/
 
 /* apply a natural box layout model to all elements, but allowing components to change */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -8,6 +10,10 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body{
+  font-family: 'Open Sans',sans-serif;
 }
 
 html,
