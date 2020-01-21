@@ -952,9 +952,9 @@ INSERT INTO Item(item_id, item_path, item_type, module_id) VALUES
 (107,'assets/img/modules/DLT_icon.png','Image', '87'),
 (108,'assets/img/modules/DW_icon.png','Image','88'),
 (109,'assets/img/modules/FYP_icon.png','Image','89'),
-(110,'assets/img/modules/6I__icon.png.png','Image','90'),
+(110,'assets/img/modules/6I_icon.png','Image','90'),
 (111,'assets/img/modules/TIP_icon.png','Image','91'),
-(112,'assets/img/modules/SSD.png','Image','92');
+(112,'assets/img/modules/SSD_icon.png','Image','92');
 
 /*------ Item (Project) -------*/
 INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES 
