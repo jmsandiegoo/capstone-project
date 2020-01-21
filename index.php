@@ -120,7 +120,7 @@
                     <div class="slide" id="<?php echo 'slide2-' . $row['id']?>" data-anchor="1">
                         <div class="container-fluid">
                             <div class="course-information">
-                                <div class="container" style="padding-top:20px">
+                                <div class="container">
                                     <h1><i class="question-icon"></i> Course Information</h1>
                                     <p><?php echo $row['course_description'] ?></p>
                                 </div>
