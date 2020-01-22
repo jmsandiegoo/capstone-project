@@ -112,5 +112,8 @@ body {
   h4{
     font-size:8.5vw !important;
   }
+  .btn{
+    font-size:3vw;
+  }
   
 }
