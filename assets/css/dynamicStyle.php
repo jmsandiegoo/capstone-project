@@ -31,6 +31,7 @@ foreach ($courses as $key => $row):
 
     #<?php echo 'section-' . $row['id'] . ' h1'?>, #<?php echo 'section-' . $row['id'] . ' h2'?> {
         letter-spacing: 0.2rem;
+        margin-bottom:16px;
         text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     }
 

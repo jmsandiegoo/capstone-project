@@ -224,11 +224,14 @@
                                 </p><br/>
                                 
                             </div>
-                            
-                        </div>
-                        <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
+                            <div>
+                            <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
                                 </a>
+                            </div>
+                        </div>
+
+                      
                     </div>
                 </div>
             </div>

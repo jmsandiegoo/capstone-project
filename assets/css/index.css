@@ -176,8 +176,9 @@ em{
 }
 
 #learn-more-btn {
-    position: absolute;
-    right: 30px;
+    position: relative;
+    margin-top:2vw;
+    margin-right:7%;
     padding: .5rem 1rem;
     font-size: 1.5vw;
     line-height: 1.5;
@@ -318,6 +319,7 @@ em{
         line-height: 1.5;
         border-radius: .2rem;
         width:100%;
+        margin-top:8vw;
     }
 
     .rounded-circle{
