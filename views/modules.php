@@ -170,6 +170,7 @@
         </div>
         </div>
     </section>  
+    <?php include $helper->subviewPath('projectInfoOverlay.php') ?>
     <?php include $helper->subviewPath('moduleInfoOverlay.php') ?>
 </main>
 <?php include $helper->subviewPath('footer.php') ?>
