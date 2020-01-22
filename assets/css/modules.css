@@ -214,7 +214,63 @@ p{
   border-radius: 3px 3px 0 0;
   border-bottom: none;
 }
+ /* Project Overlay */
 
+ .module-modal1 .modal-dialog {
+  max-width: 850px;
+}
+
+.module-modal1 .modal-content {
+  padding: 100px 0;
+  border: 0;
+  border-radius: 3px;
+  text-align: center;
+  background-clip: border-box;
+  box-shadow: none;
+  min-height: 50%;
+}
+
+.module-modal1 .close-modal {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 75px;
+  height: 75px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.module-modal1 .close-modal .lr {
+  z-index: 1051;
+  width: 1px;
+  height: 60px;
+  margin-left: 35px;
+  background-color: #2c3e50;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.module-modal1 .close-modal .rl {
+  z-index: 1052;
+  width: 1px;
+  height: 60px;
+  background-color: #2c3e50;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.module-modal1 .modal-body {
+  position: relative;
+  padding: 20px;
+}
+
+.module-modal1 .modal-body .image {
+  width: 50vw;
+  max-width: 250px;
+  margin: 2.5rem 0;
+}
  /* Module Overlay */
 
 .module-modal .modal-dialog {

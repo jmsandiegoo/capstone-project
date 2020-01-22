@@ -118,3 +118,12 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+@media only screen and (max-width: 767px) {
+    .slick-slide img
+    {
+        padding-left:10px;
+        height:50vw;
+        display: block;
+    }
+}

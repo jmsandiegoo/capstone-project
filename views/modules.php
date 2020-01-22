@@ -166,8 +166,10 @@
         <div class="top-content">
             <div class="carousel">
             <?php foreach ($projectInfo as $key => $row): ?>
-                    <div>
+                    <div class="btcarousel-item">
+                    <a id="<?php echo $row['project_id'] ?>" class="card-body">
                       <img src="../<?php echo $row["item_path"]?>" class="img-fluid mx-auto d-block">
+                    </a>
                     </div>
                 <?php endforeach; ?>
         </div>
@@ -178,6 +180,7 @@
 </main>
 <?php include $helper->subviewPath('footer.php') ?>
 <script src="<?php echo $helper->jsPath("modules.js") ?>" ></script>
+<script src="<?php echo $helper->jsPath("projects.js") ?>" ></script>
 </html>
 <script type="text/javascript">
 $(document).ready(function(){
