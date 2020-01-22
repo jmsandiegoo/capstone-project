@@ -108,8 +108,6 @@
     background: #181818;
 }
 
-
-
 .course-career .job-wrapper {
     display: flex;
     justify-content: space-around;
@@ -329,7 +327,7 @@
     }
     .hidden-text{
         font-weight:250 !important;
-        font-size:1.2em !important;
+        font-size:5vw !important;
         display:block !important;
         width:100%;
     }
