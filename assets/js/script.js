@@ -55,10 +55,3 @@ function toggleStickyNav() {
         navbarPlaceholder.style.height = "56px";
     }
 }
-
-// Misc
-
-$(document).ready(function()
-{
-    $('#projectSlider').tinycarousel();
-});

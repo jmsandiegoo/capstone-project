@@ -29,13 +29,17 @@
     }
 
     // Retrieving the project information
+    $projectImage = [];
     $db = new Mysql_Driver();
     $db->connect(); 
-    $sql = "SELECT * FROM Project WHERE id=$id";
+    $sql = "SELECT * FROM Item i INNER JOIN Project p ON i.project_id = p.project_id WHERE p.id=$id";
     $projectInfoResult = $db->query($sql);
     $projectInfo = [];
     while ($row = $db->fetch_array($projectInfoResult)) {
       $projectInfo[] = $row;
+    }
+    foreach ($projectInfo as $key => $row){
+      $projectImage[] = $row["item_path"];
     }
 
     // Fetch Module_Year for IT Courses
@@ -45,6 +49,7 @@
     while ($row = $db->fetch_array($moduleYearResult)) {
         $moduleYear[] = $row;
     }
+    
 
     $courseModule = [];
     foreach ($moduleYear as $key => $row) {
@@ -52,14 +57,13 @@
         $courseModuleResult = $db->query($sql);
         $modules= [];
         while ($row2 = $db->fetch_array($courseModuleResult)) {
-            //This needs to be redone.
-            /*$sql = "SELECT j.job_name FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN ModuleJob mj ON mj.module_id=m.module_id INNER JOIN Job j ON j.job_id=mj.job_id WHERE cm.id=$id AND m.module_id='$row2[module_id]'ORDER BY module_name ASC";
+            $sql = "SELECT j.job_name FROM Module m INNER JOIN CourseModule cm ON m.module_id = cm.module_id INNER JOIN ModuleJob mj ON mj.module_id=m.module_id INNER JOIN Job j ON j.job_id=mj.job_id WHERE cm.id=$id AND m.module_id='$row2[module_id]'ORDER BY module_name ASC";
             $jobResult = $db->query($sql);
             $jobArray = [];
             while ($row3 = $db->fetch_array($jobResult)) {
                 array_push($jobArray, $row3['job_name']);
             }
-            $row2['job_string'] = implode(",", $jobArray);*/
+            $row2['job_string'] = implode(",", $jobArray);
             $modules[] = $row2;
         }
         $courseModule["$row[module_year]"] = $modules;
@@ -156,43 +160,31 @@
     </section>
     <section class="project-content container">
         <h1>Project Portfolio</h1>
-        <div id="projectSlider" class="carousel slide" data-ride="carousel">
-        <ul class="carousel-indicators">
-          <?php foreach ($projectInfo as $key => $row): ?>
-            <?php if($key === 0): ?>
-                <li data-target="#projectSlider" data-slide-to="<?php echo $key?>" class="active"></li>
-              <?php else:?>
-                <li data-target="#projectSlider" data-slide-to="<?php echo $key?>"></li>
-            <?php endif?>
-          <?php endforeach; ?>
-        </ul>
-        
-        <div class="carousel-inner">
-          <?php foreach ($projectInfo as $key => $row): ?>
-            <?php if($key === 0): ?>
-              <div class="carousel-item active">
-                <a href="#!">
-                <img class="card-img" src="http://placehold.it/400x400" alt='<?php echo $row['project_name']?>'></a>
-              </div>
-            <?php else:?>
-              <div class="carousel-item">
-                <a href="#!"><img class="card-img" src="http://placehold.it/400x400" alt='<?php echo $row['project_name']?>'></a>
-              </div>
-            <?php endif?>
-          <?php endforeach; ?>
+        <div class="top-content">
+            <div class="carousel">
+            <?php foreach ($projectInfo as $key => $row): ?>
+                    <div>
+                      <img src="../<?php echo $row["item_path"]?>" class="img-fluid mx-auto d-block">
+                    </div>
+                <?php endforeach; ?>
         </div>
-
-        <a class="carousel-control-prev" href="#projectSlider" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#projectSlider" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-      </div>
-      </div>
-    </section>
+        </div>
+    </section>  
     <?php include $helper->subviewPath('moduleInfoOverlay.php') ?>
 </main>
 <?php include $helper->subviewPath('footer.php') ?>
 <script src="<?php echo $helper->jsPath("modules.js") ?>" ></script>
 </html>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.carousel').slick({
+  slidesToShow: 3,
+  dots:true,
+  centerMode: true,
+  arrows:true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  });
+});
+
+</script>

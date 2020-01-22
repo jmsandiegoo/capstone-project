@@ -14,5 +14,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("faq.css") ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("projects.css") ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("dynamicStyle.php") ?>"/>
+
+    <link rel="stylesheet" type="text/css" href="../assets/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/slick/slick-theme.css"/>
 </head>
 <body>

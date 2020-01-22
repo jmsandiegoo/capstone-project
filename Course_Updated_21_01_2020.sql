@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS Account;
 DROP TABLE IF EXISTS PwdReset;
 DROP TABLE IF EXISTS Appointment;
 DROP TABLE IF EXISTS Item;
+DROP TABLE IF EXISTS ModuleJob;
 DROP TABLE IF EXISTS CourseModule;
 DROP TABLE IF EXISTS ElectiveModule;
 DROP TABLE IF EXISTS Project;
@@ -149,6 +150,13 @@ CREATE TABLE CourseModule
   CONSTRAINT fk_coursemodule_module_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE ModuleJob
+(
+  job_id INT(4) NOT NULL, 
+  module_id INT(4) NOT NULL,
+  CONSTRAINT fk_modulejob_job_job_id FOREIGN KEY (job_id) REFERENCES Job(job_id),
+  CONSTRAINT fk_modulejob_module_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE Item 
 (
@@ -560,28 +568,28 @@ INSERT INTO Job(job_id, job_name) VALUES
 /*------ Category -------*/
 INSERT INTO Category(category_id, category_name, id) VALUES
 /*--IT--*/
-(1, 'Coding', 1), 
-(2, 'Computer Support', 1), 
-(3, 'Cloud Computing Engineers', 1), 
-(4, 'Information Security Specialist', 1), 
+(1, 'Programmer', 1), 
+(2, 'Helpdesk', 1), 
+(3, 'Cloud Technology', 1), 
+(4, 'Information Security', 1), 
 
 /*--IM--*/
-(5, 'UX', 3), 
+(5, 'User Experience', 3), 
 (6, 'Game Designer', 3), 
-(7, '3D/Sketch', 3), 
+(7, 'Graphics, 3D/Sketch', 3), 
 (8, 'Digital', 3),
 
 /*--FI--*/
 (9, 'Banking & Finance', 2), 
 (10, 'Data Science', 2),
 (11, 'Customer Service', 2), 
-(12, 'Enterprise Computing',2),
+(12, 'Consultant',2),
 
 /*--CSF--*/
 (13, 'Security Analyst', 4), 
-(14, 'Penetration  Tester', 4), 
-(15, 'Security Risk Management', 4), 
-(16, 'Forensics', 4);
+(14, 'Ethical Hacker', 4), 
+(15, 'Security Risk', 4), 
+(16, 'Cyber Forensics', 4);
 
 /*--CategoryJob--*/
 INSERT INTO CategoryJob(category_id, job_id) VALUES
@@ -962,13 +970,13 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (115, 'assets/img/projects/IT3.png', 'Image', 3),
 
 /*------ Financial Information-------*/
-(116, 'assets/img/projects/FI1.png', 'Image', 4),
+(116, 'assets/img/projects/FI1.jpg', 'Image', 4),
 
 /*------ Immersive Media-------*/
 (117, 'assets/img/projects/IM1.png', 'Image', 5),
 
 /*------ Cybersecurity & Digital Forensics-------*/
-(118, 'assets/img/projects/CSF1.png', 'Image', 6),
+(118, 'assets/img/projects/CSF1.PNG', 'Image', 6),
 
 /*------ Common ICT-------*/
 (119, 'assets/img/projects/IT1.png', 'Image', 7),
@@ -994,6 +1002,15 @@ INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES
 (136, 'assets/img/category/qa.png', 'Image',14), 
 (137, 'assets/img/category/risk.png', 'Image',15), 
 (138, 'assets/img/category/forensic.png', 'Image',16);
+
+/*------ Modules with Jobs-------*/
+INSERT INTO CategoryJob(category_id, module_id) VALUES
+/*------ Information Technology-------*/
+(1,19), (1,20), (1,25), (1,24), (1,27), (1,54), (1,55), (1,60), (1,63), (1,64), (1,74), (1,85), (1,92), (1,84),
+(2, 12), (2, 19), (2,20), (2,25), (2,24), (2,27), (2,54), (2,55), (2,60), (2,63), (2,64), (2,74), (2,85), (2,92), (2,84),
+(3,20), (3,22), (3,23), (3,24), (3,27), (3,37), (3,60), (3,63), (3,64), (3,69), (3,73), (3,85), (3,92), (2,84),
+(4, 16), (4,17), (4,28), (4,30), (4,31),(4,32),(4,36),(4,45),(4,47),(4,71),(4,79),(4,80),(4,87),(4,91),
+
 
 
 INSERT INTO FAQ(question_id,question_text,question_answer) VALUES
