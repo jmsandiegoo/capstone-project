@@ -352,6 +352,9 @@ em{
     #categoryjobname{
         padding-left:3vw !important;
     }
+    em{
+        font-size:2vw;
+    }
 }
 
 .card-body1 {
