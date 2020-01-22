@@ -267,7 +267,7 @@ em{
         font-size: 4.2vw !important;
     }
 
-    .course-entry h1 {
+    .course-entry h1, .question-icon, .binoculars-icon {
         font-size: 7vw !important;
     }
 
@@ -275,13 +275,7 @@ em{
         font-size: 4vw;
     }
 
-    .question-icon{
-        width:1vw;
-    }
 
-    .binoculars-icon{
-        width:1vw;
-    }
     
     .fp-controlArrow.fp-next{
         border-width: 25.25px 0 25.25px 17px !important;

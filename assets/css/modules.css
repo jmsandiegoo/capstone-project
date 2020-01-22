@@ -303,4 +303,7 @@ p{
         flex-basis: calc(100% / 2);
         margin: 0 0;
     }
+    .tab-content p{
+      font-size:4vw;
+    }
 }
