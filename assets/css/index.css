@@ -1,5 +1,7 @@
 /* Index.php styles */
-
+#categoryjobname{
+    padding-left:10px;
+}
 #section-header {
     color: white;
     text-align: center;
@@ -10,6 +12,9 @@
       ),url("../img/General/BG_Index.png");
 
     background-size: cover;
+}
+em{
+    font-size:1vw;
 }
 .container.cour{
     display: flex;
@@ -108,6 +113,8 @@
     background: #181818;
 }
 
+
+
 .course-career .job-wrapper {
     display: flex;
     justify-content: space-around;
@@ -169,8 +176,9 @@
 }
 
 #learn-more-btn {
-    position: absolute;
-    right: 30px;
+    position: relative;
+    margin-top:2vw;
+    margin-right:7%;
     padding: .5rem 1rem;
     font-size: 1.5vw;
     line-height: 1.5;
@@ -271,11 +279,11 @@
     }
 
     .course-entry h1 {
-        font-size: 4vw !important;
+        font-size: 7vw !important;
     }
 
     .course-entry h3, .course-entry h5, .course-entry h6{
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .question-icon{
@@ -292,10 +300,10 @@
     
     }
     #categoryjob{
-        font-size: 2.5vw !important;
+        font-size: 3.5vw !important;
     }
     #categoryjobname{
-        font-size:2vw !important;
+        font-size:3vw !important;
     }
     .card-body1.category{    
         flex-basis: calc(100% / 3) !important;
@@ -311,6 +319,7 @@
         line-height: 1.5;
         border-radius: .2rem;
         width:100%;
+        margin-top:8vw;
     }
 
     .rounded-circle{
@@ -327,14 +336,27 @@
     }
     .hidden-text{
         font-weight:250 !important;
-        font-size:5vw !important;
+        font-size:5em !important;
         display:block !important;
         width:100%;
     }
     .navbar{
         background-color: rgba(0, 0, 0, 0.99) !important;
     }
-    
+    .course-career{
+        display: block;
+        align-items:initial;
+        /*Give more whitespace*/
+        /* padding-top: 50px; */
+        min-height: 50vh;
+    } 
+
+    #categoryjobname{
+        padding-left:3vw !important;
+    }
+    em{
+        font-size:2vw;
+    }
 }
 
 .card-body1 {

@@ -87,8 +87,8 @@
 }
 .slick-slide img
 {
+    padding-left:10px;
     display: block;
-    height:30%;
 }
 .slick-slide.slick-loading img
 {

@@ -978,7 +978,7 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 /*------ Information Technology-------*/
 (113, 'assets/img/projects/IT1.png', 'Image', 1),
 (114, 'assets/img/projects/IT2.jpg', 'Image', 2),
-(115, 'assets/img/projects/IT3.png', 'Image', 3),
+(115, 'assets/img/projects/IT3.PNG', 'Image', 3),
 
 /*------ Financial Information-------*/
 (116, 'assets/img/projects/FI1.jpg', 'Image', 4),
@@ -996,7 +996,7 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (119, 'assets/img/projects/IT1.png', 'Image', 10),
 (120, 'assets/img/projects/FI1.jpg', 'Image', 11),
 (121, 'assets/img/projects/IM1.png', 'Image', 12),
-(122, 'assets/img/projects/CSF1.png', 'Image',13);
+(122, 'assets/img/projects/CSF1.PNG', 'Image',13);
 
 /*------ Item (Category) -------*/
 INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
