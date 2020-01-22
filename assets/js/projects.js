@@ -4,11 +4,11 @@ var projectPoster = document.querySelectorAll(".btcarousel-item .card-body");
 for (var i = 0; i < projectPoster.length; i++) {
     projectPoster[i].addEventListener("click", function() {
         var project_id = this.id;
-        getAjaxModuleInfo(project_id);
+        getAjaxProjectInfo(project_id);
     });
 }
 
-function getAjaxModuleInfo(project_id) {
+function getAjaxProjectInfo(project_id) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', `../process/fetchProjectInfo.php?project_id=${project_id}`)
     xhr.onload = function() {

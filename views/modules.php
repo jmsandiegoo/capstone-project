@@ -30,7 +30,6 @@
     }
 
     // Retrieving the project information
-    $projectImage = [];
     $db = new Mysql_Driver();
     $db->connect(); 
     $sql = "SELECT * FROM Item i INNER JOIN Project p ON i.project_id = p.project_id WHERE p.id=$id";
@@ -39,9 +38,7 @@
     while ($row = $db->fetch_array($projectInfoResult)) {
       $projectInfo[] = $row;
     }
-    foreach ($projectInfo as $key => $row){
-      $projectImage[] = $row["item_path"];
-    }
+
 
     // Fetch Module_Year for IT Courses
     $sql = "SELECT DISTINCT module_year FROM CourseModule WHERE id=$id ORDER BY module_year ASC";
@@ -167,7 +164,7 @@
             <div class="carousel">
             <?php foreach ($projectInfo as $key => $row): ?>
                     <div class="btcarousel-item">
-                    <a id="<?php echo $row['project_id'] ?>" class="card-body">
+                    <a id="<?php echo $row["project_id"] ?>" class="card-body">
                       <img src="../<?php echo $row["item_path"]?>" class="img-fluid mx-auto d-block">
                     </a>
                     </div>
@@ -184,14 +181,19 @@
 </html>
 <script type="text/javascript">
 $(document).ready(function(){
+
   $('.carousel').slick({
   slidesToShow: 3,
   dots:true,
   centerMode: true,
-  arrows:true,
+  arrows:false,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 1000,
+  focusOnSelect:false,
+  draggable:false,
+
   });
 });
+
 
 </script>
