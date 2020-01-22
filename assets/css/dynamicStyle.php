@@ -100,7 +100,7 @@ foreach ($courses as $key => $row):
     }
 
     #<?php echo 'slide3-' . $row['id'] . ' .subject-wrapper' ?> {
-        border-top: 0.3vw dashed white;
+        border-top: 0.1vw dashed white;
         padding-top: 5px; 
         clear:both;
         width: 70%;
