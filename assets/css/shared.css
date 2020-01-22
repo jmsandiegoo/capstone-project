@@ -91,6 +91,10 @@ body {
   opacity: 100%;
 }
 
+.navbar-brand {
+  font-size:1.25vw;
+}
+
 /* Footer */
 
 /* Shared Media */
