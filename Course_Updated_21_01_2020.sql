@@ -1002,22 +1002,22 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 
 /*------ Item (Category) -------*/
 INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
-(123, 'assets/img/category/coding.png', 'Image', 1), 
-(124, 'assets/img/category/support.png', 'Image',2), 
-(125, 'assets/img/category/cloud.png', 'Image',3), 
-(126, 'assets/img/category/security.png', 'Image',4), 
-(127, 'assets/img/category/interactivemedia.png', 'Image',5), 
-(128, 'assets/img/category/gamedesigner.png', 'Image',6), 
-(129, 'assets/img/category/3d.png', 'Image',7), 
-(130, 'assets/img/category/digital.png', 'Image',8),
-(131, 'assets/img/category/banking.png', 'Image',9), 
-(132, 'assets/img/category/data.png', 'Image',10),
-(133, 'assets/img/category/customer.png', 'Image',11), 
-(134,'assets/img/category/enterprise.png', 'Image',12),
-(135, 'assets/img/category/Infrastructure.png', 'Image',13), 
-(136, 'assets/img/category/qa.png', 'Image',14), 
-(137, 'assets/img/category/risk.png', 'Image',15), 
-(138, 'assets/img/category/forensic.png', 'Image',16);
+(126, 'assets/img/category/coding.png', 'Image', 1), 
+(127, 'assets/img/category/support.png', 'Image',2), 
+(128, 'assets/img/category/cloud.png', 'Image',3), 
+(129, 'assets/img/category/security.png', 'Image',4), 
+(130, 'assets/img/category/interactivemedia.png', 'Image',5), 
+(131, 'assets/img/category/gamedesigner.png', 'Image',6), 
+(132, 'assets/img/category/3d.png', 'Image',7), 
+(133, 'assets/img/category/digital.png', 'Image',8),
+(134, 'assets/img/category/banking.png', 'Image',9), 
+(135, 'assets/img/category/data.png', 'Image',10),
+(136, 'assets/img/category/customer.png', 'Image',11), 
+(137,'assets/img/category/enterprise.png', 'Image',12),
+(138, 'assets/img/category/Infrastructure.png', 'Image',13), 
+(139, 'assets/img/category/qa.png', 'Image',14), 
+(140, 'assets/img/category/risk.png', 'Image',15), 
+(141, 'assets/img/category/forensic.png', 'Image',16);
 
 /*------ Modules with Jobs-------*/
 INSERT INTO CategoryModule(category_id, module_id) VALUES
@@ -1053,15 +1053,23 @@ INSERT INTO CategoryModule(category_id, module_id) VALUES
 
 
 
-
-
 INSERT INTO FAQ(question_id,question_text,question_answer) VALUES
-(1,'What are the internship opportunities if I enter this school?','Answer 1'),
+(1,'What are the internship opportunities if I enter this school?','In your final year, you will round off your learning journey with a six-month local or overseas internship with organisations such as KPMG, IBM, Singtel and Microsoft, or launch your own IT business ideas at our technology hubs. You can also work on a capstone project which will beef up your digital portfolio and impress your future employer!'),
 (2,'What will the course structure of the school be like? What will I learn in (IT/FI/IM/CDF)?','Answer 2'),
 (3,'What are the possible FYPs or Capstone Projects that students will be asked to do in the school?','Answer 3'),
 (4,'What scholarship opportunities does your school offer?','Answer 4'),
-(5,'What University degrees/courses will I be able to apply to after I graduate?','Answer 5'),
-(6,'What are the Further Progression opportunities are there upon graduation?','Answer 6'),
-(7,'Difference between games in IM and games in IT','Answer 7'),
-(8,'Which course in the school should I enter?','Answer 8'),
-(9,'why should i choose this school?','Answer 9');
+(5,'What University degrees/courses will I be able to apply in university after I graduate?','<p>You can receive advanced standing when you apply for
+related degree programmes at universities both locally
+and abroad.</br>Depending on the course that you take, some related courses include: Computer Science, Information Systems, Electrical and Computer Engineering, Game Development, Human-Computer Interaction, Information Technology, Interactive Media, Software Engineering.</p>'),
+(6,'What are the Further Progression opportunities are there upon graduation?','
+  <b>Information Technology</b></br>
+  London is the capital city of England.</br>
+  <b>Financial Informatics</b></br>
+  London is the capital city of England.</br>
+  <b>Immersive Media</b></br>
+  London is the capital city of England.</br>
+  <b>Cybersecurity and Digital Forensics</b></br>
+  London is the capital city of England.'),
+(7,'Difference between games in IM and games in IT','Games in Immersive Media is more in to the designing of games, while Games in Information Technology is more to Games Programming.'),
+(8,'Which course in the school should I enter?','If you are not sure which course in our school you would like to enter, you can click on the Telegram button below and create an appointment using /createAppt with our course counsellors to help you make your decision, or you can also take part in the /quiz to find out your true passion!'),
+(9,'Why should i choose this school?','With Singapore on track to becoming a smart nation, you are poised for flourishing industries that will welcome your talent. This means there will also be more room for your aspirations to bloom. Here at ICT, we offer four diplomas and one Common ICT Programme, teamed with various electives and areas of interest, to equip you for your chosen field!');
