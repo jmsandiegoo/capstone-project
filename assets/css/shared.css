@@ -95,6 +95,9 @@ body {
   font-size:1.25vw;
 }
 
+.tabName{
+  padding-right:1vw;
+}
 /* Footer */
 
 /* Shared Media */
@@ -116,6 +119,9 @@ body {
   h4{
     font-size:8.5vw !important;
   }
+  h3{
+    font-size:9.5vw !important;
+  }
   .btn{
     font-size:3vw;
   }
@@ -127,5 +133,12 @@ body {
   }
   .project-content h1{
     font-size:2rem;
+  }
+  .navbar-brand{
+    font-size:5vw;
+  }
+  .foot h4{
+
+    font-size:5.5vw !important;
   }
 }

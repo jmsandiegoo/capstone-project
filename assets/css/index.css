@@ -106,7 +106,6 @@ em{
 }
 .course-entry{
     /* padding-top:140px !important; */
-    padding-top: 80px;
 }
 
 .course-information {
@@ -137,12 +136,12 @@ em{
 } */
 
 .question-icon {
-    width: 3.5rem;
+    width: 3.5vw;
     content: url("../img/General/question.svg");
 }
 
 .binoculars-icon {
-    width: 3.5rem;
+    width: 3.5vw;
     content: url("../img/General/binoculars.svg");
 }
 
@@ -185,6 +184,7 @@ em{
     border-radius: .3rem;
     color: #380E7F;
     font-weight: bold;
+    width:100%;
 }
 
 .hidden-text{
@@ -210,19 +210,8 @@ em{
     font-weight: bold;
 }
 
-#floatingBtn {
-    height: 50px;
-    color: #FFFFFF;
-    background-color: #202020;
-    position: fixed;
-    z-index: 70;
-    bottom: 20px;
-    right: 30px;
-    margin: 20 auto;
-    text-align: right;
-    font-size: 0.9em;
-    padding: 10px;
-    border-radius: 0.5em;
+#floatingBtn #floatingBtnTxt{
+    display:none;
 }
 
 .col-md-4.courses{
@@ -287,11 +276,11 @@ em{
     }
 
     .question-icon{
-        width:1em;
+        width:1vw;
     }
 
     .binoculars-icon{
-        width:1em;
+        width:1vw;
     }
     
     .fp-controlArrow.fp-next{
@@ -379,7 +368,7 @@ em{
     -moz-border-radius: 99em;
     border-radius: 99em;
     border: 5px solid white;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 3px 2px rgb(0, 0, 0); 
 }
 .course-career{
     background-color:#380E7F;
@@ -387,4 +376,13 @@ em{
 
 .card-title{
     font-weight: bold;
+}
+.overlay.slide3{
+    display:flex;
+}
+.container.slide3{
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    
 }
