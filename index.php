@@ -322,10 +322,12 @@
                                     $db -> close();
                                     while ($row = $db->fetch_array($result)): 
                                 ?><br/>
+                                
+                                <div stlye="padding-top:10px">
                                 <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
                                 </a>
-
+                                </div>
                                 <?php endwhile; ?>
                             </div>
                         </div>

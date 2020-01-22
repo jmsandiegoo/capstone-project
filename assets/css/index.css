@@ -1,5 +1,7 @@
 /* Index.php styles */
-
+#categoryjobname{
+    padding-left:10px;
+}
 #section-header {
     color: white;
     text-align: center;
@@ -10,6 +12,9 @@
       ),url("../img/General/BG_Index.png");
 
     background-size: cover;
+}
+em{
+    font-size:1vw;
 }
 .container.cour{
     display: flex;
@@ -329,14 +334,24 @@
     }
     .hidden-text{
         font-weight:250 !important;
-        font-size:1.2em !important;
+        font-size:5em !important;
         display:block !important;
         width:100%;
     }
     .navbar{
         background-color: rgba(0, 0, 0, 0.99) !important;
     }
-    
+    .course-career{
+        display: block;
+        align-items:initial;
+        /*Give more whitespace*/
+        /* padding-top: 50px; */
+        min-height: 50vh;
+    } 
+
+    #categoryjobname{
+        padding-left:3vw !important;
+    }
 }
 
 .card-body1 {
