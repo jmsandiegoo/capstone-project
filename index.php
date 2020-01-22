@@ -357,6 +357,6 @@
             </div>
         </div>
     </main>
-    <?php include $helper->subviewPath('footer.php') ?>
+    <?php include $helper->subviewPath('fullpageFooter.php') ?>
 </html>
 
