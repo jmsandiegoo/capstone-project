@@ -362,4 +362,8 @@ p{
     .tab-content p{
       font-size:4vw;
     }
+    .modal-body p{
+
+      font-size:4vw;
+    }
 }

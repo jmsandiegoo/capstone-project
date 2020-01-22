@@ -39,5 +39,5 @@ function populateProjectOverlay(projectObj) {
 var closeBtn = document.querySelector(".module-modal1 .close-modal")
 
 closeBtn.addEventListener("click", function() {
-    $('.module-modal.in').modal('hide');
+    $('.module-modal1.in').modal('hide');
 })
