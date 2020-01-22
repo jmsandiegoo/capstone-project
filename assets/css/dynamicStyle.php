@@ -118,7 +118,7 @@ foreach ($courses as $key => $row):
         }
 
         #<?php echo 'section-' . $row['id'] . ' p'?> {
-            font-size: 1.75vw;
+            font-size: 3vw;
         }
     }
 
