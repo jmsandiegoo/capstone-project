@@ -763,24 +763,25 @@ INSERT INTO Project(project_id, project_name, project_desc, id) VALUES
 (1, 'Patch', 'A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 1),
 (2, 'Clip Go', 'Our team will be inventing a product that addresses the issues faced by working adults when using the Healthy 365 mobile application and HPB Steps Tracker, as well as the National Steps Challenge, to better suit the needs of its users. We brainstormed and integrated ideas on how to implement all users’ requirements into creating a product that works similarly to the Healthy 365 mobile application, the HPB Steps Tracker, as well as the National Steps Challenge.', 1),
 (3, 'Purple Project', 'Work with Bethesda care to minimize manual processes by simplifying then with a few clicks. Through a website, we are trying to achieve higher productivity rates',1),
+(4, 'Pincii','The module portfolio that the students of year 1 had showcase their creative works with Research & Development or Programming codes of Products. My partner and I decided to do a research & development project. ',1),
 
 /*------ Financial Informatics -------*/
-(4, '-', 'Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',2),
+(5, '-', 'Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',2),
 
 /*------ Immersive Media -------*/
-(5, 'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',3),
+(6, 'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',3),
 
 /*------ Cybersecurity & Digital Forensics -------*/
-(6, 'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',4),
-(7, 'OSSEC', 'For our Network Security assignment, we had to research on an Intrusion Detection/Prevention tool. The poster shows the main features of the IDS tool, OSSEC, and how these features can be used. I demonstrated how the features can be used and had put some test cases like detecting XSS attacks and Telnet remote Login attempts.',4),
-(8, 'EBP', 'For our EBP assignment, we were required to come up with strategies to sell Muselli and manage the stocks in order to gain a profit. This poster shows an overview of the whole simulation.',4),
-(9, 'Wazuh', 'Wazuh is a fork of OSSEC, which is an IDS that allows for the detection of potential threats by generating alerts. Such alerts are generated through rulesets which can be customised according to an organisation’s needs. This poster shows two examples of how Wazuh is able to detect two different kind of attacks.',4),
+(7, 'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',4),
+(8, 'OSSEC', 'For our Network Security assignment, we had to research on an Intrusion Detection/Prevention tool. The poster shows the main features of the IDS tool, OSSEC, and how these features can be used. I demonstrated how the features can be used and had put some test cases like detecting XSS attacks and Telnet remote Login attempts.',4),
+(9, 'EBP', 'For our EBP assignment, we were required to come up with strategies to sell Muselli and manage the stocks in order to gain a profit. This poster shows an overview of the whole simulation.',4),
+(10, 'Wazuh', 'Wazuh is a fork of OSSEC, which is an IDS that allows for the detection of potential threats by generating alerts. Such alerts are generated through rulesets which can be customised according to an organisation’s needs. This poster shows two examples of how Wazuh is able to detect two different kind of attacks.',4),
 
 /*------ Common ICT Programme -------*/
-(10, 'Patch','A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 5),
-(11, '-','Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',5),
-(12,'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',5),
-(13,'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',5)
+(11, 'Patch','A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 5),
+(12, '-','Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',5),
+(13,'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',5),
+(14,'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',5)
 ;
 
 /*------ ElectiveModule -------*/
@@ -978,25 +979,26 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 /*------ Information Technology-------*/
 (113, 'assets/img/projects/IT1.png', 'Image', 1),
 (114, 'assets/img/projects/IT2.jpg', 'Image', 2),
-(115, 'assets/img/projects/IT3.PNG', 'Image', 3),
+(115, 'assets/img/projects/IT3.png', 'Image', 3),
+(116, 'assets/img/projects/IT3.png', 'Image', 4),
 
 /*------ Financial Information-------*/
-(116, 'assets/img/projects/FI1.jpg', 'Image', 4),
+(117, 'assets/img/projects/FI1.jpg', 'Image', 5),
 
 /*------ Immersive Media-------*/
-(117, 'assets/img/projects/IM1.png', 'Image', 5),
+(118, 'assets/img/projects/IM1.png', 'Image', 6),
 
 /*------ Cybersecurity & Digital Forensics-------*/
-(118, 'assets/img/projects/CSF1.png', 'Image', 6),
-(119, 'assets/img/projects/CSF2.jpeg', 'Image', 7),
-(120, 'assets/img/projects/CSF3.jpg', 'Image', 8),
-(120, 'assets/img/projects/CSF4.jpg', 'Image', 9),
+(119, 'assets/img/projects/CSF1.png', 'Image', 7),
+(120, 'assets/img/projects/CSF2.jpeg', 'Image', 8),
+(121, 'assets/img/projects/CSF3.jpg', 'Image', 9),
+(122, 'assets/img/projects/CSF4.jpg', 'Image', 10),
 
 /*------ Common ICT-------*/
-(119, 'assets/img/projects/IT1.png', 'Image', 10),
-(120, 'assets/img/projects/FI1.jpg', 'Image', 11),
-(121, 'assets/img/projects/IM1.png', 'Image', 12),
-(122, 'assets/img/projects/CSF1.png', 'Image',13);
+(123, 'assets/img/projects/IT1.png', 'Image', 11),
+(124, 'assets/img/projects/FI1.jpg', 'Image', 12),
+(125, 'assets/img/projects/IM1.png', 'Image', 13),
+(126, 'assets/img/projects/CSF1.png', 'Image',14);
 
 /*------ Item (Category) -------*/
 INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
