@@ -221,12 +221,14 @@
                                 <p style="width:80%; float:left;">
                                     <em>* You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements.<br/>
                                     * Candidates with severe vision deficiency should not apply for the course.</em>
-                                </p>
-                                <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
+                                </p><br/>
+                                
+                            </div>
+                            
+                        </div>
+                        <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
                                 </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -319,7 +321,7 @@
                                     $result = $db->query($sql);
                                     $db -> close();
                                     while ($row = $db->fetch_array($result)): 
-                                ?>
+                                ?><br/>
                                 <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
                                 </a>
@@ -331,15 +333,7 @@
                 </div>
             </div>
             <?php endforeach;?>                            
-            <div class="section" id="sectionfooter">
-                <div class="container">
-                    <footer>
-                        <h1>Not sure which course to take?</h1>
-                        <p>Don't worry! We have prepared a quiz for you, it will guide you to find the courses you might be interested in!</p>
-                        <a href="<?php echo $helper->pageUrl("quiz.php") ?>" id="quiz-button" class="btn bg-light">Take Quiz</a>
-                    </footer>
-                </div>
-            </div>
+
         </div>
     </main>
     <?php include $helper->subviewPath('footer.php') ?>

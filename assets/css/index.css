@@ -53,12 +53,12 @@
     color:white;
 }
 #section-header h1 {
-    font-size: 6rem;
+    font-size: 6vw;
     margin-bottom:0;
 }
 
 #section-header h2 {
-    font-size: 2.5rem;
+    font-size: 2.5vw;
     display: inline-block;
 }
 
@@ -174,7 +174,7 @@
     position: absolute;
     right: 30px;
     padding: .5rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     line-height: 1.5;
     border-radius: .3rem;
     color: #380E7F;
@@ -273,11 +273,11 @@
     }
 
     .course-entry h1 {
-        font-size: 7vw !important;
+        font-size: 4vw !important;
     }
 
     .course-entry h3, .course-entry h5, .course-entry h6{
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .question-icon{
@@ -294,10 +294,10 @@
     
     }
     #categoryjob{
-        font-size: 3.5vw !important;
+        font-size: 2.5vw !important;
     }
     #categoryjobname{
-        font-size:2.5vw !important;
+        font-size:2vw !important;
     }
     .card-body1.category{    
         flex-basis: calc(100% / 3) !important;
@@ -309,7 +309,7 @@
     #learn-more-btn{
         position: static;
         padding: .25rem .5rem;
-        font-size: .875rem;
+        font-size: 3vw;
         line-height: 1.5;
         border-radius: .2rem;
         width:100%;

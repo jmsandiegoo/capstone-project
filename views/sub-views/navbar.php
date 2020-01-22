@@ -7,9 +7,9 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <div class="navbar-nav">
-                    <a class="nav-item text-white nav-link pl-2" href="<?php echo $helper->pageUrl("index.php") ?>"><b>Full Time Courses</b><span class="sr-only">(current)</span></a>
-                    <a class="nav-item text-white nav-link" href="<?php echo $helper->pageUrl("tour.php") ?>"><b>Map</b></a>
-                    <a class="nav-item text-white nav-link" href="<?php echo $helper->pageUrl("faq.php") ?>"><b>FAQ</b></a>
+                    <a class="nav-item text-white nav-link pl-2" href="<?php echo $helper->pageUrl("index.php") ?>"><b style="font-size:1.5vw">Full Time Courses</b><span class="sr-only">(current)</span></a>
+                    <a class="nav-item text-white nav-link" href="<?php echo $helper->pageUrl("tour.php") ?>"><b style="font-size:1.5vw">Map</b></a>
+                    <a class="nav-item text-white nav-link" href="<?php echo $helper->pageUrl("faq.php") ?>"><b style="font-size:1.5vw">FAQ</b></a>
                 </div>
             </div>
         </div>
