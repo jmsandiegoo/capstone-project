@@ -3,28 +3,33 @@
     position: relative;
 }
 
+.faq-wrapper .colle {
+    border: 1px solid gray;
+    margin-top: 3px;
+    
+}
 .faq-wrapper .collapsible {
-    background-color: #777;
-    color: white;
+    background-color: white;
+    color: black;
     cursor: pointer;
-    padding: 18px;
+    padding: 15px;
     width: 100%;
-    border: none;
     text-align: left;
     outline: none;
     font-size: 15px;
+    border: none;
+    margin-top: 3px;
 }
 
 .faq-wrapper  .active, .collapsible:hover {
-    background-color: #555;
+    background-color: white;
 }
 
 .faq-wrapper .collapsible:after {
     content: '\002B';
-    color: white;
+    color: black;
     font-weight: bold;
     float: right;
-    margin-left: 5px;
 }
 
 .faq-wrapper .active:after {
@@ -32,27 +37,14 @@
 }
   
 .faq-wrapper .content {
+    margin: 3px;
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
+    background-color:white;
 }
-  
-.faq-wrapper .tg-btn{
-    font-size:16px;
-    font-weight:500;
-    text-align:center;
-    border-radius:8px;
-    padding:5px;
-    background:#389ce9;
-    text-decoration:none;
-    color:#fff;
-  }
-  
-  .faq-wrapper .tg-btn-box{
-    width:30px;
-    height:20px;
-    vertical-align:middle;
-    margin:0px 5px;
-  }
+
+.faq-wrapper .telegram-button {
+    text-align: center;
+}

@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-6 project-right">
                 <div class="project-image">
-                  <img src="<?php echo $projectImagePath; ?>" class="img-fluid" alt="Responsive image">
+                  <img style="max-height:80% " src="<?php echo $projectImagePath; ?>" class="img-fluid" alt="Responsive image">
                 </div>
             </div>
 

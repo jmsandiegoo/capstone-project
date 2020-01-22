@@ -8,8 +8,9 @@
  $db->connect(); 
 
  // Fetch the background
- $backgroundPath = '../assets/img/General/faq.png';
+ $backgroundPath = '../assets/img/General/FAQ.png';
  $tglogoPath = '../assets/img/General/tglogo.png';
+ $tgbtnPath = '../assets/img/General/tgbtn.png';
  
  //Fetch FAQs
  $sql = "SELECT * FROM FAQ";
@@ -38,23 +39,25 @@
     <section class="faq-content container">
         <div id="myBtnContainer-faq">
             <?php foreach ($faqResultsArray as $key => $row):?>
+            <div class="colle">
             <button class="collapsible"><?php echo $faqResultsArray[$key]['question_text'] ?></button>
             <div class="content">
-            <p><?php echo $faqResultsArray[$key]['question_answer'] ?></p>
+            <?php echo $faqResultsArray[$key]['question_answer'] ?>
+            </div>
             </div>
             <?php endforeach; ?>
         </div>
-    </section>
-
-    <section class="faq-btn container">
-        <div id="telegramWidget">
-              <p>Have any other questions? Create an appointment with our course counsellors with our Telegram Chatbot by clicking on the Telegram button below!</p>
-          <a class="tg-btn" href="https://t.me/npictoh_bot" target="_blank">
-            <svg class="tg-btn-box" viewBox="0 0 21 18">
-              <image href="<?php echo $tglogoPath; ?>" x="0" y="0" height="16px" width="16px"/>
-            </svg>Chat with our bot! 
-          </a>
-        </div>
+        <div class="tele-button align-items-center">
+        </div> 
+        <div class="row"> 
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4 telegram-button">
+                    <a class="tg-btn" href="https://t.me/npictoh_bot"><img src="<?php echo $tgbtnPath; ?>" width="70%"/></a>
+            </div>
+            <div class="col-lg-4">
+            </div>
+          </div>
     </section>
 </main>
 <script src="<?php echo $helper->jsPath("faq.js") ?>" ></script>
