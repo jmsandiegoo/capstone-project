@@ -987,7 +987,7 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (117, 'assets/img/projects/IM1.png', 'Image', 5),
 
 /*------ Cybersecurity & Digital Forensics-------*/
-(118, 'assets/img/projects/CSF1.PNG', 'Image', 6),
+(118, 'assets/img/projects/CSF1.png', 'Image', 6),
 (119, 'assets/img/projects/CSF2.jpeg', 'Image', 7),
 (120, 'assets/img/projects/CSF3.jpg', 'Image', 8),
 (120, 'assets/img/projects/CSF4.jpg', 'Image', 9),
@@ -996,7 +996,7 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (119, 'assets/img/projects/IT1.png', 'Image', 10),
 (120, 'assets/img/projects/FI1.jpg', 'Image', 11),
 (121, 'assets/img/projects/IM1.png', 'Image', 12),
-(122, 'assets/img/projects/CSF1.PNG', 'Image',13);
+(122, 'assets/img/projects/CSF1.png', 'Image',13);
 
 /*------ Item (Category) -------*/
 INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
