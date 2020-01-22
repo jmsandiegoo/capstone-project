@@ -102,12 +102,15 @@ body {
     width: 80% !important;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   h6 {
     font-size: 1.5vw;
   }
   h5{
     font-size:2.0vw;
+  }
+  h4{
+    font-size:8.5vw !important;
   }
   
 }

@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS Account;
 DROP TABLE IF EXISTS PwdReset;
 DROP TABLE IF EXISTS Appointment;
 DROP TABLE IF EXISTS Item;
+DROP TABLE IF EXISTS CategoryModule
 DROP TABLE IF EXISTS ModuleJob;
 DROP TABLE IF EXISTS CourseModule;
 DROP TABLE IF EXISTS ElectiveModule;
@@ -157,6 +158,15 @@ CREATE TABLE ModuleJob
   CONSTRAINT fk_modulejob_job_job_id FOREIGN KEY (job_id) REFERENCES Job(job_id),
   CONSTRAINT fk_modulejob_module_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE CategoryModule
+(
+  category_id INT(4) NOT NULL,
+  module_id INT(4) NOT NULL,
+  CONSTRAINT fk_categorymodule_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id),
+  CONSTRAINT fk_categorymodule_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 CREATE TABLE Item 
 (
@@ -577,7 +587,7 @@ INSERT INTO Category(category_id, category_name, id) VALUES
 (5, 'User Experience', 3), 
 (6, 'Game Designer', 3), 
 (7, 'Graphics, 3D/Sketch', 3), 
-(8, 'Digital', 3),
+(8, 'Digital Work', 3),
 
 /*--FI--*/
 (9, 'Banking & Finance', 2), 
@@ -735,7 +745,6 @@ INSERT INTO Module(module_id, module_name, module_description) VALUES
 (79, 'Portfolio Development', 'This module provides students with the opportunity to apply the knowledge and skills gained from the various modules in the course to date, and explore topics in IT that they have a personal interest. Students may choose to undertake a real- life IT project, a competition- based project or a research and development project. The chosen project should result in the subsequent deliverable of artefacts that are suitable for their personal portfolios. Through the project, students have opportunities to work in teams, work on real-world problems, and build up their personal portfolios.'),
 (80, 'Spreadsheet Engineering','The spreadsheet is an indispensable tool for professionals, especially in the banking and finance industry, to solve business problems and make better informed decisions. This module will introduce students to the use of spreadsheets as a reporting and modelling tool in the areas of business and finance. Through hands-on Excel practical sessions in class, students will explore various spreadsheet functions and simple macros used for analysing, formatting and presenting data. Students will also be equipped with an understanding of best practices in spreadsheet usage and design.'),
 (81, 'Deep Learning', 'The students will learn the increasingly important field of artificial intelligence and neural networks.'),
-(82, 'Descriptive Analytics', 'Many companies applied discipline to analyse their data for improved decision making. This module describes what happened in the past including the various forms of reports, queries and dashboards. It aims to teach the students the descriptive analytics lifecycle, as well as learn ask the appropriate analytics questions, identify and aggregate data sources and create data models. They apply techniques to analyse the data captured in these models. Visualisation components will be appropriated to gain insight from the data create by them. Those will be synthesized into dashboards that add value and can be readily consumed by the business users.'),
 (83, 'Machine Learning', 'With the introduction of Fundamentals Machine Learning and its Applications, the students will be provided the essential context and background knowledge of Machine Learning. They will gain exposure to both supervised and unsupervised learning models such as Linear & Logistic Regressopm, Decision Tree, K-means Clustering and more. Using leading software and associated libraries, they will be able to implements and train Machine Learning models to address business challenges.'),
 (84, 'Advance Databases', 'This module covers analysis, design, and implementation of polygot persistence for modern software applications. Latest Key-Values, Document, Column-Oriented, Graph, Blob, and Queue storages in data storage methods and techniques will be discussed. Students will be exposed to de-normalisation transactions, concurrency control, and database recovery techniques. Stored Procedtures and how to migrate and deploy an on-premises database to a cloud database will be teach. Additional, parallel and distributed database technologies will be introduced. Factors relating to data partitioning and placement across regions will be discussed. The students will have hand-on practical activities using Microsoft Azure. This module will further explore data security, laws and regulations governing data access, usage, storage and transmission.'),
 (85, 'DevOps', 'This module is mainly focus to teach the set of software development practices that automates the process between software development and IT operatins. Building upon their knowledge on agile methodology and software development, students will be taught how to leverage the concepts of continuous integration and continuous delivery (CI/CD) to deliver value faster. The module will provide hands-on practice for students to experience the CI/CD pipeline with the use of popular open-source tools.'),
@@ -811,7 +820,7 @@ INSERT INTO CourseModule(id, module_id, module_year) VALUES
 (1, 55,'Elective'),(1,59,'Elective'),(1, 60,'2'),(1, 61,'1'),(1, 63,'1'),
 (1, 64,'1'),(1, 65,'3'),(1, 66,'Elective'),(1,68,'Elective'),(1, 69,'Elective'),
 (1, 71,'Elective'),(1, 72,'Elective'),(1, 73,'Elective'),(1, 74,'2'),(1, 76,'2'),(1,77,'Elective'),(1,78,'2'),
-(1,79, '2'), (1,80,'2'),(1,81,'Elective'),(1,82,'Elective'),(1,83,'Elective'),(1,84,'Elective'),(1,85,'Elective'),
+(1,79, '2'), (1,80,'2'),(1,81,'Elective'),(1,83,'Elective'),(1,84,'Elective'),(1,85,'Elective'),
 
 /*------ Financial Informatics -------*/
 (2, 4,'1'),(2,5,'3'),(2,8,'2'),(2,9,'2'),(2,10,'Elective'),(2,11,'3'),
@@ -1004,12 +1013,38 @@ INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES
 (138, 'assets/img/category/forensic.png', 'Image',16);
 
 /*------ Modules with Jobs-------*/
-INSERT INTO CategoryJob(category_id, module_id) VALUES
+INSERT INTO CategoryModule(category_id, module_id) VALUES
 /*------ Information Technology-------*/
-(1,19), (1,20), (1,25), (1,24), (1,27), (1,54), (1,55), (1,60), (1,63), (1,64), (1,74), (1,85), (1,92), (1,84),
-(2, 12), (2, 19), (2,20), (2,25), (2,24), (2,27), (2,54), (2,55), (2,60), (2,63), (2,64), (2,74), (2,85), (2,92), (2,84),
-(3,20), (3,22), (3,23), (3,24), (3,27), (3,37), (3,60), (3,63), (3,64), (3,69), (3,73), (3,85), (3,92), (2,84),
-(4, 16), (4,17), (4,28), (4,30), (4,31),(4,32),(4,36),(4,45),(4,47),(4,71),(4,79),(4,80),(4,87),(4,91),
+(1,12), (1,19), (1,20), (1,22), (1,23), (1,37), (1,25), (1,24), (1,27), (1,54), (1,55), (1,60), (1,63), (1,64), (1,74), (1,85), (1,92), (1,84),
+
+(2,13), (2, 16), (2,17), (2,28), (2,30), (2,31),(2,32),(2,36),(2,45),(2,47),(2,71),(2,79),(2,80),(2,87),(2,91),
+
+(3,12), (3,19), (3,20), (3,24), (3,25), (3,28), (3,30), (3,31),(3,32),(3,59),(3,61),(3,68),(3,67),(3,73),(3,83),
+
+(4,12), (4,15), (4,18), (4,52), (4,19), (4,20), (4,26), (4,28), (4,33), (4,52) (4,56), (4,57), (4,58), (4,66),(4,67),(4,68),(4,75) (4,37), (4,25), (4,24), (4,27), (4,54), (4,55), (4,60), (4,63), (4,64), (4,74), (4,85), (4,92), (4,84),
+
+(5,6), (5,20), (5,22), (5,23), (5,37), (5,25), (5,49), (5,24), (5,27), (5,54), (5,55), (5,60), (5,63), (5,64), (5,74), (5,85), (5,92), (5,84),
+
+(6,1), (6,2), (6,3), (6,7),(6,14),(6,41),(6,42),(6,43),(6,44),(6,85),(6,69),(6,60),(6,72),
+
+(7,1),(7,2),(7,3),(7,6),(7,22),(7,23),(7,34),(7,49),(7,72),
+
+(8,1), (8,2), (8,3), (8,7),(8,14),(8,41),(8,42),(8,43),(8,44),(8,85),(8,69),(8,60),(8,72),
+
+(9,4),(9,5),(9,8),(9,9),(9,10),(9,21),(9,35),(9,36),(9,47),(9,86),(9,87),
+
+(10,10), (10,20), (10,21), (10,28), (10,32), (10,35), (10,86),(10,84),(10,88),
+
+(11,13), (11, 16), (11,17), (11,28), (11,30), (11,31),(11,32),(11,36),(11,45),(11,47),(11,71),(11,79),(11,80),(11,87),(11,91),
+
+(12,10), (12,20), (12,21), (12,28), (12,32), (12,35), (12,86),(12,84),(12,88),(12,13), (12, 16), (12,17), (12,28), (12,30), (12,31),(12,32),(12,36),(12,45),(12,47),(12,71),(12,79),(12,80),(12,87),(12,91),
+
+(13,12),(13,15,),(13,18),(13,24),(13,52),(13,58),(13,59),(13,68),
+(14,12),(14,15),(14,18),(14,24),(14,33),(14,58,),
+(15,12),(15,15),(15,18),(15,24),(15,58),(15,59),(15,67),(15,68),
+(16,12),(16,15),(16,18),(16,24),(16,26),(16,57),(16,58);
+
+
 
 
 
