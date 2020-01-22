@@ -980,7 +980,7 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (113, 'assets/img/projects/IT1.png', 'Image', 1),
 (114, 'assets/img/projects/IT2.jpg', 'Image', 2),
 (115, 'assets/img/projects/IT3.png', 'Image', 3),
-(116, 'assets/img/projects/IT3.png', 'Image', 4),
+(116, 'assets/img/projects/IT4.png', 'Image', 4),
 
 /*------ Financial Information-------*/
 (117, 'assets/img/projects/FI1.jpg', 'Image', 5),
@@ -1002,22 +1002,22 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 
 /*------ Item (Category) -------*/
 INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
-(126, 'assets/img/category/coding.png', 'Image', 1), 
-(127, 'assets/img/category/support.png', 'Image',2), 
-(128, 'assets/img/category/cloud.png', 'Image',3), 
-(129, 'assets/img/category/security.png', 'Image',4), 
-(130, 'assets/img/category/interactivemedia.png', 'Image',5), 
-(131, 'assets/img/category/gamedesigner.png', 'Image',6), 
-(132, 'assets/img/category/3d.png', 'Image',7), 
-(133, 'assets/img/category/digital.png', 'Image',8),
-(134, 'assets/img/category/banking.png', 'Image',9), 
-(135, 'assets/img/category/data.png', 'Image',10),
-(136, 'assets/img/category/customer.png', 'Image',11), 
-(137,'assets/img/category/enterprise.png', 'Image',12),
-(138, 'assets/img/category/Infrastructure.png', 'Image',13), 
-(139, 'assets/img/category/qa.png', 'Image',14), 
-(140, 'assets/img/category/risk.png', 'Image',15), 
-(141, 'assets/img/category/forensic.png', 'Image',16);
+(127, 'assets/img/category/coding.png', 'Image', 1), 
+(128, 'assets/img/category/support.png', 'Image',2), 
+(129, 'assets/img/category/cloud.png', 'Image',3), 
+(130, 'assets/img/category/security.png', 'Image',4), 
+(131, 'assets/img/category/interactivemedia.png', 'Image',5), 
+(132, 'assets/img/category/gamedesigner.png', 'Image',6), 
+(133, 'assets/img/category/3d.png', 'Image',7), 
+(134, 'assets/img/category/digital.png', 'Image',8),
+(135, 'assets/img/category/banking.png', 'Image',9), 
+(136, 'assets/img/category/data.png', 'Image',10),
+(137, 'assets/img/category/customer.png', 'Image',11), 
+(138,'assets/img/category/enterprise.png', 'Image',12),
+(139, 'assets/img/category/Infrastructure.png', 'Image',13), 
+(140, 'assets/img/category/qa.png', 'Image',14), 
+(141, 'assets/img/category/risk.png', 'Image',15), 
+(142, 'assets/img/category/forensic.png', 'Image',16);
 
 /*------ Modules with Jobs-------*/
 INSERT INTO CategoryModule(category_id, module_id) VALUES
