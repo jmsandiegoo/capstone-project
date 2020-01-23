@@ -770,10 +770,10 @@ INSERT INTO Project(project_id, project_name, project_desc, id) VALUES
 
 /*------ Immersive Media -------*/
 (6, 'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',3),
-(7,'','',3),
-(8,'','',3),
-(9,'','',3),
-(10,'','',3),
+(7,'Landscape','The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.',3),
+(8,'Natural Poster','It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',3),
+(9,'Thinking Lighting','Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',3),
+(10,'Romantic','It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',3),
 
 /*------ Cybersecurity & Digital Forensics -------*/
 (11, 'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',4),
