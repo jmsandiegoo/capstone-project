@@ -783,12 +783,16 @@ INSERT INTO Project(project_id, project_name, project_desc, id) VALUES
 (15, 'OSSEC', 'For our Network Security assignment, we had to research on an Intrusion Detection/Prevention tool. The poster shows the main features of the IDS tool, OSSEC, and how these features can be used. I demonstrated how the features can be used and had put some test cases like detecting XSS attacks and Telnet remote Login attempts.',4),
 (16, 'EBP', 'For our EBP assignment, we were required to come up with strategies to sell Muselli and manage the stocks in order to gain a profit. This poster shows an overview of the whole simulation.',4),
 (17, 'Wazuh', 'Wazuh is a fork of OSSEC, which is an IDS that allows for the detection of potential threats by generating alerts. Such alerts are generated through rulesets which can be customised according to an organisation’s needs. This poster shows two examples of how Wazuh is able to detect two different kind of attacks.',4),
+(18, 'SQLmap, a Lethal Weapon for Attackers','Injection attackers can do great deal of damage and have been around for decades. Yet, they remain among the Top 10 Security Risks out there, according to the Open Web Application Security Project',4),
+(19, 'The Sleuth Kit', 'Poster for Digital Forensics module in the Information Security & Forensics course. This poster shows a brief overview of a forensics tool used for research assignment, as well as how the student made use of this tool to create her own tool using a bash script (the self created tool basically allows user to sort files according to their file extensions. The main feature is that it is able to sort even files with their extension changed (e.g. jpg --> docx. Done through checking of file signatures) .',4),
+(20, 'OSSEC', 'Poster for Network Security module in the Information Security & Forensics course. This poster shows a brief overview of a intrusion detection system used for research assignment. It shows how the tool can be used, and also how one can configure the tool. additionally, show what kind of attacks it can detect e.g SQL injection, XSS, spidering and more.',4),
+
 
 /*------ Common ICT Programme -------*/
-(18, 'Patch','A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 5),
-(19, '-','Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',5),
-(20,'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',5),
-(21,'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',5)
+(21, 'Patch','A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 5),
+(22, '-','Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',5),
+(23,'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',5),
+(24,'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',5)
 ;
 
 /*------ ElectiveModule -------*/
@@ -1007,31 +1011,35 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (127, 'assets/img/projects/CSF2.jpeg', 'Image', 15),
 (128, 'assets/img/projects/CSF3.jpg', 'Image', 16),
 (129, 'assets/img/projects/CSF4.jpg', 'Image', 17),
+(130, 'assets/img/projects/CSF5.jpg', 'Image', 18),
+(131, 'assets/img/projects/CSF6.jpg', 'Image', 19),
+(132, 'assets/img/projects/CSF7.jpg', 'Image', 20),
+
 
 /*------ Common ICT-------*/
-(130, 'assets/img/projects/IT1.png', 'Image', 18),
-(131, 'assets/img/projects/FI1.jpg', 'Image', 19),
-(132, 'assets/img/projects/IM1.png', 'Image', 20),
-(133, 'assets/img/projects/CSF1.png', 'Image',21);
+(133, 'assets/img/projects/IT1.png', 'Image', 21),
+(134, 'assets/img/projects/FI1.jpg', 'Image', 22),
+(135, 'assets/img/projects/IM1.png', 'Image', 23),
+(136, 'assets/img/projects/CSF1.png', 'Image',24);
 
 /*------ Item (Category) -------*/
 INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
-(134, 'assets/img/category/coding.png', 'Image', 1), 
-(135, 'assets/img/category/support.png', 'Image',2), 
-(136, 'assets/img/category/cloud.png', 'Image',3), 
-(137, 'assets/img/category/security.png', 'Image',4), 
-(138, 'assets/img/category/interactivemedia.png', 'Image',5), 
-(139, 'assets/img/category/gamedesigner.png', 'Image',6), 
-(140, 'assets/img/category/3d.png', 'Image',7), 
-(141, 'assets/img/category/digital.png', 'Image',8),
-(142, 'assets/img/category/banking.png', 'Image',9), 
-(143, 'assets/img/category/data.png', 'Image',10),
-(144, 'assets/img/category/customer.png', 'Image',11), 
-(145,'assets/img/category/enterprise.png', 'Image',12),
-(146, 'assets/img/category/Infrastructure.png', 'Image',13), 
-(147, 'assets/img/category/qa.png', 'Image',14), 
-(148, 'assets/img/category/risk.png', 'Image',15), 
-(149, 'assets/img/category/forensic.png', 'Image',16);
+(137, 'assets/img/category/coding.png', 'Image', 1), 
+(138, 'assets/img/category/support.png', 'Image',2), 
+(139, 'assets/img/category/cloud.png', 'Image',3), 
+(140, 'assets/img/category/security.png', 'Image',4), 
+(141, 'assets/img/category/interactivemedia.png', 'Image',5), 
+(142, 'assets/img/category/gamedesigner.png', 'Image',6), 
+(143, 'assets/img/category/3d.png', 'Image',7), 
+(144, 'assets/img/category/digital.png', 'Image',8),
+(145, 'assets/img/category/banking.png', 'Image',9), 
+(146, 'assets/img/category/data.png', 'Image',10),
+(147, 'assets/img/category/customer.png', 'Image',11), 
+(148,'assets/img/category/enterprise.png', 'Image',12),
+(149, 'assets/img/category/Infrastructure.png', 'Image',13), 
+(150, 'assets/img/category/qa.png', 'Image',14), 
+(151, 'assets/img/category/risk.png', 'Image',15), 
+(152, 'assets/img/category/forensic.png', 'Image',16);
 
 /*------ Modules with Jobs-------*/
 INSERT INTO CategoryModule(category_id, module_id) VALUES
