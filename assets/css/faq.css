@@ -4,25 +4,24 @@
 }
 
 .faq-wrapper .colle {
-    border: 1px solid gray;
-    margin-top: 3px;
-    
+    border: 1px solid #9651A4;
+    /* margin-top: 3px; */  
 }
 .faq-wrapper .collapsible {
-    background-color: white;
-    color: black;
+    background-color: #9651A4;
+    color: white;
     cursor: pointer;
-    padding: 15px;
     width: 100%;
     text-align: left;
     outline: none;
     font-size: 15px;
     border: none;
-    margin-top: 3px;
+    padding: 15px;
+    /* margin-top: 3px; */
 }
 
 .faq-wrapper  .active, .collapsible:hover {
-    background-color: white;
+    background-color: #9651A4;
 }
 
 .faq-wrapper .collapsible:after {
@@ -37,8 +36,9 @@
 }
   
 .faq-wrapper .content {
-    margin: 3px;
-    padding: 0 18px;
+    /* margin: 3px; */
+    max-height: 0;
+    padding: 0 20px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color:white;
@@ -48,3 +48,6 @@
     text-align: center;
 }
 
+h5{
+    font-size: medium;
+}
