@@ -8,7 +8,7 @@
     <?php include $helper->subviewPath('navbar.php')?>
     <?php include $helper->subviewPath('header.php')?>
     <main class="container">
-        <h1 class="text-center">Map</h1>
+        <h4 class="text-center">Map</h4>
         <img src='../assets/img/tourmap/TourMap.png' alt="Tour Map" width="100%" height="100%">
     </main>
     <?php include $helper->subviewPath('footer.php') ?>

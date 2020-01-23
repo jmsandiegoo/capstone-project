@@ -20,7 +20,7 @@
     $row = $db->fetch_array($courseItemResult);
     $backgroundPath = '../' . $row['item_path'];
 
-    // Fetch Categor
+    // Fetch Category
     // $sql = "SELECT j.job_name FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id = $id";
     $sql = "SELECT cat.category_name FROM Category cat WHERE cat.id = $id";
     $categoryNameResults = $db->query($sql);
@@ -105,60 +105,109 @@
             </div>
             <div class="fade-overlay"></div>
         </div>
-            <!-- Tab Year Links -->
-        <div id="tabContainer">
-            <div class="tabs">
-                <?php foreach ($moduleYear as $key => $row): 
-                    $tablinkLbl = 'Elective';
 
-                    if ($row['module_year'] !== 'Elective') {
-                        $tablinkLbl = 'Year ' . $row['module_year'];
-                    }
-                ?>
-                    <button class="btn tab-link" onclick="openTab('<?php echo 'year-'.$row['module_year'] ?>')"><b><?php echo $tablinkLbl ?></b></button>
-                <?php endforeach; ?>
-            </div>
+        <?php if ($id == 5): ?>
+            <div id="tabContainer">
+                <div class="tabs">
+                        <button class="btn tab-link" onclick="openTab('<?php echo 'year-1' ?>')"><b>Year 1</b></button>
+                        <button class="btn tab-link" onclick="openTab('<?php echo 'year-2-onwards' ?>')"><b>Year 2 Onwards</b></button>
+                </div>
+                <div class="tab-contents">
+                    <div class="tab-content year-1">
+                        <h4>Description</h4>
+                        <p><?php echo $courseInfo['course_year1_description'] ?></p>
+                        <h4 class="pt-4">Modules</h4>
+                        <div class="modules">
+                        <?php foreach ($courseModule as $key => $modules): ?>
+                            <?php if ($key == 1): ?>
+                                <?php foreach ($modules as $key => $module): ?>
+                                    <div class="card filterDiv <?php echo $module['category_string'] ?>">
+                                    <a id="<?php echo $module['module_id'] ?>" class="card-body">
+                                    <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $module["item_path"] ?>" alt="Module Image">
+                                    <h6 class="card-title"><?php echo $module['module_name'] ?></h6>
+                                    </a>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        </div>
+                    </div>
 
-            <div class="tab-contents">
-            <?php foreach ($moduleYear as $key => $row):
-                $contentYear = "Elective";
-
-                $desc = "";
-				if ($row['module_year'] === '1') {
-                    $desc = $courseInfo['course_year1_description'];
-                }
-                else if ($row['module_year'] === '2') {
-                    $desc = $courseInfo['course_year2_description'];
-                }
-                else if ($row['module_year'] === '3') {
-                    $desc = $courseInfo['course_year3_description'];
-                }
-                else if ($row['module_year'] === 'Elective') {
-                    $desc = $courseInfo['course_elective_description'];
-                }
-            ?>
-                <div class="tab-content year-<?php echo $row['module_year'] ?>">
-                    <h4>Description</h4>
-                    <p><?php echo $desc ?></p>
-                    <h4>Modules</h4>
-                    <div class="modules">
-                    <?php foreach ($courseModule as $key => $modules): ?>
-                        <?php if ($key == $row['module_year']): ?>
-                            <?php foreach ($modules as $key => $module): ?>
-                                <div class="card filterDiv <?php echo $module['category_string'] ?>">
+                    <div class="tab-content year-2-onwards">
+                        <h4>Description</h4>
+                        <p><?php echo $courseInfo['course_year2_description']?></p>
+                        <h4 class="pt-4">Respective Diploma Courses</h4>
+                        <p>Select your preferred diploma below to view the respective modules</p>
+                        <div class="modules">
+                            <div class="card filterDiv <?php echo $module['category_string'] ?>">
                                 <a id="<?php echo $module['module_id'] ?>" class="card-body">
                                 <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $module["item_path"] ?>" alt="Module Image">
                                 <h6 class="card-title"><?php echo $module['module_name'] ?></h6>
+                                    
                                 </a>
-                                </div>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-            <?php endforeach; ?>
             </div>
-        </div>
+
+        <?php else: ?>
+            <!-- Tab Year Links -->
+            <div id="tabContainer">
+                <div class="tabs">
+                    <?php foreach ($moduleYear as $key => $row): 
+                        $tablinkLbl = 'Elective';
+
+                        if ($row['module_year'] !== 'Elective') {
+                            $tablinkLbl = 'Year ' . $row['module_year'];
+                        }
+                    ?>
+                        <button class="btn tab-link" onclick="openTab('<?php echo 'year-'.$row['module_year'] ?>')"><b><?php echo $tablinkLbl ?></b></button>
+                    <?php endforeach; ?>
+                </div>
+
+                <div class="tab-contents">
+                <?php foreach ($moduleYear as $key => $row):
+                    $contentYear = "Elective";
+
+                    $desc = "";
+                    if ($row['module_year'] === '1') {
+                        $desc = $courseInfo['course_year1_description'];
+                    }
+                    else if ($row['module_year'] === '2') {
+                        $desc = $courseInfo['course_year2_description'];
+                    }
+                    else if ($row['module_year'] === '3') {
+                        $desc = $courseInfo['course_year3_description'];
+                    }
+                    else if ($row['module_year'] === 'Elective') {
+                        $desc = $courseInfo['course_elective_description'];
+                    }
+                ?>
+                    <div class="tab-content year-<?php echo $row['module_year'] ?>">
+                        <h4>Description</h4>
+                        <p><?php echo $desc ?></p>
+                        <h4 class="pt-4">Modules</h4>
+                        <div class="modules">
+                        <?php foreach ($courseModule as $key => $modules): ?>
+                            <?php if ($key == $row['module_year']): ?>
+                                <?php foreach ($modules as $key => $module): ?>
+                                    <div class="card filterDiv <?php echo $module['category_string'] ?>">
+                                    <a id="<?php echo $module['module_id'] ?>" class="card-body">
+                                    <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $module["item_path"] ?>" alt="Module Image">
+                                    <h6 class="card-title"><?php echo $module['module_name'] ?></h6>
+                                    </a>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
 
     </section>
     <section class="project-content container">
@@ -179,6 +228,7 @@
 <?php include $helper->subviewPath('footer.php') ?>
 <script src="<?php echo $helper->jsPath("modules.js") ?>" ></script>
 </html>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $('.carousel').slick({
