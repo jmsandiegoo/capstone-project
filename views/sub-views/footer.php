@@ -7,8 +7,8 @@
             <div class="col-12">
                 <hr>
                 <p style="width:50%; float:left;">&copy; Copyright 2020, Ngee Ann Poly School of ICT<br/>Capstone Project Semester 3.2 - Diego, Yeow Keng, Avin, Gerald, Sandy</p>
-                <div class=" foot" style="float:right;">    
-                <p style="width:50%;text-align:center;">Still need help? </p>
+                <div class="foot" style="float:right;">    
+                <p class="text-center" style="width:50%;">Still need help? </p>
                                        
                         <a href="https://t.me/npictoh_bot">
                             <img alt="Telegram Link" src="../assets/img/General/qrcode.png" style="margin-left:10px;margin-right:10px;width:10vw; height:10vw;">

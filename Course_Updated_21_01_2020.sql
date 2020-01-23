@@ -1080,9 +1080,9 @@ INSERT INTO FAQ(question_id,question_text,question_answer) VALUES
 (2,'What will the course structure of the school be like? What will I learn in (IT/FI/IM/CDF)?','Answer 2'),
 (3,'What are the possible FYPs or Capstone Projects that students will be asked to do in the school?','Answer 3'),
 (4,'What scholarship opportunities does your school offer?','Answer 4'),
-(5,'What University degrees/courses will I be able to apply in university after I graduate?','<p>You can receive advanced standing when you apply for
+(5,'What University degrees/courses will I be able to apply in university after I graduate?','You can receive advanced standing when you apply for
 related degree programmes at universities both locally
-and abroad.</br>Depending on the course that you take, some related courses include: Computer Science, Information Systems, Electrical and Computer Engineering, Game Development, Human-Computer Interaction, Information Technology, Interactive Media, Software Engineering.</p>'),
+and abroad.</br>Depending on the course that you take, some related courses include: Computer Science, Information Systems, Electrical and Computer Engineering, Game Development, Human-Computer Interaction, Information Technology, Interactive Media, Software Engineering.'),
 (6,'What are the Further Progression opportunities are there upon graduation?','
   <b>Information Technology</b></br>
   London is the capital city of England.</br>
