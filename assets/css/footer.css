@@ -1,0 +1,16 @@
+footer {
+    background-color:#380E7F;
+    color:#fff;
+}
+
+.foot{
+    float:right;
+}
+
+.vr {
+    width:1.5px;
+    background-color:whitesmoke;
+    position:absolute;
+    top:0;
+    bottom:0;
+}
