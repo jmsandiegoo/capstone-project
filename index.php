@@ -68,7 +68,7 @@
             <div class="section" id="section-overview">
                 <div class="container cour">
                 <?php foreach ($resultArray3 as $key => $row): ?>
-                    <div class="card courses">
+                    <div class="card courses" style="">
                         <a href="#<?php echo $row["id"]?>">
                         <div class="row no-gutters">
                         
@@ -81,7 +81,7 @@
                             while ($row3 = $db->fetch_array($result3)): 
                         ?>
                             <div class="col-auto">
-                                <img style="height:100px" src="<?php echo $row3["item_path"] ?>" class="img-fluid" alt="">
+                                <img style="height:6vw" src="<?php echo $row3["item_path"] ?>" class="img-fluid" alt="">
                             </div>
                                                          
                             <?php endwhile; ?>
@@ -188,8 +188,8 @@
                     </div>
                     <!-- Slide 3-->
                     <div class="slide" id="<?php echo 'slide3-' . $row['id']?>" data-anchor="2">
-                    <div class="overlay">
-                        <div class="container">
+                    <div class="overlay slide3">
+                        <div class="container slide3">
                             <div class="course-entry">
                                 <h1><i class="question-icon"></i> Entry Requirements</h1>
                                 <h3> <u>For Students with 'O' Levels:</u> </h3>
@@ -222,13 +222,16 @@
                                     <em>* You must also have sat for a Science or Design & Technology or Food & Nutrition or relevant OSIE/Applied Subject and fulfil the aggregate computation requirements.<br/>
                                     * Candidates with severe vision deficiency should not apply for the course.</em>
                                 </p><br/>
-                                
-                            </div>
-                            
-                        </div>
-                        <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
+                                <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
                                 </a>
+                            </div>
+                            </div>
+                            <div>
+                            
+                        </div>
+
+                      
                     </div>
                 </div>
             </div>
@@ -279,8 +282,8 @@
                     </div>
                     <!-- Slide 3-->
                     <div class="slide" id="<?php echo 'slide3-' . $row['id']?>" data-anchor="2">
-                    <div class="overlay">
-                        <div class="container">
+                    <div class="overlay slide3">
+                        <div class="container slide3">
                             <div class="course-entry">
                                 <h1><i class="question-icon"></i> Entry Requirements</h1>
                                 <h3> <u>For Students with 'O' Levels:</u> </h3>
@@ -322,10 +325,12 @@
                                     $db -> close();
                                     while ($row = $db->fetch_array($result)): 
                                 ?><br/>
+                                
+                                <div stlye="padding-top:10px">
                                 <a id="learn-more-btn" class="btn btn-light" href="<?php echo $helper->pageUrl("modules.php") . "?id=$row[id]" ?>">
                                     Learn More
                                 </a>
-
+                                </div>
                                 <?php endwhile; ?>
                             </div>
                         </div>
@@ -333,9 +338,25 @@
                 </div>
             </div>
             <?php endforeach;?>                            
-
+            <div class="section" id="sectionfooter">
+                <div class="container">
+                    <footer>
+                    <div class="align-content-center foot" style="text-align:center">    
+                    <h3>Still need help? </h3>
+                    <h4>Check out our other features on Telegram Chatbot by scanning the QR Code or clicking on the Telegram button below!</h4>   
+                    <br/><br/>                    
+                        <a href="https://t.me/npictoh_bot">
+                            <img alt="Telegram Link" src="assets/img/General/qrcode.png" style="margin-left:10px;margin-right:10px;width:10vw; height:10vw;">
+                        </a>    
+                        <a href="https://t.me/npictoh_bot">
+                            <img alt="Telegram Link" src="assets/img/General/tglogo.png"  style="margin-left:10px;margin-right:10px;width:10vw; height:10vw;">
+                        </a>
+                    </div>
+                    </footer>
+                </div>
+            </div>
         </div>
     </main>
-    <?php include $helper->subviewPath('footer.php') ?>
+    <?php include $helper->subviewPath('fullpageFooter.php') ?>
 </html>
 

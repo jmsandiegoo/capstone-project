@@ -763,21 +763,36 @@ INSERT INTO Project(project_id, project_name, project_desc, id) VALUES
 (1, 'Patch', 'A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 1),
 (2, 'Clip Go', 'Our team will be inventing a product that addresses the issues faced by working adults when using the Healthy 365 mobile application and HPB Steps Tracker, as well as the National Steps Challenge, to better suit the needs of its users. We brainstormed and integrated ideas on how to implement all users’ requirements into creating a product that works similarly to the Healthy 365 mobile application, the HPB Steps Tracker, as well as the National Steps Challenge.', 1),
 (3, 'Purple Project', 'Work with Bethesda care to minimize manual processes by simplifying then with a few clicks. Through a website, we are trying to achieve higher productivity rates',1),
+(4, 'Pincii','The module portfolio that the students of year 1 had showcase their creative works with Research & Development or Programming codes of Products. My partner and I decided to do a research & development project. ',1),
 
 /*------ Financial Informatics -------*/
-(4, '-', 'Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',2),
+(5, '-', 'Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',2),
+(6, '-', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',2),
+(7, '-', 'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.',2),
+(8, '-', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there is not anything embarrassing hidden in the middle of text.',2),
 
 /*------ Immersive Media -------*/
-(5, 'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',3),
+(9, 'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',3),
+(10,'Landscape','The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.',3),
+(11,'Natural Poster','It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',3),
+(12,'Thinking Lighting','Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',3),
+(13,'Romantic','It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',3),
 
 /*------ Cybersecurity & Digital Forensics -------*/
-(6, 'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',4),
+(14, 'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',4),
+(15, 'OSSEC', 'For our Network Security assignment, we had to research on an Intrusion Detection/Prevention tool. The poster shows the main features of the IDS tool, OSSEC, and how these features can be used. I demonstrated how the features can be used and had put some test cases like detecting XSS attacks and Telnet remote Login attempts.',4),
+(16, 'EBP', 'For our EBP assignment, we were required to come up with strategies to sell Muselli and manage the stocks in order to gain a profit. This poster shows an overview of the whole simulation.',4),
+(17, 'Wazuh', 'Wazuh is a fork of OSSEC, which is an IDS that allows for the detection of potential threats by generating alerts. Such alerts are generated through rulesets which can be customised according to an organisation’s needs. This poster shows two examples of how Wazuh is able to detect two different kind of attacks.',4),
+(18, 'SQLmap, a Lethal Weapon for Attackers','Injection attackers can do great deal of damage and have been around for decades. Yet, they remain among the Top 10 Security Risks out there, according to the Open Web Application Security Project',4),
+(19, 'The Sleuth Kit', 'Poster for Digital Forensics module in the Information Security & Forensics course. This poster shows a brief overview of a forensics tool used for research assignment, as well as how the student made use of this tool to create her own tool using a bash script (the self created tool basically allows user to sort files according to their file extensions. The main feature is that it is able to sort even files with their extension changed (e.g. jpg --> docx. Done through checking of file signatures) .',4),
+(20, 'OSSEC', 'Poster for Network Security module in the Information Security & Forensics course. This poster shows a brief overview of a intrusion detection system used for research assignment. It shows how the tool can be used, and also how one can configure the tool. additionally, show what kind of attacks it can detect e.g SQL injection, XSS, spidering and more.',4),
+
 
 /*------ Common ICT Programme -------*/
-(7, 'Patch','A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 5),
-(8, '-','Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',5),
-(9,'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',5),
-(10,'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',5)
+(21, 'Patch','A mobile application that encourages interaction by matching them up with other elderly users who have similar hobbies and interests to  connect and socialize with new friends.', 5),
+(22, '-','Team had to come up with a poster for our sales strategy within a simulation game; Enterprise Business Processes Assignment.',5),
+(23,'KWSH Heritage Trail', 'Kwong Wai Shiu Hospital (KWSH) has a rich history of over 100 years since they first started and they would like to share the history to the public, especially to the younger generations. Our client, KWSH came to us with the problem where their heritage trail is too dry and heavy content, especially for children to young adults with short attention spans. Additionally, they hope that our application could be user friendly to elderlies as well. Therefore, with our application, different users will be able to learn the history of KWSH in a more fun and engaging way rather than just reading plain text in the heritage trail.',5),
+(24,'Honeypot', 'The aim of our honeypot is to deter attackers from accessing the actual network by creating a subnet and luring them there using fake devices. This is helpful as it will distract them, disrupt their breach progression and may even discourage the attacker from continuing with the attack.',5)
 ;
 
 /*------ ElectiveModule -------*/
@@ -976,40 +991,55 @@ INSERT INTO Item(item_id, item_path, item_type, Project_id) VALUES
 (113, 'assets/img/projects/IT1.png', 'Image', 1),
 (114, 'assets/img/projects/IT2.jpg', 'Image', 2),
 (115, 'assets/img/projects/IT3.png', 'Image', 3),
+(116, 'assets/img/projects/IT4.png', 'Image', 4),
 
 /*------ Financial Information-------*/
-(116, 'assets/img/projects/FI1.jpg', 'Image', 4),
+(117, 'assets/img/projects/FI1.jpg', 'Image', 5),
+(118, 'assets/img/projects/FI2.jpg', 'Image', 6),
+(119, 'assets/img/projects/FI3.jpg', 'Image', 7),
+(120, 'assets/img/projects/FI4.jpg', 'Image', 8),
 
 /*------ Immersive Media-------*/
-(117, 'assets/img/projects/IM1.png', 'Image', 5),
+(121, 'assets/img/projects/IM1.png', 'Image', 9),
+(122, 'assets/img/projects/IM2.png', 'Image', 10),
+(123, 'assets/img/projects/IM3.png', 'Image', 11),
+(124, 'assets/img/projects/IM4.png', 'Image', 12),
+(125, 'assets/img/projects/IM5.png', 'Image', 13),
 
 /*------ Cybersecurity & Digital Forensics-------*/
-(118, 'assets/img/projects/CSF1.PNG', 'Image', 6),
+(126, 'assets/img/projects/CSF1.png', 'Image', 14),
+(127, 'assets/img/projects/CSF2.jpeg', 'Image', 15),
+(128, 'assets/img/projects/CSF3.jpg', 'Image', 16),
+(129, 'assets/img/projects/CSF4.jpg', 'Image', 17),
+(130, 'assets/img/projects/CSF5.jpg', 'Image', 18),
+(131, 'assets/img/projects/CSF6.jpg', 'Image', 19),
+(132, 'assets/img/projects/CSF7.jpg', 'Image', 20),
+
 
 /*------ Common ICT-------*/
-(119, 'assets/img/projects/IT1.png', 'Image', 7),
-(120, 'assets/img/projects/FI1.png', 'Image', 8),
-(121, 'assets/img/projects/IM1.png', 'Image', 9),
-(122, 'assets/img/projects/CSF1.png', 'Image',10);
+(133, 'assets/img/projects/IT1.png', 'Image', 21),
+(134, 'assets/img/projects/FI1.jpg', 'Image', 22),
+(135, 'assets/img/projects/IM1.png', 'Image', 23),
+(136, 'assets/img/projects/CSF1.png', 'Image',24);
 
 /*------ Item (Category) -------*/
 INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES 
-(123, 'assets/img/category/coding.png', 'Image', 1), 
-(124, 'assets/img/category/support.png', 'Image',2), 
-(125, 'assets/img/category/cloud.png', 'Image',3), 
-(126, 'assets/img/category/security.png', 'Image',4), 
-(127, 'assets/img/category/interactivemedia.png', 'Image',5), 
-(128, 'assets/img/category/gamedesigner.png', 'Image',6), 
-(129, 'assets/img/category/3d.png', 'Image',7), 
-(130, 'assets/img/category/digital.png', 'Image',8),
-(131, 'assets/img/category/banking.png', 'Image',9), 
-(132, 'assets/img/category/data.png', 'Image',10),
-(133, 'assets/img/category/customer.png', 'Image',11), 
-(134,'assets/img/category/enterprise.png', 'Image',12),
-(135, 'assets/img/category/Infrastructure.png', 'Image',13), 
-(136, 'assets/img/category/qa.png', 'Image',14), 
-(137, 'assets/img/category/risk.png', 'Image',15), 
-(138, 'assets/img/category/forensic.png', 'Image',16);
+(137, 'assets/img/category/coding.png', 'Image', 1), 
+(138, 'assets/img/category/support.png', 'Image',2), 
+(139, 'assets/img/category/cloud.png', 'Image',3), 
+(140, 'assets/img/category/security.png', 'Image',4), 
+(141, 'assets/img/category/interactivemedia.png', 'Image',5), 
+(142, 'assets/img/category/gamedesigner.png', 'Image',6), 
+(143, 'assets/img/category/3d.png', 'Image',7), 
+(144, 'assets/img/category/digital.png', 'Image',8),
+(145, 'assets/img/category/banking.png', 'Image',9), 
+(146, 'assets/img/category/data.png', 'Image',10),
+(147, 'assets/img/category/customer.png', 'Image',11), 
+(148,'assets/img/category/enterprise.png', 'Image',12),
+(149, 'assets/img/category/Infrastructure.png', 'Image',13), 
+(150, 'assets/img/category/qa.png', 'Image',14), 
+(151, 'assets/img/category/risk.png', 'Image',15), 
+(152, 'assets/img/category/forensic.png', 'Image',16);
 
 /*------ Modules with Jobs-------*/
 INSERT INTO CategoryModule(category_id, module_id) VALUES
@@ -1045,15 +1075,23 @@ INSERT INTO CategoryModule(category_id, module_id) VALUES
 
 
 
-
-
 INSERT INTO FAQ(question_id,question_text,question_answer) VALUES
-(1,'What are the internship opportunities if I enter this school?','Answer 1'),
+(1,'What are the internship opportunities if I enter this school?','In your final year, you will round off your learning journey with a six-month local or overseas internship with organisations such as KPMG, IBM, Singtel and Microsoft, or launch your own IT business ideas at our technology hubs. You can also work on a capstone project which will beef up your digital portfolio and impress your future employer!'),
 (2,'What will the course structure of the school be like? What will I learn in (IT/FI/IM/CDF)?','Answer 2'),
 (3,'What are the possible FYPs or Capstone Projects that students will be asked to do in the school?','Answer 3'),
 (4,'What scholarship opportunities does your school offer?','Answer 4'),
-(5,'What University degrees/courses will I be able to apply to after I graduate?','Answer 5'),
-(6,'What are the Further Progression opportunities are there upon graduation?','Answer 6'),
-(7,'Difference between games in IM and games in IT','Answer 7'),
-(8,'Which course in the school should I enter?','Answer 8'),
-(9,'why should i choose this school?','Answer 9');
+(5,'What University degrees/courses will I be able to apply in university after I graduate?','You can receive advanced standing when you apply for
+related degree programmes at universities both locally
+and abroad.</br>Depending on the course that you take, some related courses include: Computer Science, Information Systems, Electrical and Computer Engineering, Game Development, Human-Computer Interaction, Information Technology, Interactive Media, Software Engineering.'),
+(6,'What are the Further Progression opportunities are there upon graduation?','
+  <b>Information Technology</b></br>
+  London is the capital city of England.</br>
+  <b>Financial Informatics</b></br>
+  London is the capital city of England.</br>
+  <b>Immersive Media</b></br>
+  London is the capital city of England.</br>
+  <b>Cybersecurity and Digital Forensics</b></br>
+  London is the capital city of England.'),
+(7,'Difference between games in IM and games in IT','Games in Immersive Media is more in to the designing of games, while Games in Information Technology is more to Games Programming.'),
+(8,'Which course in the school should I enter?','If you are not sure which course in our school you would like to enter, you can click on the Telegram button below and create an appointment using /createAppt with our course counsellors to help you make your decision, or you can also take part in the /quiz to find out your true passion!'),
+(9,'Why should i choose this school?','With Singapore on track to becoming a smart nation, you are poised for flourishing industries that will welcome your talent. This means there will also be more room for your aspirations to bloom. Here at ICT, we offer four diplomas and one Common ICT Programme, teamed with various electives and areas of interest, to equip you for your chosen field!');

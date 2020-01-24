@@ -31,6 +31,7 @@ foreach ($courses as $key => $row):
 
     #<?php echo 'section-' . $row['id'] . ' h1'?>, #<?php echo 'section-' . $row['id'] . ' h2'?> {
         letter-spacing: 0.2rem;
+        margin-bottom:16px;
         text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     }
 
@@ -99,7 +100,7 @@ foreach ($courses as $key => $row):
     }
 
     #<?php echo 'slide3-' . $row['id'] . ' .subject-wrapper' ?> {
-        border-top: 0.3vw dashed white;
+        border-top: 0.1vw dashed white;
         padding-top: 5px; 
         clear:both;
         width: 70%;
@@ -118,7 +119,7 @@ foreach ($courses as $key => $row):
         }
 
         #<?php echo 'section-' . $row['id'] . ' p'?> {
-            font-size: 1.75vw;
+            font-size: 3vw;
         }
     }
 

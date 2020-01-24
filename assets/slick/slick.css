@@ -87,8 +87,9 @@
 }
 .slick-slide img
 {
+    padding-left:10px;
+    height:30vw;
     display: block;
-    height:30%;
 }
 .slick-slide.slick-loading img
 {
@@ -116,4 +117,13 @@
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .slick-slide img
+    {
+        padding-left:10px;
+        height:50vw;
+        display: block;
+    }
 }
