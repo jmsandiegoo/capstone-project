@@ -7,6 +7,7 @@
  $db = new Mysql_Driver();
  $db->connect(); 
 
+ $overviewImg = '../assets/img/tourmap/overview.png';
  // Fetch the background
  
  //Fetch tours
@@ -27,10 +28,13 @@
 </head>
 <main class="tour-wrapper">
     <?php include $helper->subviewPath('navbar.php') ?>
-	  
+    <section style="justify-content: center;display: flex;">
+    <img class="img-fluid tour" src="<?php echo $overviewImg?>"></img>
+    </section>
     
 
     <section class="tour-content container">
+    <h1>Booths in ICT Open House</h1>
         <div id="myBtnContainer-tour">
             <?php foreach ($Journey as $key => $row):?>
             <div class="colle">
