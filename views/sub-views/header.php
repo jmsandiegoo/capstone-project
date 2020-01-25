@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("index.css") ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("modules.css") ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("faq.css") ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("tour.css") ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("footer.css") ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("projects.css") ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $helper->cssPath("dynamicStyle.php") ?>"/>

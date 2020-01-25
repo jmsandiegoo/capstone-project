@@ -39,9 +39,9 @@
         <div id="myBtnContainer-faq">
             <?php foreach ($faqResultsArray as $key => $row):?>
             <div class="colle">
-                <button class="collapsible"><b><?php echo $faqResultsArray[$key]['question_text'] ?></b></button>
+                <button class="collapsible"><b><?php echo $row['question_text'] ?></b></button>
                 <div class="content">
-                    <h5><?php echo $faqResultsArray[$key]['question_answer'] ?></h5>
+                    <h5><?php echo $row['question_answer'] ?></h5>
                 </div>
             </div></br>
             <?php endforeach; ?>

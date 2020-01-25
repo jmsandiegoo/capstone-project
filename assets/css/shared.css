@@ -142,3 +142,7 @@ body {
     font-size:5.5vw !important;
   }
 }
+
+.img-fluid.tour{
+  max-width:70%;
+}

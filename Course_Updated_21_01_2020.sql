@@ -28,9 +28,16 @@ DROP TABLE IF EXISTS CourseReq;
 DROP TABLE IF EXISTS Requirement;
 DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS FAQ;
+DROP TABLE IF EXISTS Journey;
 /*******************************************************************************/
 /***                              Create the tables                          ***/
 /*******************************************************************************/
+CREATE TABLE Journey (
+  journey_id int(4) NOT NULL AUTO_INCREMENT,
+  title TEXT NOT NULL,
+  checkpoint_desc TEXT NOT NULL,
+  CONSTRAINT pk_journey PRIMARY KEY (journey_id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE Account (
   id INT(11) NOT NULL AUTO_INCREMENT,
@@ -177,11 +184,13 @@ CREATE TABLE Item
   course_id INT(4) DEFAULT NULL,
   project_id INT(4) DEFAULT NULL,
   category_id INT(4) DEFAULT NULL,
+  journey_id INT(4) DEFAULT NULL,
   CONSTRAINT pk_item PRIMARY KEY (item_id),
   CONSTRAINT fk_item_module_id FOREIGN KEY (module_id) REFERENCES Module(module_id),
   CONSTRAINT fk_item_course_id FOREIGN KEY (course_id) REFERENCES Course(id),
   CONSTRAINT fk_item_project_id FOREIGN KEY (project_id) REFERENCES Project(project_id),
-  CONSTRAINT fk_item_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id)
+  CONSTRAINT fk_item_category_id FOREIGN KEY (category_id) REFERENCES Category(category_id),
+  CONSTRAINT fk_item_journey_id FOREIGN KEY (journey_id) REFERENCES Journey(journey_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*******************************************************************************/
@@ -881,6 +890,19 @@ INSERT INTO CourseModule(id, module_id, module_year) VALUES
 (5,70,'Elective'),(5,71,'Elective'),(5,72,'Elective'),(5,73,'Elective'),(5,74,'Elective'),
 (5,75,'Elective'),(5,76,'Elective'),(5,77,'Elective');
 
+INSERT INTO Journey(journey_id, title, checkpoint_desc) VALUES
+(1, 'Express Facilities Tour','Want to learn more about the facilities in the School of ICT? Head on down to this booth to get a tour of our classrooms and other spaces!'),
+(2, 'Course Counselling','Have a desire to join the School of ICT but have no idea if it actually suits you? Visit this booth to have a consultation with our lecturers, whom will assist you with all your questions!'),
+(3, 'ICT Overflow SIG','Overflow, a Student Interest Group (CCA), where like-minded students that are passionate about coding, software development and technology! Head on down to this booth to have a look into various projects that students have developed!'),
+(4, 'ICT Orion SIG','Orion, a Student Interest Group (CCA)'),
+(5, 'Course: Financial Informatics','Interested in Financial Informatics and wish to learn more about it? Head on down to this booth to have a look into student courseworks and speak to one of our students currently enrolled into this course!'),
+(6, 'Course: Common ICT Programme','Have difficulties choosing a course that may suit you but still having the desire to join ICT? In the Common ICT Programme, you will be a jack of all trades in ICT during Year 1, before being a master of one from Year 2 onwards! Head on down to Common ICT booth to learn more!'),
+(7, 'Course: Immersive Media','Interested in learning and interacting with engaging content found on the internet? Ever wish to learn how it is made? Head on down to the Immersive Media booth to have a look at student courseworks, as well as the opportunity to strike a conversation with students enrolled in the course!'),
+(8, 'Course: Cybersecurity & Digital Forensics','Cybersecurity has been an increasing trend over the past decade. This trend will continue to increase as demand for Cybersecurity personnel increases due to how everything is connected. Head on down to this booth to learn more about student courseworks!'),
+(9, 'Course: Information Technology','Interested in developing IT solutions or creating your own e-Business? Information Technology offers 5 different specialization to choose from while studying, ensuring you with variety! Head on down to the Information Technology booth where a wide range of IT projects are on display!'),
+(10, 'Ngee Ann Polytechnic CET Academy','Lifelong Learning'),
+(11, 'Student Projects & Souvenir Collection','Tired after learning and exploring about what ICT could offer you? Take a break at this corner and enjoy games made by our fellow students!');
+
 /*------ Item (Courses) -------*/
 INSERT INTO Item(item_id, item_path, item_type, course_id) VALUES
 (1, 'assets/img/FI/BG_1.jpg', 'Image', '2'),
@@ -1046,6 +1068,20 @@ INSERT INTO Item(item_id, item_path, item_type, category_id) VALUES
 (153, 'assets/img/category/qa.png', 'Image',14), 
 (154, 'assets/img/category/risk.png', 'Image',15), 
 (155, 'assets/img/category/forensic.png', 'Image',16);
+
+/*------ Item (Journey) -------*/
+INSERT INTO Item(item_id, item_path, item_type, journey_id) VALUES 
+(156,'assets/img/tourmap/1.jpeg','Image',1),
+(157,'assets/img/tourmap/2.jpeg','Image',2),
+(158,'assets/img/tourmap/3.jpeg','Image',3),
+(159,'assets/img/tourmap/4.jpeg','Image',4),
+(160,'assets/img/tourmap/5.jpeg','Image',5),
+(161,'assets/img/tourmap/6.jpeg','Image',6),
+(162,'assets/img/tourmap/7.jpeg','Image',7),
+(163,'assets/img/tourmap/8.jpeg','Image',8),
+(164,'assets/img/tourmap/9.jpeg','Image',9),
+(165,'assets/img/tourmap/10.jpeg','Image',10),
+(166,'assets/img/tourmap/11.jpeg','Image',11);
 
 /*------ Modules with Jobs-------*/
 INSERT INTO CategoryModule(category_id, module_id) VALUES
