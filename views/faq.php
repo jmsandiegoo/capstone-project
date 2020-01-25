@@ -32,14 +32,14 @@
 </head>
 <main class="faq-wrapper">
     <?php include $helper->subviewPath('navbar.php') ?>
-    <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(<?php echo $backgroundPath ?>);">
+    <section class="main-banner faq container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(<?php echo $backgroundPath ?>);">
     </section>
 
     <section class="faq-content container">
         <div id="myBtnContainer-faq">
             <?php foreach ($faqResultsArray as $key => $row):?>
             <div class="colle">
-                <button class="collapsible"><b><?php echo $row['question_text'] ?></b></button>
+                <button class="collapsible faq"><b><?php echo $row['question_text'] ?></b></button>
                 <div class="content">
                     <h5><?php echo $row['question_answer'] ?></h5>
                 </div>

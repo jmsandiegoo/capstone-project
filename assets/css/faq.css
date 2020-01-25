@@ -19,9 +19,12 @@
     padding: 15px;
     /* margin-top: 3px; */
 }
-
-.faq-wrapper  .active, .collapsible:hover {
+.faq-wrapper  .active{
     background-color: #9651A4;
+}
+
+.collapsible.faq:hover {
+    background-color: #7f498a;
 }
 
 .faq-wrapper .collapsible:after {
@@ -50,4 +53,12 @@
 
 h5{
     font-size: medium;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .main-banner.faq{
+        background-position:left;
+      }
+    
 }

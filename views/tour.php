@@ -38,7 +38,7 @@
         <div id="myBtnContainer-tour">
             <?php foreach ($Journey as $key => $row):?>
             <div class="colle">
-            <button class="collapsible"><?php echo $row["journey_id"]. ". " .$row['title'] ?></button>
+            <button class="collapsible tour"><?php echo $row["journey_id"]. ". " .$row['title'] ?></button>
             <div class="content tour">
             <p><?php echo $row['checkpoint_desc'] ?></p>
             <br/>

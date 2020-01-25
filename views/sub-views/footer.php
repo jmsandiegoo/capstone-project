@@ -10,7 +10,7 @@
                 <div class="foot">
                 <i class="vr">&nbsp;</i>
                     <p style="margin-left:20px;width:50%;">Still need help?
-                    </br>Come scan the below or open telegram!</p>                                  
+                    </br>Scan the QR Code below or open telegram!</p>                                  
                     <a href="https://t.me/npictoh_bot">
                         <img alt="Telegram Link" src="../assets/img/General/qrcode.png" style="margin-left:20px;margin-right:10px;width:10vw; height:10vw;">
                     </a>    

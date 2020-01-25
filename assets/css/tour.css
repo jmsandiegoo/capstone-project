@@ -44,12 +44,21 @@
     background-color:white;
 }
 
-.tour-wrapper .telegram-button {
-    text-align: center;
-}
+
 .img-fluid.tour{
     max-width:70%;
   }
   .content.tour p{
       font-size:1.3vw;
   }
+
+
+@media only screen and (max-width: 767px) {
+    .img-fluid.tour{
+        max-width:100%;
+      }
+      .content.tour p{
+          font-size:2.3vw;
+      }
+    
+}
