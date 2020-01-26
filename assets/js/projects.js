@@ -1,3 +1,27 @@
+var project_id = getUrlParameter('project_id');
+if (project_id) {
+    var projectSection = document.querySelector('#projectWrapper');
+    var heightOfHeader = document.querySelector('.navbar').offsetHeight;
+    // window.scrollTo({left: 0, top: projectSection.offsetTop - heightOfHeader, behavior:'smooth'});
+    var i = window.pageYOffset;
+    var int = setInterval(function() {
+      window.scrollTo(0, i);
+      i += 10;
+      if (i >= projectSection.offsetTop - heightOfHeader) {
+          clearInterval(int);
+          getAjaxProjectInfo(project_id);
+        }
+    }, 3.5);
+}
+
+// Functions
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
 // Adding on click in project poster
 var projectPoster = document.querySelectorAll(".btcarousel-item");
 for (var i = 0; i < projectPoster.length; i++) {
