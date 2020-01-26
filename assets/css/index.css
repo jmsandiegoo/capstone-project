@@ -242,7 +242,7 @@ em{
     
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     #section-header h1 {
         font-size: 10vw;
     }
@@ -338,7 +338,19 @@ em{
         padding-left:3vw !important;
     }
     em{
+        font-size:1.5vw;
+    }
+    .container.courseInfo p, .course-wrapper.desc p{
+        font-size:2vw !important;
+    }
+    .subject-wrapper p{
         font-size:2vw;
+    }
+    .course-entry p{
+        font-size:2vw;
+    }
+    .course-information p{
+        font-size:2vw !important;
     }
 }
 

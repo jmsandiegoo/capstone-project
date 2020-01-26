@@ -118,7 +118,7 @@
                         <button class="btn tab-link" onclick="openTab('<?php echo 'year-2-onwards' ?>')"><b>Semester 2 Onwards</b></button>
                 </div>
                 <div class="tab-contents">
-                    <div class="tab-content year-1">
+                    <div class="tab-content elective year-1">
                         <h4>Description</h4>
                         <p><?php echo $courseInfo['course_year1_description'] ?></p>
                         <h4 class="pt-4">Modules</h4>
@@ -138,7 +138,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-content year-2-onwards">
+                    <div class="tab-content elective year-2-onwards">
                         <h4>Description</h4>
                         <p><?php echo $courseInfo['course_year2_description']?></p>
                         <h4 class="pt-4">Respective Diploma Courses</h4>
@@ -194,7 +194,7 @@
                         $desc = $courseInfo['course_elective_description'];
                     }
                 ?>
-                    <div class="tab-content year-<?php echo $row['module_year'] ?>">
+                    <div class="tab-content elective year-<?php echo $row['module_year'] ?>">
                         <h4>Description</h4>
                         <p><?php echo $desc ?></p>
                         <h4 class="pt-4">Modules</h4>
