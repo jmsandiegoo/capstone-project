@@ -419,9 +419,27 @@ p{
         margin: 0 0;
     }
     .module-wrapper .courses .card {
-        flex-basis: calc(100% / 2);
+        flex-basis: 100%;
         margin: 0 0;
     }
+
+    .module-wrapper .courses .card .card-body {
+      padding: 1rem;
+      position: relative;
+    }
+
+    .module-wrapper .courses .card {
+      margin: 0.5rem 0;
+    }
+
+    .module-wrapper .courses .card::after {
+      padding: 0%;
+    }
+
+    .module-wrapper .courses .card .card-body img {
+      display: none;
+    }
+
     .tab-content p{
       font-size:4vw;
     }
