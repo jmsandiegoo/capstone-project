@@ -22,10 +22,10 @@ class Mysql_Driver
 		
 		// XAMPP Config
         //connection parameters
-        //   $host = 'localhost';
-        //  $user = 'root';
-        //   $password = '';
-		//  $database = 'ict_open_house'; 
+        // $host = 'localhost';
+        // $user = 'root';
+        // $password = '';
+		// $database = 'ict_open_house'; 
 		
     
         $this->connection = mysqli_connect($host, $user, $password, $database);

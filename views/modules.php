@@ -3,7 +3,7 @@
     include_once __DIR__.'/../helpers/helper.php';
     $helper = new Helper();
 	$id = $_GET['id'];
-    // Retrieving the course information
+    // Retrieving the current course information
     $db = new Mysql_Driver();
     $db->connect(); 
     $sql = "SELECT * FROM Course WHERE id=$id";
@@ -19,6 +19,14 @@
     $courseItemResult = $db->query($sql);
     $row = $db->fetch_array($courseItemResult);
     $backgroundPath = '../' . $row['item_path'];
+
+    // Fetch courses and items
+    $sql = "SELECT c.id, c.course_name, c.course_short_description, i.item_path FROM Course c INNER JOIN Item i ON c.id = i.course_id WHERE item_path LIKE '%BG_1.jpg'";
+    $coursesResult = $db->query($sql);
+    $coursesArray = [];
+    while ($row = $db->fetch_array($coursesResult)) {
+        $coursesArray[] = $row;
+    }
 
     // Fetch Category
     // $sql = "SELECT j.job_name FROM Job j INNER JOIN CourseJob cj ON j.job_id = cj.job_id WHERE cj.id = $id";
@@ -40,7 +48,7 @@
     }
 
 
-    // Fetch Module_Year for IT Courses
+    // Fetch Module_Year for Courses
     $sql = "SELECT DISTINCT module_year FROM CourseModule WHERE id=$id ORDER BY module_year ASC";
     $moduleYearResult = $db->query($sql);
     $moduleYear = [];
@@ -100,14 +108,14 @@
                     <button class="btn filter-btn" onclick="filterSelection('<?php echo $row['category_name'] ?>')"><?php echo $row['category_name'] ?></button>
                 <?php endforeach; ?>
             </div>
-            <div class="fade-overlay"></div>
+            <!-- <div class="fade-overlay"></div> -->
         </div>
 
         <?php if ($id == 5): ?>
             <div id="tabContainer">
                 <div class="tabs">
-                        <button class="btn tab-link" onclick="openTab('<?php echo 'year-1' ?>')"><b>Year 1</b></button>
-                        <button class="btn tab-link" onclick="openTab('<?php echo 'year-2-onwards' ?>')"><b>Year 2 Onwards</b></button>
+                        <button class="btn tab-link" onclick="openTab('<?php echo 'year-1' ?>')"><b>Semester 1</b></button>
+                        <button class="btn tab-link" onclick="openTab('<?php echo 'year-2-onwards' ?>')"><b>Semester 2 Onwards</b></button>
                 </div>
                 <div class="tab-contents">
                     <div class="tab-content year-1">
@@ -135,14 +143,18 @@
                         <p><?php echo $courseInfo['course_year2_description']?></p>
                         <h4 class="pt-4">Respective Diploma Courses</h4>
                         <p>Select your preferred diploma below to view the respective modules</p>
-                        <div class="modules">
-                            <div class="card filterDiv <?php echo $module['category_string'] ?>">
-                                <a id="<?php echo $module['module_id'] ?>" class="card-body">
-                                <img class="img-fluid" style="width:50%; margin-bottom: 1rem;" src="../<?php echo $module["item_path"] ?>" alt="Module Image">
-                                <h6 class="card-title"><?php echo $module['module_name'] ?></h6>
-                                    
+                        <div class="courses pt-2">
+                        <?php foreach ($coursesArray as $key => $course): ?>
+                            <?php if ($course["id"] != 5): ?>
+                            <div class="card">
+                                <a href="<?php echo $helper->pageUrl("modules.php") . "?id=$course[id]" ?>" class="card-body">
+                                <img class="img-fluid" style="width:100%; margin-bottom: 1rem;" src="../<?php echo $course["item_path"] ?>" alt="Course Image">
+                                    <h6 class="card-title"><?php echo $course["course_name"] ?></h6>
+                                    <p class="card-subtitle"><?php echo $course['course_short_description'] ?></p>
                                 </a>
                             </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                         </div>
                     </div>
 
@@ -207,6 +219,8 @@
         <?php endif; ?>
 
     </section>
+
+    <?php if ($id != 5): ?>
     <section class="project-content container">
         <h1>Project Portfolio</h1>
         <div class="top-content">
@@ -221,6 +235,7 @@
         </div>
         </div>
     </section>  
+    <?php endif; ?>
     <?php include $helper->subviewPath('projectInfoOverlay.php') ?>
     <?php include $helper->subviewPath('moduleInfoOverlay.php') ?>
 </main>
