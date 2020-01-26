@@ -421,7 +421,7 @@ p{
     }
 
     .module-wrapper .card .card-title {
-        font-size: 3vw;
+        font-size: 2vw;
     }
 
     .module-wrapper .card .card-subtitle {
@@ -432,6 +432,12 @@ p{
       min-width: 0;
       flex-grow: 1;
       font-size: 2.5vw;
+    }
+    .tab-content.elective p{
+      font-size:2.5vw !important;
+    }
+    .tab-content.elective h4{
+      font-size:3vw !important;
     }
 }
 
