@@ -1,0 +1,64 @@
+#myBtnContainer-tour {
+    position: relative;
+}
+
+.tour-wrapper .colle {
+    border: 1px solid gray;
+    margin-top: 3px;
+    
+}
+.tour-wrapper .collapsible {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border: none;
+    margin-top: 3px;
+}
+
+.tour-wrapper  .active, .collapsible:hover {
+    background-color: white;
+}
+
+.tour-wrapper .collapsible:after {
+    content: '\002B';
+    color: black;
+    font-weight: bold;
+    float: right;
+}
+
+.tour-wrapper .active:after {
+    content: "\2212";
+}
+  
+.tour-wrapper .content {
+    margin: 3px;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color:white;
+}
+
+
+.img-fluid.tour{
+    max-width:70%;
+  }
+  .content.tour p{
+      font-size:1.3vw;
+  }
+
+
+@media only screen and (max-width: 767px) {
+    .img-fluid.tour{
+        max-width:100%;
+      }
+      .content.tour p{
+          font-size:2.3vw;
+      }
+    
+}
