@@ -223,16 +223,11 @@
     <?php if ($id != 5): ?>
     <section class="project-content container">
         <h1>Project Portfolio</h1>
-        <div class="top-content">
-            <div class="carousel">
+        <div class="carousel">
             <?php foreach ($projectInfo as $key => $row): ?>
-                    <div class="btcarousel-item">
-                    <a id="<?php echo $row["project_id"] ?>" class="card-body">
-                      <img src="../<?php echo $row["item_path"]?>" class="img-fluid mx-auto d-block">
-                    </a>
-                    </div>
-                <?php endforeach; ?>
-        </div>
+                <div class="btcarousel-item" style="background-image: url(<?php echo '../' . $row["item_path"] ?>);" data-id="<?php echo $row["project_id"]?>">
+                </div>
+            <?php endforeach; ?>
         </div>
     </section>  
     <?php endif; ?>
@@ -245,19 +240,44 @@
 </html>
 
 <script type="text/javascript">
+
 $(document).ready(function(){
-
-  $('.carousel').slick({
-  slidesToShow: 3,
-  dots:true,
-  centerMode: true,
-  arrows:false,
-  autoplay: true,
-  autoplaySpeed: 1000,
-  focusOnSelect:false,
-  draggable:false,
-
-  });
+    $('.carousel').slick({
+    dots: true,
+    centerMode: false,
+    infinite: true,
+    speed: 650,
+    autoplay: true,
+    slidesToShow: 3,
+    draggable: true,
+    slidesToScroll: 3,
+    cssEase: 'linear',
+    responsive: [
+        {
+        breakpoint: 1024,
+        settings: {
+            centerMode: false,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+        }
+        },
+        {
+        breakpoint: 480,
+        settings: {
+            centerMode: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false
+        }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
+    });
 });
 
 

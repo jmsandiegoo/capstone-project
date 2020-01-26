@@ -1,9 +1,9 @@
 // Adding on click in project poster
-var projectPoster = document.querySelectorAll(".btcarousel-item .card-body");
-
+var projectPoster = document.querySelectorAll(".btcarousel-item");
 for (var i = 0; i < projectPoster.length; i++) {
     projectPoster[i].addEventListener("click", function() {
-        var project_id = this.id;
+        console.log(this.dataset.id);
+        var project_id = this.dataset.id
         getAjaxProjectInfo(project_id);
     });
 }
@@ -25,7 +25,6 @@ function getAjaxProjectInfo(project_id) {
 }
 
 function populateProjectOverlay(projectObj) {
-
     var projectName = document.querySelector(".module-modal1 .modal-body .title");
     var projectImg = document.querySelector(".module-modal1 .modal-body .image");
     var projectDescription = document.querySelector(".module-modal1 .modal-body .description");

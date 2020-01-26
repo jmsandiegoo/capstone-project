@@ -384,6 +384,30 @@ p{
   margin: 2rem 0;
 }
 
+.project-content .carousel .btcarousel-item {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-origin: padding-box;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* .project-content .carousel .btcarousel-item .project-id-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+} */
+
+.project-content .carousel .btcarousel-item::after {
+  content: '';
+  display: block;
+  padding-top: 150%;
+}
+
 /* Media Queries */
 
 /* Ipads */
