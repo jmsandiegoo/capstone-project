@@ -197,7 +197,7 @@
                                 <h6>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
                                 <br>
                                 <h3><u> Aggregate Type ELR2B2-C </u></h3>
-                                <p><i> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </i> </p>
+                                <p>To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </p>
                                 <h6 style="width:50%; float:left;"> Subjects </h6>
                                 <h6 style="width:50%; float:right;">'O' Level Grade </h6>
                                 <?php 
@@ -266,7 +266,7 @@
                             <div class="course-career">
                                 <div class="container">
                                     <h1><i class="binoculars-icon"></i> Course Pathway</h1>
-                                    <div class="course-wrapper">
+                                    <div class="course-wrapper desc">
                                         <p>In Year 1, Students are given an opportunity to learn modules from other courses in ICT.</br>
                                         Upon completion of Year 1 modules, Students are to continue their education by selecting the following courses:</br>
                                         </p> 
@@ -291,7 +291,7 @@
                                 <h6>Planned Intake (2020): <strong><?php echo $row['course_intake'] ?></strong></h5>  
                                 <br>
                                 <h3><u> Aggregate Type ELR2B2-C </u></h3>
-                                <p><i> To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </i> </p>
+                                <p>To be eligible for consideration, candidates must have the following GCE 'O' Level Examination results </p>
                                 <h6 style="width:50%; float:left;"> Subjects </h6>
                                 <h6 style="width:50%; float:right;">'O' Level Grade </h6>
                                 <?php 

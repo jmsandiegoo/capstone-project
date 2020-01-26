@@ -1,27 +1,29 @@
 #myBtnContainer-tour {
+    margin: 2rem -5px;
     position: relative;
 }
 
 .tour-wrapper .colle {
-    border: 1px solid gray;
-    margin-top: 3px;
+    border: 1px solid #9651A4;
+    margin-top: 15px;
     
 }
 .tour-wrapper .collapsible {
-    background-color: white;
-    color: black;
+    background-color: #9651A4;
+    color: white;
     cursor: pointer;
-    padding: 15px;
     width: 100%;
     text-align: left;
     outline: none;
-    font-size: 15px;
     border: none;
-    margin-top: 3px;
+    padding: 15px;
+    /* font-size: inherit; */
+    /* margin-top: 3px; */
 }
 
+
 .tour-wrapper  .active, .collapsible:hover {
-    background-color: white;
+    background-color: #9651A4;
 }
 
 .tour-wrapper .collapsible:after {
@@ -29,6 +31,7 @@
     color: black;
     font-weight: bold;
     float: right;
+    /* font-size: inherit; */
 }
 
 .tour-wrapper .active:after {
@@ -36,8 +39,8 @@
 }
   
 .tour-wrapper .content {
-    margin: 3px;
-    padding: 0 18px;
+    /* margin: 3px; */
+    padding: 0 20px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -58,7 +61,10 @@
         max-width:100%;
       }
       .content.tour p{
-          font-size:2.3vw;
+          font-size:3vw;
       }
+      .collapsible{
+        font-size: 4vw;
+    }
     
 }

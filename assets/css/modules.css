@@ -436,7 +436,7 @@ p{
 }
 
 /* Smartphones */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 
     .module-wrapper .modules .card {
         flex-basis: calc(100% / 2);
@@ -470,5 +470,14 @@ p{
     .modal-body p{
 
       font-size:4vw;
+    }.tab-content.elective h4{
+      font-size:5vw !important;
+    }
+    
+    .tab-content.elective p{
+      font-size:2.8vw !important;
+    }
+    .tab-content.elective h6{
+      font-size:3vw !important;
     }
 }
