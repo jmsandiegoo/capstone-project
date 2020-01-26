@@ -5,7 +5,7 @@
 
 .faq-wrapper .colle {
     border: 1px solid #9651A4;
-    /* margin-top: 3px; */  
+    margin-top: 15px; 
 }
 .faq-wrapper .collapsible {
     background-color: #9651A4;
@@ -14,17 +14,15 @@
     width: 100%;
     text-align: left;
     outline: none;
-    font-size: 15px;
     border: none;
     padding: 15px;
-    /* margin-top: 3px; */
-}
-.faq-wrapper  .active{
-    background-color: #9651A4;
-}
 
-.collapsible.faq:hover {
-    background-color: #7f498a;
+    /* margin-top: 3px; */
+    /* font-size: 15px; */
+
+}
+.faq-wrapper  .active, .collapsible.faq:hover{
+    background-color: #9651A4;
 }
 
 .faq-wrapper .collapsible:after {
@@ -32,6 +30,7 @@
     color: black;
     font-weight: bold;
     float: right;
+    /* font-size: inherit; */
 }
 
 .faq-wrapper .active:after {
@@ -47,9 +46,24 @@
     background-color:white;
 }
 
-.faq-wrapper .telegram-button {
-    text-align: center;
+.faq-wrapper h5{
+    font-size: inherit;
 }
+
+
+@media only screen and (max-width: 767px) {
+    .collapsible{
+        font-size: 4vw;
+    }
+      .faq-wrapper h5{
+          font-size: 3vw;
+      }
+    
+}
+
+/* .faq-wrapper .telegram-button {
+    text-align: center;
+} */
 
 /* h5{
     font-size: medium;
