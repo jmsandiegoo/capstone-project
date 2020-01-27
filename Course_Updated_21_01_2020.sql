@@ -1119,21 +1119,21 @@ INSERT INTO CategoryModule(category_id, module_id) VALUES
 
 INSERT INTO FAQ(question_id,question_text,question_answer) VALUES
 (1,'What are the internship opportunities if I enter this school?','In your final year, you will round off your learning journey with a six-month local or overseas internship with organisations such as KPMG, IBM, Singtel and Microsoft, or launch your own IT business ideas at our technology hubs. You can also work on a capstone project which will beef up your digital portfolio and impress your future employer!'),
-(2,'What will the course structure of the school be like? What will I learn in (IT/FI/IM/CDF)?','Answer 2'),
-(3,'What are the possible FYPs or Capstone Projects that students will be asked to do in the school?','Answer 3'),
-(4,'What scholarship opportunities does your school offer?','Answer 4'),
+(2,'What will the course structure of the school be like? What will I learn in (IT/FI/IM/CDF)?','In your first year, core general skills. In your second & third  year, you are free to choose from a myriad of electives that suit your interests and passion. </br> To keep our curriculum current and robust, diploma modules are subject to change over the three years.'),
+(3,'What are the possible FYPs or Capstone Projects that students will be asked to do in the school?','<p><b>Capstone Project</b> is a newly introduced module where you can apply and integrate the knowledge that you have learnt on innovative and interesting ICT-related projects. 
+You are given the choice to take up Capstone Project in place of two elective modules that are worth at least 8 credit units jointly. 
+Each Capstone Project will be undertaken by a group of two to four students. 
+One lecturer will be assigned to supervise and guide each Capstone Project group throughout the project. 
+Capstone Project offers an opportunity for you to work with friends and even schoolmates from other diploma programmes on a same project, 
+by creating common time and space in your timetable to facilitate such collaboration opportunities. 
+There are many more of such innovative Capstone Projects waiting to be implemented by you!</p></br>
+<p><b>Final Year Project</b> is the culmination of the degree – it gives students a chance to demonstrate all they have learned. Apart from an initial briefing session there are no formal lectures to attend. Teaching consists of regular individual/small group meetings to discuss progress. For assessment, students submit reports of their progress and final results, and give in-person presentations and demonstrations of their work.</p>'),
+(4,'What scholarship opportunities does your school offer?','You can go check the NP by <a href="https://www.np.edu.sg/admissions/Pages/scholarships.aspx">link</a>. ICT School will give more opportunities such as iPrep, IMDA Scholarship and more upcoming!'),
 (5,'What University degrees/courses will I be able to apply in university after I graduate?','You can receive advanced standing when you apply for
 related degree programmes at universities both locally
 and abroad.</br>Depending on the course that you take, some related courses include: Computer Science, Information Systems, Electrical and Computer Engineering, Game Development, Human-Computer Interaction, Information Technology, Interactive Media, Software Engineering.'),
 (6,'What are the Further Progression opportunities are there upon graduation?','
-  <b>Information Technology</b></br>
-  London is the capital city of England.</br>
-  <b>Financial Informatics</b></br>
-  London is the capital city of England.</br>
-  <b>Immersive Media</b></br>
-  London is the capital city of England.</br>
-  <b>Cybersecurity and Digital Forensics</b></br>
-  London is the capital city of England.'),
+  <p>You can receive advanced standing when you applying for related degree programmes at university both locally and abroad. Or you can fulfil your career with reference to the ICT Skills framework. You can also look forward to pursuing specialist diploma courses at local polytechnics.</p>'),
 (7,'Difference between games in IM and games in IT','Games in Immersive Media is more in to the designing of games, while Games in Information Technology is more to Games Programming.'),
 (8,'Which course in the school should I enter?','If you are not sure which course in our school you would like to enter, you can click on the Telegram button below and create an appointment using /createAppt with our course counsellors to help you make your decision, or you can also take part in the /quiz to find out your true passion!'),
 (9,'Why should i choose this school?','With Singapore on track to becoming a smart nation, you are poised for flourishing industries that will welcome your talent. This means there will also be more room for your aspirations to bloom. Here at ICT, we offer four diplomas and one Common ICT Programme, teamed with various electives and areas of interest, to equip you for your chosen field!');
