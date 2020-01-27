@@ -102,6 +102,7 @@
     <section class="module-content container">
         <!-- Job Links Links -->
         <div id="myBtnContainer">
+        <h4>Category</h4>Select category to view only elective modules.
             <div class="filters">
             <button class="btn filter-btn active" onclick="filterSelection('all')">Show All</button>
                 <?php foreach ($categoryName as $key => $row): ?>
