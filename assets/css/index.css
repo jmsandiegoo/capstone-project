@@ -242,6 +242,27 @@ em{
     
 }
 
+@media only screen and (max-width: 1024px) {
+    .card-title{
+        font-size:2.5vw;
+    }
+    .card-subtitle{
+        font-size:1.7vw;
+    }
+    #section-header h1{
+        font-size:10vw;
+    }
+    #section-header h2{
+        font-size:4vw;
+    }
+    .foot h3{
+        font-size:6vw;
+    }
+    .foot h4{
+        font-size:4vw;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     #section-header h1 {
         font-size: 10vw;
@@ -326,6 +347,12 @@ em{
     .navbar{
         background-color: rgba(0, 0, 0, 0.99) !important;
     }
+    .navbar-brand{
+    
+        font-size:4vw !important;}
+    .tabName{
+        font-size:3vw !important;
+    }
     .course-career{
         display: block;
         align-items:initial;
@@ -338,20 +365,16 @@ em{
         padding-left:3vw !important;
     }
     em{
-        font-size:1.5vw;
+        font-size:2vw;
     }
-    .container.courseInfo p, .course-wrapper.desc p{
-        font-size:2vw !important;
-    }
+
     .subject-wrapper p{
         font-size:2vw;
     }
     .course-entry p{
         font-size:2vw;
     }
-    .course-information p{
-        font-size:2vw !important;
-    }
+
 }
 
 .card-body1 {

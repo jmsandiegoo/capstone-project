@@ -106,9 +106,27 @@ foreach ($courses as $key => $row):
         width: 70%;
     } 
 
+    @media only screen and (max-width: 1024px) {
+        #<?php echo 'section-' . $row['id'] . ' h1'?> {
+            font-size: 6.5vw;
+            width: 80%;
+            letter-spacing: 0;
+        }
+        #<?php echo 'section-' . $row['id'] . ' h2'?> {
+            font-size: 5vw;
+            border-top: 2px solid white;
+        }
+        #<?php echo 'slide3-' . $row['id'] . ' .subject-wrapper' ?> {
+        border-top: 0.5vw dashed white;
+        padding-top: 5px; 
+        clear:both;
+        width: 70%;
+    } 
+    }
 
     @media only screen and (max-width: 767px) { 
         #<?php echo 'section-' . $row['id'] . ' h1'?> {
+            padding-top:10px;
             font-size: 10vw;
             width: 80%;
             letter-spacing: 0;

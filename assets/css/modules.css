@@ -82,7 +82,9 @@ p{
     margin: 5px 5px;
     transition: 0.3s;
 }
-
+.modal-body h2{
+  margin-bottom:1rem;
+}
 .module-wrapper .courses .card {
   background: #181818;
   color: white;
@@ -272,7 +274,7 @@ p{
 }
 
 .module-modal1 .modal-content {
-  padding: 100px 0;
+  padding: 100px 50px;
   border: 0;
   border-radius: 3px;
   text-align: center;
@@ -320,7 +322,7 @@ p{
 .module-modal1 .modal-body .image {
   width: 50vw;
   max-width: 250px;
-  margin: 2.5rem 0;
+  margin: 0 0 2.5rem 0;
 }
  /* Module Overlay */
 
@@ -412,7 +414,18 @@ p{
 
 /* Ipads */
 @media (max-width: 1024px) {
-
+    p{
+      font-size:2vw;
+    }
+    .tabName, .navbar-brand{
+      font-size:2vw;
+    }
+    .main-banner h1{
+      font-size:6vw;
+    }
+    .main-banner h3{
+      font-size:4vw;
+    }
     .module-wrapper .modules .card {
         flex-basis: calc((100% - 60px) / 3);
     }
@@ -443,7 +456,9 @@ p{
 
 /* Smartphones */
 @media only screen and (max-width: 768px) {
-
+    .image.project{
+      min-width:300px !important;
+    }
     .module-wrapper .modules .card {
         flex-basis: calc(100% / 2);
         margin: 0 0;
@@ -481,9 +496,19 @@ p{
     }
     
     .tab-content.elective p{
-      font-size:2.8vw !important;
+      font-size:3.5vw !important;
     }
     .tab-content.elective h6{
-      font-size:3vw !important;
+      font-size:4vw !important;
     }
+    .module-modal1 .modal-content {
+      padding: 100px 0;
+    }
+}
+.image.project{
+  min-width:400px;
+}
+
+.modal-open{
+  padding-right:0px !important;
 }

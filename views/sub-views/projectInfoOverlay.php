@@ -9,9 +9,11 @@
                 </div>
             </div>
             <div class="modal-body">
+                <img class="image project" src="https://anijs.github.io/examples/scrollreveal/img/portfolio/2002.png" alt="module-image">
+                <div>
                 <h2 class="title">Project Name</h2>
-                <img class="image" src="https://anijs.github.io/examples/scrollreveal/img/portfolio/2002.png" alt="module-image">
-                <p class="text-justify description">Project description</p>
+                <p class="text-justify-center description">Project description</p>
+                </div>
             </div>
         </div>
     </div>
