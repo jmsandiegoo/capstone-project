@@ -221,7 +221,7 @@
     </section>
 
     <?php if ($id != 5): ?>
-    <section class="project-content container">
+    <section id='projectWrapper' class="project-content container">
         <h1>Project Portfolio</h1>
         <div class="carousel">
             <?php foreach ($projectInfo as $key => $row): ?>

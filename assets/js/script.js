@@ -46,12 +46,11 @@ function toggleStickyNav() {
     var navbar = document.getElementsByClassName("navbar")[0];
     var navbarPlaceholder = document.getElementsByClassName("navbar-placeholder")[0];
     var offsetTop = navbar.offsetTop;
-
     if (window.pageYOffset > offsetTop) {
         navbar.classList.add("sticky-top");
-        navbarPlaceholder.style.height = "56px";
+        navbarPlaceholder.style.height = `${navbar.offsetHeight}px`;
     } else {
         navbar.classList.remove("sticky-top");
-        navbarPlaceholder.style.height = "56px";
+        navbarPlaceholder.style.height = `${navbar.offsetHeight}px`;
     }
 }
