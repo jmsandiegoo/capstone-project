@@ -54,7 +54,8 @@ $(document).ready(function(){
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false
+            arrows: false,
+            dots: true
         }
         }
         // You can unslick at a given breakpoint now by adding:
