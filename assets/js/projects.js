@@ -113,6 +113,24 @@ function populateProjectOverlay(projectObj) {
     projectName.innerHTML = projectObj.project_name;
     projectImg.src = `../${projectObj.item_path}`;
     projectDescription.innerHTML = projectObj.project_desc;
+
+    $('.project-modal').on('show.bs.modal', function (e) {
+        // do something...
+        var scrollArrows = document.querySelector('.project-modal .scrolldown');
+        scrollArrows.style.opacity = 0;
+    })
+    $('.project-modal').on('shown.bs.modal', function (e) {
+        // do something...
+        var modalBody = document.querySelector('.project-modal .modal-body');
+        var scrollArrows = document.querySelector('.project-modal .scrolldown');
+        console.log(modalBody);
+        console.log(`offset: ${modalBody.offsetHeight} client: ${modalBody.clientHeight}`);
+        if (modalBody.scrollHeight > modalBody.clientHeight) {
+            scrollArrows.style.opacity = 1;
+        } else {
+            scrollArrows.style.opacity = 0;
+        }
+    })
     $('.project-modal').modal('show');
 }
 

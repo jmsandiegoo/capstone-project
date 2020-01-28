@@ -104,7 +104,36 @@ function populateModuleOverlay(moduleObj) {
     moduleName.innerHTML = moduleObj.module_name;
     moduleImg.src = `../${moduleObj.item_path}`;
     moduleDescription.innerHTML = moduleObj.module_description;
+
+    // check if it is scrollable
+
+
+    // modalBody.addEventListener("scroll", function() {
+    //     if (this.offsetHeight > this.clientHeight) {
+    //         scrollArrows.style.opacity = 1;
+    //     } else {
+    //         scrollArrows.style.opacity = 0;
+    //     }
+    // });
+    $('.module-modal').on('show.bs.modal', function (e) {
+        // do something...
+        var scrollArrows = document.querySelector('.module-modal .scrolldown');
+        scrollArrows.style.opacity = 0;
+    })
+    $('.module-modal').on('shown.bs.modal', function (e) {
+        // do something...
+        var modalBody = document.querySelector('.module-modal .modal-body');
+        var scrollArrows = document.querySelector('.module-modal .scrolldown');
+        console.log(modalBody);
+        console.log(`offset: ${modalBody.offsetHeight} client: ${modalBody.clientHeight}`);
+        if (modalBody.scrollHeight > modalBody.clientHeight) {
+            scrollArrows.style.opacity = 1;
+        } else {
+            scrollArrows.style.opacity = 0;
+        }
+      })
     $('.module-modal').modal('show');
+
 }
 
 var closeBtn = document.querySelector(".module-modal .close-modal")
