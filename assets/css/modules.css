@@ -465,11 +465,50 @@ p{
 /* Media Queries */
 
 @media (min-width: 3840px) {
-  .modal-content{
+  .module-modal .modal-content, .project-modal .modal-content{
     padding: 200px 200px;
     max-height:60% !important;
     min-height:60% !important;
   }
+
+  .close-modal .lr {
+    width: 2px !important;
+    height: 100px !important;
+    margin-left: 0 !important;
+  }
+  
+  .module-modal .close-modal .rl {
+    width: 2px !important;
+    height: 100px !important;
+  }
+
+  .modal .scrolldown {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translateY(-80px) translateX(-50%) rotate(45deg);
+  }
+
+  .modal .scrolldown span {
+    border-bottom: 4px solid #2c3e50;
+    border-right: 4px solid #2c3e50;
+  }
+
+  .modal .scrolldown span:nth-child(1) {
+    transform: translate(-23px, -23px);
+    animation-delay: -0.4s;
+  }
+  .modal .scrolldown span:nth-child(2) {
+    transform: translate(0, 0);
+    animation-delay: -0.2s;
+  }
+  .modal .scrolldown span:nth-child(3) {
+    transform: translate(23px, 23px);
+    animation-delay: 0s;
+  }
+
   .module-modal .modal-dialog {
       max-width: 50%;
     
