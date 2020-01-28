@@ -29,6 +29,11 @@
                 <img class="image" src="https://anijs.github.io/examples/scrollreveal/img/portfolio/2002.png" alt="module-image">
                 <p class="text-justify-center description">Module description</p>
             </div>
+            <div class="scrolldown">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
 </div>

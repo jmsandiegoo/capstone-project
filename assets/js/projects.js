@@ -106,18 +106,18 @@ function getAjaxProjectInfo(project_id) {
 }
 
 function populateProjectOverlay(projectObj) {
-    var projectName = document.querySelector(".module-modal1 .modal-body .title");
-    var projectImg = document.querySelector(".module-modal1 .modal-body .image");
-    var projectDescription = document.querySelector(".module-modal1 .modal-body .description");
+    var projectName = document.querySelector(".project-modal .modal-body .title");
+    var projectImg = document.querySelector(".project-modal .modal-body .image");
+    var projectDescription = document.querySelector(".project-modal .modal-body .description");
 
     projectName.innerHTML = projectObj.project_name;
     projectImg.src = `../${projectObj.item_path}`;
     projectDescription.innerHTML = projectObj.project_desc;
-    $('.module-modal1').modal('show');
+    $('.project-modal').modal('show');
 }
 
-var closeBtn = document.querySelector(".module-modal1 .close-modal")
+var closeBtn = document.querySelector(".project-modal .close-modal")
 
 closeBtn.addEventListener("click", function() {
-    $('.module-modal1.in').modal('hide');
+    $('.project-modal.in').modal('hide');
 })

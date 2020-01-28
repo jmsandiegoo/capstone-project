@@ -269,11 +269,11 @@ p{
 }
  /* Project Overlay */
 
- .module-modal1 .modal-dialog {
+ .project-modal .modal-dialog {
   max-width: 850px;
 }
 
-.module-modal1 .modal-content {
+.project-modal .modal-content {
   padding: 100px 50px;
   border: 0;
   border-radius: 3px;
@@ -283,7 +283,7 @@ p{
   min-height: 50%;
 }
 
-.module-modal1 .close-modal {
+.project-modal .close-modal {
   position: absolute;
   top: 25px;
   right: 25px;
@@ -293,7 +293,7 @@ p{
   cursor: pointer;
 }
 
-.module-modal1 .close-modal .lr {
+.project-modal .close-modal .lr {
   z-index: 1051;
   width: 1px;
   height: 60px;
@@ -304,7 +304,7 @@ p{
   transform: rotate(45deg);
 }
 
-.module-modal1 .close-modal .rl {
+.project-modal .close-modal .rl {
   z-index: 1052;
   width: 1px;
   height: 60px;
@@ -314,12 +314,12 @@ p{
   transform: rotate(90deg);
 }
 
-.module-modal1 .modal-body {
+.project-modal .modal-body {
   position: relative;
   padding: 20px;
 }
 
-.module-modal1 .modal-body .image {
+.project-modal .modal-body .image {
   width: 50vw;
   max-width: 250px;
   margin: 0 0 2.5rem 0;
@@ -382,6 +382,41 @@ p{
   margin: 2.5rem 0;
 }
 
+.modal .scrolldown {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  /* background: #2c3e50; */
+  transform: translateY(-50px) translateX(-50%) rotate(45deg);
+}
+
+.modal .scrolldown span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid #2c3e50;
+  border-right: 2px solid #2c3e50;
+  animation: animate 1.5s linear infinite;
+}
+
+.modal .scrolldown span:nth-child(1) {
+  transform: translate(-15px, -15px);
+  animation-delay: -0.4s;
+}
+.modal .scrolldown span:nth-child(2) {
+  transform: translate(0, 0);
+  animation-delay: -0.2s;
+}
+.modal .scrolldown span:nth-child(3) {
+  transform: translate(15px, 15px);
+  animation-delay: 0s;
+}
+
 .project-content h1 {
   margin: 2rem 0;
 }
@@ -410,6 +445,24 @@ p{
   padding-top: 150%;
 }
 
+/* Key Frames */
+@keyframes animate {
+  0% {
+    top: -5px;
+    left: -5px;
+    opacity: 0;
+  }
+  25% {
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+  }
+  50%,100% {
+    top: 5px;
+    left: 5px;
+    opacity: 0;
+  }
+}
 /* Media Queries */
 
 @media (min-width: 3840px) {
