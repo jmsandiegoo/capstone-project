@@ -33,7 +33,8 @@ class Mysql_Driver
   		{
  		    //echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			trigger_error("Failed to connect to MySQL: " . mysqli_connect_error());
-  		} 
+		}
+		mysqli_set_charset($this->connection, 'utf8mb4');
     }
 
     public function close()
