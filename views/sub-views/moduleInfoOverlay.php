@@ -27,7 +27,7 @@
             <div class="modal-body">
                 <h2 class="title">Module Name</h2>
                 <img class="image" src="https://anijs.github.io/examples/scrollreveal/img/portfolio/2002.png" alt="module-image">
-                <p class="text-justify description">Module description</p>
+                <p class="text-justify-center description">Module description</p>
             </div>
         </div>
     </div>

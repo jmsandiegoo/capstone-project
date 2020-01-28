@@ -412,6 +412,18 @@ p{
 
 /* Media Queries */
 
+@media (min-width: 3840px) {
+  .modal-content{
+    padding: 200px 200px;
+    max-height:60% !important;
+    min-height:60% !important;
+  }
+  .module-modal .modal-dialog {
+      max-width: 50%;
+    
+  }
+}
+
 /* Ipads */
 @media (max-width: 1024px) {
     p{
