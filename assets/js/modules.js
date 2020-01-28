@@ -131,7 +131,7 @@ function populateModuleOverlay(moduleObj) {
         } else {
             scrollArrows.style.opacity = 0;
         }
-      })
+    })
     $('.module-modal').modal('show');
 
 }
