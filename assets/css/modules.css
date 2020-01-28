@@ -477,7 +477,7 @@ p{
     margin-left: 0 !important;
   }
   
-  .module-modal .close-modal .rl {
+  .close-modal .rl {
     width: 2px !important;
     height: 100px !important;
   }
@@ -511,11 +511,14 @@ p{
 
   .module-modal .modal-dialog, .project-modal .modal-dialog {
       max-width: 50%;
-    
   }
   .modal-body h2{
-    margin-bottom:2rem;
-    font-size:2vw;
+    margin-bottom: 2rem;
+    font-size: 6rem;
+  }
+
+  .project-modal .modal-body .image {
+    max-width: 1000px;
   }
 
   
