@@ -12,7 +12,7 @@ new fullpage('#fullpage', {
     resetSliders: true,
     //controlArrows:false,
     // navigationTooltips: ['01', '02', '03'],
-    anchors: ['home', 'overview', '1', '2', '3', '4', '5', 'footer'],
+    anchors: ['home', 'overview', 'IT', 'FI', 'IM', 'CDF', 'CICT', 'footer'],
     onLeave: function(origin, destination, direction) {
         console.log("onleave occured");
         if (runOnce === false) {

@@ -69,7 +69,7 @@
                 <div class="container cour">
                 <?php foreach ($resultArray3 as $key => $row): ?>
                     <div class="card courses" style="">
-                        <a href="#<?php echo $row["id"]?>">
+                        <a href="#<?php echo $row["course_abbreviations"]?>">
                         <div class="row no-gutters">
                         
                         <?php 
