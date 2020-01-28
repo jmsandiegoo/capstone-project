@@ -464,7 +464,7 @@ p{
 }
 /* Media Queries */
 
-@media (min-width: 3840px) {
+@media (min-width: 2160px) {
   .module-modal .modal-content, .project-modal .modal-content{
     padding: 200px 200px;
     max-height:60% !important;
@@ -509,7 +509,7 @@ p{
     animation-delay: 0s;
   }
 
-  .module-modal .modal-dialog {
+  .module-modal .modal-dialog, .project-modal .modal-dialog {
       max-width: 50%;
     
   }
