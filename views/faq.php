@@ -32,17 +32,7 @@
 </head>
 <main class="faq-wrapper">
     <?php include $helper->subviewPath('navbar.php') ?>
-    <div class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(<?php echo $backgroundPath ?>);">
-                <div class="container">
-                    <div class="card flex-row flex-wrap intro">
-                        <div class="card-block px-2 justify-content-center" style="float:right; padding-top:50px;">
-                            <h1>FAQ</h1>
-                            <h3>Here are some frequently asked questions on enrollment</h3>                 
-                        </div>
-                    </div>
-                    <br>
-                </div>
-            </div>
+    <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(<?php echo $backgroundPath ?>);">
     </section>
 
     <section class="faq-content container">
