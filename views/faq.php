@@ -32,9 +32,8 @@
 </head>
 <main class="faq-wrapper">
     <?php include $helper->subviewPath('navbar.php') ?>
-    <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(<?php echo $backgroundPath ?>);">
+    <section class="main-banner container-fluid" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(<?php echo $backgroundPath ?>); background-position:left;">
     </section>
-
     <section class="faq-content container">
         <div id="myBtnContainer-faq">
             <?php foreach ($faqResultsArray as $key => $row):?>
